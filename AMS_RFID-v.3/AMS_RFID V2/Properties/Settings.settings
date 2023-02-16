@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AMS_RFID_V2.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ams_rfid_cn" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;server=localhost;user id=AMS_RFID;password=@M$_Rf1d2O22;persistsecurityinfo=True;database=ams_rfid;convert zero datetime=True;&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;MySql.Data.MySqlClientl;&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">server=localhost;user id=AMS_RFID;password=@M$_Rf1d2O22;persistsecurityinfo=True;database=ams_rfid;convert zero datetime=True;</Value>
+    </Setting>
+    <Setting Name="ams_rfidConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;server=localhost;user id=AMS_RFID;password=@M$_Rf1d2O22;persistsecurityinfo=True;database=ams_rfid;allowuservariables=True;connectionlifetime=100;convert zero datetime=True;&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">server=localhost;user id=AMS_RFID;password=@M$_Rf1d2O22;persistsecurityinfo=True;database=ams_rfid;allowuservariables=True;connectionlifetime=100;convert zero datetime=True;</Value>
+    </Setting>
+    <Setting Name="ams_rfidConnectionString1" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;server=localhost;user id=AMS_RFID;password=@M$_Rf1d2O22;persistsecurityinfo=True;database=ams_rfid;allowuservariables=True;connectionlifetime=100&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">server=localhost;user id=AMS_RFID;password=@M$_Rf1d2O22;persistsecurityinfo=True;database=ams_rfid;allowuservariables=True;connectionlifetime=100</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

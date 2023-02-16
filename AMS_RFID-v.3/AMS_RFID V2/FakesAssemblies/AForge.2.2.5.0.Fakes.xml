@@ -1,0 +1,1025 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AForge.2.2.5.0.Fakes</name>
+    </assembly>
+    <members>
+        <member name="T:AForge.Fakes.ShimCommunicationBufferEventArgs">
+            <summary>Shim type of AForge.CommunicationBufferEventArgs</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimCommunicationBufferEventArgs.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimCommunicationBufferEventArgs.#ctor(AForge.CommunicationBufferEventArgs)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:AForge.Fakes.ShimCommunicationBufferEventArgs.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimCommunicationBufferEventArgs.AllInstances.GetMessage">
+            <summary>Sets the Shim of CommunicationBufferEventArgs.GetMessage()</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimCommunicationBufferEventArgs.AllInstances.GetMessageString">
+            <summary>Sets the Shim of CommunicationBufferEventArgs.GetMessageString()</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimCommunicationBufferEventArgs.AllInstances.MessageLengthGet">
+            <summary>Sets the Shim of CommunicationBufferEventArgs.get_MessageLength()</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimCommunicationBufferEventArgs.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimCommunicationBufferEventArgs.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimCommunicationBufferEventArgs.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimCommunicationBufferEventArgs.ConstructorByteArray">
+            <summary>Sets the Shim of CommunicationBufferEventArgs.CommunicationBufferEventArgs(Byte[] message)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimCommunicationBufferEventArgs.ConstructorByteArrayInt32Int32">
+            <summary>Sets the Shim of CommunicationBufferEventArgs.CommunicationBufferEventArgs(Byte[] buffer, Int32 index, Int32 length)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimCommunicationBufferEventArgs.GetMessage">
+            <summary>Sets the Shim of CommunicationBufferEventArgs.GetMessage()</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimCommunicationBufferEventArgs.GetMessageString">
+            <summary>Sets the Shim of CommunicationBufferEventArgs.GetMessageString()</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimCommunicationBufferEventArgs.MessageLengthGet">
+            <summary>Sets the Shim of CommunicationBufferEventArgs.get_MessageLength()</summary>
+        </member>
+        <member name="T:AForge.Fakes.ShimConnectionFailedException">
+            <summary>Shim type of AForge.ConnectionFailedException</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimConnectionFailedException.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimConnectionFailedException.#ctor(AForge.ConnectionFailedException)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:AForge.Fakes.ShimConnectionFailedException.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimConnectionFailedException.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimConnectionFailedException.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimConnectionFailedException.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimConnectionFailedException.Bind(System.Runtime.Serialization.ISerializable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimConnectionFailedException.ConstructorString">
+            <summary>Sets the Shim of ConnectionFailedException.ConnectionFailedException(String message)</summary>
+        </member>
+        <member name="T:AForge.Fakes.ShimConnectionLostException">
+            <summary>Shim type of AForge.ConnectionLostException</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimConnectionLostException.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimConnectionLostException.#ctor(AForge.ConnectionLostException)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:AForge.Fakes.ShimConnectionLostException.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimConnectionLostException.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimConnectionLostException.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimConnectionLostException.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimConnectionLostException.Bind(System.Runtime.Serialization.ISerializable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimConnectionLostException.ConstructorString">
+            <summary>Sets the Shim of ConnectionLostException.ConnectionLostException(String message)</summary>
+        </member>
+        <member name="T:AForge.Fakes.ShimDeviceBusyException">
+            <summary>Shim type of AForge.DeviceBusyException</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimDeviceBusyException.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimDeviceBusyException.#ctor(AForge.DeviceBusyException)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:AForge.Fakes.ShimDeviceBusyException.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimDeviceBusyException.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimDeviceBusyException.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimDeviceBusyException.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimDeviceBusyException.Bind(System.Runtime.Serialization.ISerializable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimDeviceBusyException.ConstructorString">
+            <summary>Sets the Shim of DeviceBusyException.DeviceBusyException(String message)</summary>
+        </member>
+        <member name="T:AForge.Fakes.ShimDeviceErrorException">
+            <summary>Shim type of AForge.DeviceErrorException</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimDeviceErrorException.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimDeviceErrorException.#ctor(AForge.DeviceErrorException)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:AForge.Fakes.ShimDeviceErrorException.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimDeviceErrorException.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimDeviceErrorException.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimDeviceErrorException.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimDeviceErrorException.Bind(System.Runtime.Serialization.ISerializable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimDeviceErrorException.ConstructorString">
+            <summary>Sets the Shim of DeviceErrorException.DeviceErrorException(String message)</summary>
+        </member>
+        <member name="T:AForge.Fakes.ShimDoublePoint">
+            <summary>Shim type of AForge.DoublePoint</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimDoublePoint.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimDoublePoint.AddDoublePointDouble">
+            <summary>Sets the Shim of DoublePoint.Add(DoublePoint point, Double valueToAdd)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimDoublePoint.AddDoublePointDoublePoint">
+            <summary>Sets the Shim of DoublePoint.Add(DoublePoint point1, DoublePoint point2)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimDoublePoint.AdditionOpDoublePointDouble">
+            <summary>Sets the Shim of DoublePoint.op_Addition(DoublePoint point, Double valueToAdd)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimDoublePoint.AdditionOpDoublePointDoublePoint">
+            <summary>Sets the Shim of DoublePoint.op_Addition(DoublePoint point1, DoublePoint point2)</summary>
+        </member>
+        <member name="T:AForge.Fakes.ShimDoublePoint.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimDoublePoint.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimDoublePoint.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimDoublePoint.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimDoublePoint.DivideDoublePointDouble">
+            <summary>Sets the Shim of DoublePoint.Divide(DoublePoint point, Double factor)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimDoublePoint.DivisionOpDoublePointDouble">
+            <summary>Sets the Shim of DoublePoint.op_Division(DoublePoint point, Double factor)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimDoublePoint.EqualityOpDoublePointDoublePoint">
+            <summary>Sets the Shim of DoublePoint.op_Equality(DoublePoint point1, DoublePoint point2)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimDoublePoint.ExplicitOpDoublePointIntPoint">
+            <summary>Sets the Shim of DoublePoint.op_Explicit(DoublePoint point)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimDoublePoint.ExplicitOpDoublePointPoint">
+            <summary>Sets the Shim of DoublePoint.op_Explicit(DoublePoint point)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimDoublePoint.InequalityOpDoublePointDoublePoint">
+            <summary>Sets the Shim of DoublePoint.op_Inequality(DoublePoint point1, DoublePoint point2)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimDoublePoint.MultiplyDoublePointDouble">
+            <summary>Sets the Shim of DoublePoint.Multiply(DoublePoint point, Double factor)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimDoublePoint.MultiplyOpDoublePointDouble">
+            <summary>Sets the Shim of DoublePoint.op_Multiply(DoublePoint point, Double factor)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimDoublePoint.SubtractDoublePointDouble">
+            <summary>Sets the Shim of DoublePoint.Subtract(DoublePoint point, Double valueToSubtract)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimDoublePoint.SubtractDoublePointDoublePoint">
+            <summary>Sets the Shim of DoublePoint.Subtract(DoublePoint point1, DoublePoint point2)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimDoublePoint.SubtractionOpDoublePointDouble">
+            <summary>Sets the Shim of DoublePoint.op_Subtraction(DoublePoint point, Double valueToSubtract)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimDoublePoint.SubtractionOpDoublePointDoublePoint">
+            <summary>Sets the Shim of DoublePoint.op_Subtraction(DoublePoint point1, DoublePoint point2)</summary>
+        </member>
+        <member name="T:AForge.Fakes.ShimDoubleRange">
+            <summary>Shim type of AForge.DoubleRange</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimDoubleRange.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="T:AForge.Fakes.ShimDoubleRange.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimDoubleRange.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimDoubleRange.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimDoubleRange.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimDoubleRange.EqualityOpDoubleRangeDoubleRange">
+            <summary>Sets the Shim of DoubleRange.op_Equality(DoubleRange range1, DoubleRange range2)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimDoubleRange.InequalityOpDoubleRangeDoubleRange">
+            <summary>Sets the Shim of DoubleRange.op_Inequality(DoubleRange range1, DoubleRange range2)</summary>
+        </member>
+        <member name="T:AForge.Fakes.ShimIntPoint">
+            <summary>Shim type of AForge.IntPoint</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimIntPoint.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimIntPoint.AddIntPointInt32">
+            <summary>Sets the Shim of IntPoint.Add(IntPoint point, Int32 valueToAdd)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimIntPoint.AddIntPointIntPoint">
+            <summary>Sets the Shim of IntPoint.Add(IntPoint point1, IntPoint point2)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimIntPoint.AdditionOpIntPointInt32">
+            <summary>Sets the Shim of IntPoint.op_Addition(IntPoint point, Int32 valueToAdd)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimIntPoint.AdditionOpIntPointIntPoint">
+            <summary>Sets the Shim of IntPoint.op_Addition(IntPoint point1, IntPoint point2)</summary>
+        </member>
+        <member name="T:AForge.Fakes.ShimIntPoint.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimIntPoint.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimIntPoint.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimIntPoint.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimIntPoint.DivideIntPointInt32">
+            <summary>Sets the Shim of IntPoint.Divide(IntPoint point, Int32 factor)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimIntPoint.DivisionOpIntPointInt32">
+            <summary>Sets the Shim of IntPoint.op_Division(IntPoint point, Int32 factor)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimIntPoint.EqualityOpIntPointIntPoint">
+            <summary>Sets the Shim of IntPoint.op_Equality(IntPoint point1, IntPoint point2)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimIntPoint.ImplicitOpIntPointDoublePoint">
+            <summary>Sets the Shim of IntPoint.op_Implicit(IntPoint point)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimIntPoint.ImplicitOpIntPointPoint">
+            <summary>Sets the Shim of IntPoint.op_Implicit(IntPoint point)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimIntPoint.InequalityOpIntPointIntPoint">
+            <summary>Sets the Shim of IntPoint.op_Inequality(IntPoint point1, IntPoint point2)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimIntPoint.MultiplyIntPointInt32">
+            <summary>Sets the Shim of IntPoint.Multiply(IntPoint point, Int32 factor)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimIntPoint.MultiplyOpIntPointInt32">
+            <summary>Sets the Shim of IntPoint.op_Multiply(IntPoint point, Int32 factor)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimIntPoint.SubtractIntPointInt32">
+            <summary>Sets the Shim of IntPoint.Subtract(IntPoint point, Int32 valueToSubtract)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimIntPoint.SubtractIntPointIntPoint">
+            <summary>Sets the Shim of IntPoint.Subtract(IntPoint point1, IntPoint point2)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimIntPoint.SubtractionOpIntPointInt32">
+            <summary>Sets the Shim of IntPoint.op_Subtraction(IntPoint point, Int32 valueToSubtract)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimIntPoint.SubtractionOpIntPointIntPoint">
+            <summary>Sets the Shim of IntPoint.op_Subtraction(IntPoint point1, IntPoint point2)</summary>
+        </member>
+        <member name="T:AForge.Fakes.ShimIntRange">
+            <summary>Shim type of AForge.IntRange</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimIntRange.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="T:AForge.Fakes.ShimIntRange.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimIntRange.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimIntRange.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimIntRange.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimIntRange.EqualityOpIntRangeIntRange">
+            <summary>Sets the Shim of IntRange.op_Equality(IntRange range1, IntRange range2)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimIntRange.ImplicitOpIntRangeRange">
+            <summary>Sets the Shim of IntRange.op_Implicit(IntRange range)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimIntRange.InequalityOpIntRangeIntRange">
+            <summary>Sets the Shim of IntRange.op_Inequality(IntRange range1, IntRange range2)</summary>
+        </member>
+        <member name="T:AForge.Fakes.ShimNotConnectedException">
+            <summary>Shim type of AForge.NotConnectedException</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimNotConnectedException.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimNotConnectedException.#ctor(AForge.NotConnectedException)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:AForge.Fakes.ShimNotConnectedException.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimNotConnectedException.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimNotConnectedException.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimNotConnectedException.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimNotConnectedException.Bind(System.Runtime.Serialization.ISerializable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimNotConnectedException.ConstructorString">
+            <summary>Sets the Shim of NotConnectedException.NotConnectedException(String message)</summary>
+        </member>
+        <member name="T:AForge.Fakes.ShimParallel">
+            <summary>Shim type of AForge.Parallel</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimParallel.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimParallel.#ctor(AForge.Parallel)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:AForge.Fakes.ShimParallel.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimParallel.AllInstances.Initialize">
+            <summary>Sets the Shim of Parallel.Initialize()</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimParallel.AllInstances.Terminate">
+            <summary>Sets the Shim of Parallel.Terminate()</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimParallel.AllInstances.WorkerThreadObject">
+            <summary>Sets the Shim of Parallel.WorkerThread(Object index)</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimParallel.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimParallel.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimParallel.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimParallel.Constructor">
+            <summary>Sets the Shim of Parallel.Parallel()</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimParallel.ForInt32Int32ParallelForLoopBody">
+            <summary>Sets the Shim of Parallel.For(Int32 start, Int32 stop, ForLoopBody loopBody)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimParallel.Initialize">
+            <summary>Sets the Shim of Parallel.Initialize()</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimParallel.InstanceGet">
+            <summary>Sets the Shim of Parallel.get_Instance()</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimParallel.StaticConstructor">
+            <summary>Sets the Shim of Parallel.Parallel()</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimParallel.Terminate">
+            <summary>Sets the Shim of Parallel.Terminate()</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimParallel.ThreadsCountGet">
+            <summary>Sets the Shim of Parallel.get_ThreadsCount()</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimParallel.ThreadsCountSetInt32">
+            <summary>Sets the Shim of Parallel.set_ThreadsCount(Int32 value)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimParallel.WorkerThreadObject">
+            <summary>Sets the Shim of Parallel.WorkerThread(Object index)</summary>
+        </member>
+        <member name="T:AForge.Fakes.ShimPoint">
+            <summary>Shim type of AForge.Point</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimPoint.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimPoint.AddPointPoint">
+            <summary>Sets the Shim of Point.Add(Point point1, Point point2)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimPoint.AddPointSingle">
+            <summary>Sets the Shim of Point.Add(Point point, Single valueToAdd)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimPoint.AdditionOpPointPoint">
+            <summary>Sets the Shim of Point.op_Addition(Point point1, Point point2)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimPoint.AdditionOpPointSingle">
+            <summary>Sets the Shim of Point.op_Addition(Point point, Single valueToAdd)</summary>
+        </member>
+        <member name="T:AForge.Fakes.ShimPoint.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimPoint.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimPoint.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimPoint.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimPoint.DividePointSingle">
+            <summary>Sets the Shim of Point.Divide(Point point, Single factor)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimPoint.DivisionOpPointSingle">
+            <summary>Sets the Shim of Point.op_Division(Point point, Single factor)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimPoint.EqualityOpPointPoint">
+            <summary>Sets the Shim of Point.op_Equality(Point point1, Point point2)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimPoint.ExplicitOpPointIntPoint">
+            <summary>Sets the Shim of Point.op_Explicit(Point point)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimPoint.ImplicitOpPointDoublePoint">
+            <summary>Sets the Shim of Point.op_Implicit(Point point)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimPoint.InequalityOpPointPoint">
+            <summary>Sets the Shim of Point.op_Inequality(Point point1, Point point2)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimPoint.MultiplyOpPointSingle">
+            <summary>Sets the Shim of Point.op_Multiply(Point point, Single factor)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimPoint.MultiplyPointSingle">
+            <summary>Sets the Shim of Point.Multiply(Point point, Single factor)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimPoint.SubtractPointPoint">
+            <summary>Sets the Shim of Point.Subtract(Point point1, Point point2)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimPoint.SubtractPointSingle">
+            <summary>Sets the Shim of Point.Subtract(Point point, Single valueToSubtract)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimPoint.SubtractionOpPointPoint">
+            <summary>Sets the Shim of Point.op_Subtraction(Point point1, Point point2)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimPoint.SubtractionOpPointSingle">
+            <summary>Sets the Shim of Point.op_Subtraction(Point point, Single valueToSubtract)</summary>
+        </member>
+        <member name="T:AForge.Fakes.ShimPolishExpression">
+            <summary>Shim type of AForge.PolishExpression</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimPolishExpression.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimPolishExpression.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimPolishExpression.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimPolishExpression.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimPolishExpression.EvaluateStringDoubleArray">
+            <summary>Sets the Shim of PolishExpression.Evaluate(String expression, Double[] variables)</summary>
+        </member>
+        <member name="T:AForge.Fakes.ShimRange">
+            <summary>Shim type of AForge.Range</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimRange.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="T:AForge.Fakes.ShimRange.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimRange.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimRange.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimRange.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimRange.EqualityOpRangeRange">
+            <summary>Sets the Shim of Range.op_Equality(Range range1, Range range2)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimRange.InequalityOpRangeRange">
+            <summary>Sets the Shim of Range.op_Inequality(Range range1, Range range2)</summary>
+        </member>
+        <member name="T:AForge.Fakes.ShimSystemTools">
+            <summary>Shim type of AForge.SystemTools</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimSystemTools.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimSystemTools.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimSystemTools.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimSystemTools.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimSystemTools.CopyUnmanagedMemoryIntPtrIntPtrInt32">
+            <summary>Sets the Shim of SystemTools.CopyUnmanagedMemory(IntPtr dst, IntPtr src, Int32 count)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimSystemTools.SetUnmanagedMemoryIntPtrInt32Int32">
+            <summary>Sets the Shim of SystemTools.SetUnmanagedMemory(IntPtr dst, Int32 filler, Int32 count)</summary>
+        </member>
+        <member name="T:AForge.Fakes.ShimThreadSafeRandom">
+            <summary>Shim type of AForge.ThreadSafeRandom</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimThreadSafeRandom.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimThreadSafeRandom.#ctor(AForge.ThreadSafeRandom)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="T:AForge.Fakes.ShimThreadSafeRandom.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimThreadSafeRandom.AllInstances.Next">
+            <summary>Sets the Shim of ThreadSafeRandom.Next()</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimThreadSafeRandom.AllInstances.NextBytesByteArray">
+            <summary>Sets the Shim of ThreadSafeRandom.NextBytes(Byte[] buffer)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimThreadSafeRandom.AllInstances.NextDouble">
+            <summary>Sets the Shim of ThreadSafeRandom.NextDouble()</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimThreadSafeRandom.AllInstances.NextInt32">
+            <summary>Sets the Shim of ThreadSafeRandom.Next(Int32 maxValue)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimThreadSafeRandom.AllInstances.NextInt32Int32">
+            <summary>Sets the Shim of ThreadSafeRandom.Next(Int32 minValue, Int32 maxValue)</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimThreadSafeRandom.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:AForge.Fakes.ShimThreadSafeRandom.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimThreadSafeRandom.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimThreadSafeRandom.Constructor">
+            <summary>Sets the Shim of ThreadSafeRandom.ThreadSafeRandom()</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimThreadSafeRandom.ConstructorInt32">
+            <summary>Sets the Shim of ThreadSafeRandom.ThreadSafeRandom(Int32 seed)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimThreadSafeRandom.Next">
+            <summary>Sets the Shim of ThreadSafeRandom.Next()</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimThreadSafeRandom.NextBytesByteArray">
+            <summary>Sets the Shim of ThreadSafeRandom.NextBytes(Byte[] buffer)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimThreadSafeRandom.NextDouble">
+            <summary>Sets the Shim of ThreadSafeRandom.NextDouble()</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimThreadSafeRandom.NextInt32">
+            <summary>Sets the Shim of ThreadSafeRandom.Next(Int32 maxValue)</summary>
+        </member>
+        <member name="P:AForge.Fakes.ShimThreadSafeRandom.NextInt32Int32">
+            <summary>Sets the Shim of ThreadSafeRandom.Next(Int32 minValue, Int32 maxValue)</summary>
+        </member>
+        <member name="T:AForge.Fakes.StubCommunicationBufferEventArgs">
+            <summary>Stub type of AForge.CommunicationBufferEventArgs</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubCommunicationBufferEventArgs.#ctor(System.Byte[])">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubCommunicationBufferEventArgs.#ctor(System.Byte[],System.Int32,System.Int32)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubCommunicationBufferEventArgs.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubCommunicationBufferEventArgs.InitializeStub">
+            <summary>Initializes a new instance of type StubCommunicationBufferEventArgs</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubCommunicationBufferEventArgs.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubCommunicationBufferEventArgs.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:AForge.Fakes.StubConnectionFailedException">
+            <summary>Stub type of AForge.ConnectionFailedException</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubConnectionFailedException.#ctor(System.String)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubConnectionFailedException.AttachBackingFieldToHelpLink">
+            <summary>Attaches delegates to emulate StubConnectionFailedException.HelpLink as a property with a backing field.</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubConnectionFailedException.AttachBackingFieldToSource">
+            <summary>Attaches delegates to emulate StubConnectionFailedException.Source as a property with a backing field.</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubConnectionFailedException.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubConnectionFailedException.Data">
+            <summary>Sets the stub of Exception.get_Data()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubConnectionFailedException.DataGet">
+            <summary>Sets the stub of Exception.get_Data()</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubConnectionFailedException.GetBaseException">
+            <summary>Sets the Stub of Exception.GetBaseException()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubConnectionFailedException.GetBaseException01">
+            <summary>Sets the stub of Exception.GetBaseException()</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubConnectionFailedException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Sets the Stub of Exception.GetObjectData(SerializationInfo info, StreamingContext context)</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubConnectionFailedException.GetObjectDataSerializationInfoStreamingContext">
+            <summary>Sets the stub of Exception.GetObjectData(SerializationInfo info, StreamingContext context)</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubConnectionFailedException.HelpLink">
+            <summary>Sets the stub of Exception.get_HelpLink()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubConnectionFailedException.HelpLinkGet">
+            <summary>Sets the stub of Exception.get_HelpLink()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubConnectionFailedException.HelpLinkSetString">
+            <summary>Sets the stub of Exception.set_HelpLink(String value)</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubConnectionFailedException.InitializeStub">
+            <summary>Initializes a new instance of type StubConnectionFailedException</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubConnectionFailedException.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubConnectionFailedException.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubConnectionFailedException.Message">
+            <summary>Sets the stub of Exception.get_Message()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubConnectionFailedException.MessageGet">
+            <summary>Sets the stub of Exception.get_Message()</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubConnectionFailedException.Source">
+            <summary>Sets the stub of Exception.get_Source()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubConnectionFailedException.SourceGet">
+            <summary>Sets the stub of Exception.get_Source()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubConnectionFailedException.SourceSetString">
+            <summary>Sets the stub of Exception.set_Source(String value)</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubConnectionFailedException.StackTrace">
+            <summary>Sets the stub of Exception.get_StackTrace()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubConnectionFailedException.StackTraceGet">
+            <summary>Sets the stub of Exception.get_StackTrace()</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubConnectionFailedException.ToString">
+            <summary>Sets the Stub of Exception.ToString()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubConnectionFailedException.ToString01">
+            <summary>Sets the stub of Exception.ToString()</summary>
+        </member>
+        <member name="T:AForge.Fakes.StubConnectionLostException">
+            <summary>Stub type of AForge.ConnectionLostException</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubConnectionLostException.#ctor(System.String)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubConnectionLostException.AttachBackingFieldToHelpLink">
+            <summary>Attaches delegates to emulate StubConnectionLostException.HelpLink as a property with a backing field.</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubConnectionLostException.AttachBackingFieldToSource">
+            <summary>Attaches delegates to emulate StubConnectionLostException.Source as a property with a backing field.</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubConnectionLostException.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubConnectionLostException.Data">
+            <summary>Sets the stub of Exception.get_Data()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubConnectionLostException.DataGet">
+            <summary>Sets the stub of Exception.get_Data()</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubConnectionLostException.GetBaseException">
+            <summary>Sets the Stub of Exception.GetBaseException()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubConnectionLostException.GetBaseException01">
+            <summary>Sets the stub of Exception.GetBaseException()</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubConnectionLostException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Sets the Stub of Exception.GetObjectData(SerializationInfo info, StreamingContext context)</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubConnectionLostException.GetObjectDataSerializationInfoStreamingContext">
+            <summary>Sets the stub of Exception.GetObjectData(SerializationInfo info, StreamingContext context)</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubConnectionLostException.HelpLink">
+            <summary>Sets the stub of Exception.get_HelpLink()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubConnectionLostException.HelpLinkGet">
+            <summary>Sets the stub of Exception.get_HelpLink()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubConnectionLostException.HelpLinkSetString">
+            <summary>Sets the stub of Exception.set_HelpLink(String value)</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubConnectionLostException.InitializeStub">
+            <summary>Initializes a new instance of type StubConnectionLostException</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubConnectionLostException.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubConnectionLostException.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubConnectionLostException.Message">
+            <summary>Sets the stub of Exception.get_Message()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubConnectionLostException.MessageGet">
+            <summary>Sets the stub of Exception.get_Message()</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubConnectionLostException.Source">
+            <summary>Sets the stub of Exception.get_Source()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubConnectionLostException.SourceGet">
+            <summary>Sets the stub of Exception.get_Source()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubConnectionLostException.SourceSetString">
+            <summary>Sets the stub of Exception.set_Source(String value)</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubConnectionLostException.StackTrace">
+            <summary>Sets the stub of Exception.get_StackTrace()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubConnectionLostException.StackTraceGet">
+            <summary>Sets the stub of Exception.get_StackTrace()</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubConnectionLostException.ToString">
+            <summary>Sets the Stub of Exception.ToString()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubConnectionLostException.ToString01">
+            <summary>Sets the stub of Exception.ToString()</summary>
+        </member>
+        <member name="T:AForge.Fakes.StubDeviceBusyException">
+            <summary>Stub type of AForge.DeviceBusyException</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubDeviceBusyException.#ctor(System.String)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubDeviceBusyException.AttachBackingFieldToHelpLink">
+            <summary>Attaches delegates to emulate StubDeviceBusyException.HelpLink as a property with a backing field.</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubDeviceBusyException.AttachBackingFieldToSource">
+            <summary>Attaches delegates to emulate StubDeviceBusyException.Source as a property with a backing field.</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubDeviceBusyException.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubDeviceBusyException.Data">
+            <summary>Sets the stub of Exception.get_Data()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubDeviceBusyException.DataGet">
+            <summary>Sets the stub of Exception.get_Data()</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubDeviceBusyException.GetBaseException">
+            <summary>Sets the Stub of Exception.GetBaseException()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubDeviceBusyException.GetBaseException01">
+            <summary>Sets the stub of Exception.GetBaseException()</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubDeviceBusyException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Sets the Stub of Exception.GetObjectData(SerializationInfo info, StreamingContext context)</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubDeviceBusyException.GetObjectDataSerializationInfoStreamingContext">
+            <summary>Sets the stub of Exception.GetObjectData(SerializationInfo info, StreamingContext context)</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubDeviceBusyException.HelpLink">
+            <summary>Sets the stub of Exception.get_HelpLink()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubDeviceBusyException.HelpLinkGet">
+            <summary>Sets the stub of Exception.get_HelpLink()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubDeviceBusyException.HelpLinkSetString">
+            <summary>Sets the stub of Exception.set_HelpLink(String value)</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubDeviceBusyException.InitializeStub">
+            <summary>Initializes a new instance of type StubDeviceBusyException</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubDeviceBusyException.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubDeviceBusyException.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubDeviceBusyException.Message">
+            <summary>Sets the stub of Exception.get_Message()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubDeviceBusyException.MessageGet">
+            <summary>Sets the stub of Exception.get_Message()</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubDeviceBusyException.Source">
+            <summary>Sets the stub of Exception.get_Source()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubDeviceBusyException.SourceGet">
+            <summary>Sets the stub of Exception.get_Source()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubDeviceBusyException.SourceSetString">
+            <summary>Sets the stub of Exception.set_Source(String value)</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubDeviceBusyException.StackTrace">
+            <summary>Sets the stub of Exception.get_StackTrace()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubDeviceBusyException.StackTraceGet">
+            <summary>Sets the stub of Exception.get_StackTrace()</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubDeviceBusyException.ToString">
+            <summary>Sets the Stub of Exception.ToString()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubDeviceBusyException.ToString01">
+            <summary>Sets the stub of Exception.ToString()</summary>
+        </member>
+        <member name="T:AForge.Fakes.StubDeviceErrorException">
+            <summary>Stub type of AForge.DeviceErrorException</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubDeviceErrorException.#ctor(System.String)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubDeviceErrorException.AttachBackingFieldToHelpLink">
+            <summary>Attaches delegates to emulate StubDeviceErrorException.HelpLink as a property with a backing field.</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubDeviceErrorException.AttachBackingFieldToSource">
+            <summary>Attaches delegates to emulate StubDeviceErrorException.Source as a property with a backing field.</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubDeviceErrorException.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubDeviceErrorException.Data">
+            <summary>Sets the stub of Exception.get_Data()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubDeviceErrorException.DataGet">
+            <summary>Sets the stub of Exception.get_Data()</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubDeviceErrorException.GetBaseException">
+            <summary>Sets the Stub of Exception.GetBaseException()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubDeviceErrorException.GetBaseException01">
+            <summary>Sets the stub of Exception.GetBaseException()</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubDeviceErrorException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Sets the Stub of Exception.GetObjectData(SerializationInfo info, StreamingContext context)</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubDeviceErrorException.GetObjectDataSerializationInfoStreamingContext">
+            <summary>Sets the stub of Exception.GetObjectData(SerializationInfo info, StreamingContext context)</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubDeviceErrorException.HelpLink">
+            <summary>Sets the stub of Exception.get_HelpLink()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubDeviceErrorException.HelpLinkGet">
+            <summary>Sets the stub of Exception.get_HelpLink()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubDeviceErrorException.HelpLinkSetString">
+            <summary>Sets the stub of Exception.set_HelpLink(String value)</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubDeviceErrorException.InitializeStub">
+            <summary>Initializes a new instance of type StubDeviceErrorException</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubDeviceErrorException.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubDeviceErrorException.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubDeviceErrorException.Message">
+            <summary>Sets the stub of Exception.get_Message()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubDeviceErrorException.MessageGet">
+            <summary>Sets the stub of Exception.get_Message()</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubDeviceErrorException.Source">
+            <summary>Sets the stub of Exception.get_Source()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubDeviceErrorException.SourceGet">
+            <summary>Sets the stub of Exception.get_Source()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubDeviceErrorException.SourceSetString">
+            <summary>Sets the stub of Exception.set_Source(String value)</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubDeviceErrorException.StackTrace">
+            <summary>Sets the stub of Exception.get_StackTrace()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubDeviceErrorException.StackTraceGet">
+            <summary>Sets the stub of Exception.get_StackTrace()</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubDeviceErrorException.ToString">
+            <summary>Sets the Stub of Exception.ToString()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubDeviceErrorException.ToString01">
+            <summary>Sets the stub of Exception.ToString()</summary>
+        </member>
+        <member name="T:AForge.Fakes.StubNotConnectedException">
+            <summary>Stub type of AForge.NotConnectedException</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubNotConnectedException.#ctor(System.String)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubNotConnectedException.AttachBackingFieldToHelpLink">
+            <summary>Attaches delegates to emulate StubNotConnectedException.HelpLink as a property with a backing field.</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubNotConnectedException.AttachBackingFieldToSource">
+            <summary>Attaches delegates to emulate StubNotConnectedException.Source as a property with a backing field.</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubNotConnectedException.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubNotConnectedException.Data">
+            <summary>Sets the stub of Exception.get_Data()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubNotConnectedException.DataGet">
+            <summary>Sets the stub of Exception.get_Data()</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubNotConnectedException.GetBaseException">
+            <summary>Sets the Stub of Exception.GetBaseException()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubNotConnectedException.GetBaseException01">
+            <summary>Sets the stub of Exception.GetBaseException()</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubNotConnectedException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Sets the Stub of Exception.GetObjectData(SerializationInfo info, StreamingContext context)</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubNotConnectedException.GetObjectDataSerializationInfoStreamingContext">
+            <summary>Sets the stub of Exception.GetObjectData(SerializationInfo info, StreamingContext context)</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubNotConnectedException.HelpLink">
+            <summary>Sets the stub of Exception.get_HelpLink()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubNotConnectedException.HelpLinkGet">
+            <summary>Sets the stub of Exception.get_HelpLink()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubNotConnectedException.HelpLinkSetString">
+            <summary>Sets the stub of Exception.set_HelpLink(String value)</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubNotConnectedException.InitializeStub">
+            <summary>Initializes a new instance of type StubNotConnectedException</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubNotConnectedException.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubNotConnectedException.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubNotConnectedException.Message">
+            <summary>Sets the stub of Exception.get_Message()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubNotConnectedException.MessageGet">
+            <summary>Sets the stub of Exception.get_Message()</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubNotConnectedException.Source">
+            <summary>Sets the stub of Exception.get_Source()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubNotConnectedException.SourceGet">
+            <summary>Sets the stub of Exception.get_Source()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubNotConnectedException.SourceSetString">
+            <summary>Sets the stub of Exception.set_Source(String value)</summary>
+        </member>
+        <member name="P:AForge.Fakes.StubNotConnectedException.StackTrace">
+            <summary>Sets the stub of Exception.get_StackTrace()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubNotConnectedException.StackTraceGet">
+            <summary>Sets the stub of Exception.get_StackTrace()</summary>
+        </member>
+        <member name="M:AForge.Fakes.StubNotConnectedException.ToString">
+            <summary>Sets the Stub of Exception.ToString()</summary>
+        </member>
+        <member name="F:AForge.Fakes.StubNotConnectedException.ToString01">
+            <summary>Sets the stub of Exception.ToString()</summary>
+        </member>
+    </members>
+</doc>

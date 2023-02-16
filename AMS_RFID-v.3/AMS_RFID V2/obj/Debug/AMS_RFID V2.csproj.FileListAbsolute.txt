@@ -1,0 +1,204 @@
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\obj\Debug\AMS_RFID_V2.EmployeeAttendance.resources
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\obj\Debug\AMS_RFID_V2.LoginForm.resources
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\obj\Debug\AMS_RFID_V2.MainPage.resources
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\obj\Debug\AMS_RFID_V2.Properties.Resources.resources
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\obj\Debug\AMS_RFID V2.csproj.GenerateResource.cache
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\obj\Debug\AMS_RFID V2.csproj.CoreCompileInputs.cache
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\x64\concrt140.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\x64\cvextern.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\x64\msvcp140.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\x64\msvcp140_1.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\x64\msvcp140_2.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\x64\msvcp140_codecvt_ids.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\x64\opencv_videoio_ffmpeg430_64.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\x64\vcruntime140.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\x64\vcruntime140_1.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\x86\concrt140.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\x86\cvextern.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\x86\msvcp140.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\x86\msvcp140_1.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\x86\msvcp140_2.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\x86\msvcp140_codecvt_ids.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\x86\opencv_videoio_ffmpeg430.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\x86\vcruntime140.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\concrt140.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\cvextern.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\msvcp140.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\opencv_videoio_ffmpeg460_64.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\vcruntime140.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\Emgu.CV.Runtime.Windows.projitems
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\Emgu.CV.Runtime.Windows.shproj
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\haarcascade_frontalface_alt_tree.xml
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\haarcascade_eye.xml
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\haarcascade_frontalface_alt2.xml
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\haarcascade_frontalface_default.xml
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\AMS_RFID V2.exe.config
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\AMS_RFID V2.exe.manifest
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\AMS_RFID V2.application
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\AMS_RFID V2.exe
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\AMS_RFID V2.pdb
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\AForge.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\AForge.Video.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\Emgu.CV.World.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\Google.Protobuf.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\Guna.Charts.WinForms.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\Guna.UI2.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\MetroFramework.Design.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\MetroFramework.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\MySql.Data.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\Renci.SshNet.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\System.Buffers.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\System.Memory.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\AForge.xml
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\AForge.Video.xml
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\AForge.Video.DirectShow.xml
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\Emgu.CV.World.xml
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\Google.Protobuf.pdb
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\Google.Protobuf.xml
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\MySql.Data.xml
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\Renci.SshNet.xml
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\System.Buffers.xml
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\System.Memory.xml
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\cs\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\de\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\es\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\fr\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\it\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\ja\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\ko\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\pl\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\pt-BR\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\ru\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\tr\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\zh-Hans\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\bin\Debug\zh-Hant\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\obj\Debug\AMS_RFID V2.exe.manifest
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\obj\Debug\AMS_RFID V2.application
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\obj\Debug\AMS_RFID V2.csproj.CopyComplete
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\obj\Debug\AMS_RFID V2.exe
+C:\Users\glen2\source\repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\obj\Debug\AMS_RFID V2.pdb
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\x64\concrt140.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\x64\cvextern.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\x64\msvcp140.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\x64\msvcp140_1.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\x64\msvcp140_2.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\x64\msvcp140_codecvt_ids.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\x64\opencv_videoio_ffmpeg430_64.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\x64\vcruntime140.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\x64\vcruntime140_1.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\x86\concrt140.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\x86\cvextern.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\x86\msvcp140.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\x86\msvcp140_1.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\x86\msvcp140_2.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\x86\msvcp140_codecvt_ids.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\x86\opencv_videoio_ffmpeg430.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\x86\vcruntime140.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\cv110.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\cvaux110.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\cvextern.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\cxcore110.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\Emgu.CV.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\Emgu.CV.GPU.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\Emgu.CV.ML.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\Emgu.CV.UI.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\Emgu.Util.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\highgui110.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\opencv_calib3d220.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\opencv_contrib220.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\opencv_core220.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\opencv_features2d220.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\opencv_ffmpeg220.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\opencv_flann220.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\opencv_gpu220.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\opencv_highgui220.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\opencv_imgproc220.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\opencv_legacy220.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\opencv_ml220.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\opencv_objdetect220.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\opencv_video220.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\Emgu.CV.Runtime.Windows.projitems
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\Emgu.CV.Runtime.Windows.shproj
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\haarcascade_frontalface_alt_tree.xml
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\haarcascade_eye.xml
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\haarcascade_frontalface_alt2.xml
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\haarcascade_frontalface_default.xml
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\AMS_RFID V2.exe.config
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\AMS_RFID V2.exe.manifest
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\AMS_RFID V2.application
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\AMS_RFID V2.exe
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\AMS_RFID V2.pdb
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\AForge.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\AForge.Video.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\Google.Protobuf.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\Guna.Charts.WinForms.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\Guna.UI2.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\MetroFramework.Design.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\MetroFramework.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\MySql.Data.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\Nager.Date.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\Renci.SshNet.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\System.Buffers.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\System.Memory.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\AForge.xml
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\AForge.Video.xml
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\AForge.Video.DirectShow.xml
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\Google.Protobuf.pdb
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\Google.Protobuf.xml
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\MySql.Data.xml
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\Nager.Date.xml
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\Renci.SshNet.xml
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\System.Buffers.xml
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\System.Memory.xml
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\cs\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\de\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\es\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\fr\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\it\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\ja\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\ko\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\pl\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\pt-BR\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\ru\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\tr\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\zh-Hans\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\bin\Debug\zh-Hant\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\obj\Debug\AMS_RFID_V2.SupportingWinform.resources
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\obj\Debug\AMS_RFID_V2.DTR.resources
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\obj\Debug\AMS_RFID_V2.EmployeeAttendance.resources
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\obj\Debug\AMS_RFID_V2.LoginForm.resources
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\obj\Debug\AMS_RFID_V2.MainPage.resources
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\obj\Debug\AMS_RFID_V2.Properties.Resources.resources
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\obj\Debug\AMS_RFID V2.csproj.GenerateResource.cache
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\obj\Debug\AMS_RFID V2.csproj.CoreCompileInputs.cache
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\obj\Debug\AMS_RFID V2.exe.manifest
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\obj\Debug\AMS_RFID V2.application
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\obj\Debug\AMS_RFID V2.csproj.CopyComplete
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\obj\Debug\AMS_RFID V2.exe
+C:\Users\glen2\Source\Repos\glen0924\AMS_RFID-v.3\AMS_RFID V2\obj\Debug\AMS_RFID V2.pdb
