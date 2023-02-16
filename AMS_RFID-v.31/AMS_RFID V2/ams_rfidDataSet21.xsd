@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ams_rfidDataSet2" targetNamespace="http://tempuri.org/ams_rfidDataSet21.xsd" xmlns:mstns="http://tempuri.org/ams_rfidDataSet21.xsd" xmlns="http://tempuri.org/ams_rfidDataSet21.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ams_rfidConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ams_rfidConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.AMS_RFID_V2.Properties.Settings.GlobalReference.Default.ams_rfidConnectionString1" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="attendanceTableAdapter" GeneratorDataComponentClassName="attendanceTableAdapter" Name="attendance" UserDataComponentName="attendanceTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ams_rfidConnectionString1 (Settings)" DbObjectName="ams_rfid.attendance" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `AttendanceID`, `EmployeeRfid`, `EmployeeName`, `Date`, `Am_In`, `Am_Out`, `Pm_In`, `Pm_Out`, `Remarks` FROM `attendance`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ams_rfidDataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ams_rfidDataSet2" msprop:Generator_UserDSName="ams_rfidDataSet2">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="attendance" msprop:Generator_TableClassName="attendanceDataTable" msprop:Generator_TableVarName="tableattendance" msprop:Generator_TablePropName="attendance" msprop:Generator_RowDeletingName="attendanceRowDeleting" msprop:Generator_RowChangingName="attendanceRowChanging" msprop:Generator_RowEvHandlerName="attendanceRowChangeEventHandler" msprop:Generator_RowDeletedName="attendanceRowDeleted" msprop:Generator_UserTableName="attendance" msprop:Generator_RowChangedName="attendanceRowChanged" msprop:Generator_RowEvArgName="attendanceRowChangeEvent" msprop:Generator_RowClassName="attendanceRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

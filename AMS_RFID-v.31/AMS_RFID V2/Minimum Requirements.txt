@@ -1,0 +1,16 @@
+﻿Minimum requirements to run the system
+
+Monitor = 18 inches
+cpu = intel i3 / ryzen 3 
+ram = 8gb 
+gpu = gt1030
+hdd = 320gb 
+ssd = 120gb
+
+Recommended Requirements
+Monitor = 24inches or higher
+cpu = intel i5 or later/ ryzen 5 or higher
+ram = 16 gb or higher
+gpu = gtx1050 or higher
+hdd = 500gb
+ssd = 240gb

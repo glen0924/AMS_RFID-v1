@@ -1,0 +1,4 @@
+C:\Users\glen2\Source\Repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\Fakes\AForge.fakes : warning : Cannot generate stub for AForge.PolishExpression: Type is sealed.
+C:\Users\glen2\Source\Repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\Fakes\AForge.fakes : warning : Cannot generate stub for AForge.ThreadSafeRandom: Type is sealed.
+C:\Users\glen2\Source\Repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\Fakes\AForge.fakes : warning : Cannot generate stub for AForge.Parallel: Type is sealed.
+C:\Users\glen2\Source\Repos\glen0924\Ams_Rfid_v2\AMS_RFID V2\Fakes\AForge.fakes : warning : Cannot generate stub for AForge.SystemTools: Type is sealed.
