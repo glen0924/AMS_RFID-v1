@@ -101,7 +101,7 @@ namespace AMS_RFID_V2
                         MessageBox.Show("Welcome Admin!", "Successfully Login", MessageBoxButtons.OK);
                         MainPage Mp = new MainPage();
                         Mp.Show();
-                        this.Close();
+                        this.Hide();
                         
                     }
                     else
@@ -159,7 +159,7 @@ namespace AMS_RFID_V2
                             MessageBox.Show("Welcome Admin!", "Successfully Login", MessageBoxButtons.OK);
                             MainPage Mp = new MainPage();
                             Mp.Show();
-                            this.Close();
+                            this.Hide();
 
                         }
                         else

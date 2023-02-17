@@ -4,17 +4,17 @@
   <description asmv2:publisher="AMS_RFID V2" asmv2:product="AMS_RFID V2" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="false" mapFileExtensions="true" co.v1:createDesktopShortcut="true" />
   <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
-    <framework targetVersion="4.8" profile="Full" supportedRuntime="4.0.30319" />
+    <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="AMS_RFID V2.exe.manifest" size="57782">
+    <dependentAssembly dependencyType="install" codebase="AMS_RFID V2.exe.manifest" size="58572">
       <assemblyIdentity name="AMS_RFID V2.exe" version="1.0.0.26" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Aut4n4QLByRb97YVVySVIBkFVBA7O0Xk5bBq9ldvzx8=</dsig:DigestValue>
+        <dsig:DigestValue>Aa0ZiWTHJtz4P/0qGarYDShrP9Oo8f84/DpEWWM/cR0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -288,12 +288,6 @@
       <DependentUpon>AttendanceReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CrystalReport2.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport2.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="DEptDel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -331,12 +325,6 @@
       <DependentUpon>EditForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EigenObjectRecognizer.cs" />
-    <Compile Include="EmployeeAttendance.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EmployeeAttendance.Designer.cs">
-      <DependentUpon>EmployeeAttendance.cs</DependentUpon>
-    </Compile>
     <Compile Include="EmployeeDelForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -493,10 +481,6 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>AttendanceReport.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrystalReport2.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport2.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="DEptDel.resx">
       <DependentUpon>DEptDel.cs</DependentUpon>
     </EmbeddedResource>
@@ -571,9 +555,6 @@
     <Content Include="test1.txt" />
     <EmbeddedResource Include="DTR.resx">
       <DependentUpon>DTR.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EmployeeAttendance.resx">
-      <DependentUpon>EmployeeAttendance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

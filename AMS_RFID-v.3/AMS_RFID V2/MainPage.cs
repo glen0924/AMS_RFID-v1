@@ -180,7 +180,6 @@ namespace AMS_RFID_V2
         {
             DtrbyDate();
             Mysqlloop();
-            TravDelPanel.Visible = false;
             // TODO: This line of code loads data into the 'ams_rfidDataSetAttendance.attendance' table. You can move, or remove it, as needed.
             this.attendanceTableAdapter.Fill(this.ams_rfidDataSetAttendance.attendance);
             // TODO: This line of code loads data into the 'ams_rfidDataSetAttendance.attendance' table. You can move, or remove it, as needed.
@@ -272,21 +271,6 @@ namespace AMS_RFID_V2
             //CaptureApp = new Capture();
             //Application.Idle += Streamin;
 
-            //Travels
-            empNamesel.Enabled = false;
-            brTravel.Enabled = false;
-            metroDateTime3.Enabled = false;
-            TravelSave.Enabled = false;
-            Note1.Visible = false;
-
-            //LEAVE
-            EmpSelectcombo.Enabled = false;
-            LAppiedfor.Enabled = false;
-            startD.Enabled = false;
-            endD.Enabled = false;
-            ReasonBox.Enabled = false;
-            Note.Visible = false;
-            aggreement.Visible = false;
         }
 
         #endregion LOAD
@@ -360,6 +344,7 @@ namespace AMS_RFID_V2
                 this.Close();
                 //EmployeeAttendance EmpAtt = new EmployeeAttendance();
                 //EmpAtt.ShowDialog();
+                Application.Exit();
             }
         }
 
@@ -410,26 +395,7 @@ namespace AMS_RFID_V2
             am.Text = DateTime.Now.ToString("tt");
         }
 
-        //button for Attendance Window
-        private void AttendanceEmp_Click(object sender, EventArgs e)
-        {
-            if (Application.OpenForms.OfType<EmployeeAttendance>().Count() == 1)
-            {
-                Application.OpenForms.OfType<EmployeeAttendance>().First().BringToFront();
-                Application.OpenForms.OfType<EmployeeAttendance>().First().WindowState = FormWindowState.Normal;
-            }
-            else
-            {
-                try
-                {
-                    Application.OpenForms.OfType<EmployeeAttendance>().First().Show();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-        }
+        
 
         private void guna2CircleButton1_Click(object sender, EventArgs e)
         {
@@ -914,18 +880,27 @@ namespace AMS_RFID_V2
             }
             else
             {
-                this.btnScan1.Focus();
-                FinalVideo = new VideoCaptureDevice(VideoCaptureDevices[WebCamSelect.SelectedIndex].MonikerString);
-                FinalVideo.NewFrame += Streamin;
-                FinalVideo.Start();
-                //streaming = true;
-                //CaptureApp = new Capture();
-                //Application.Idle += Streamin;
-                onoffwebcamlbl.ForeColor = Color.LimeGreen;
-                onoffwebcamlbl.Text = "WEBCAM TURNED ON";
-                WebCamSelect.Enabled = false;
-                offpanel2.SendToBack();
-                offpanel22.SendToBack();
+				try
+				{
+                    this.btnScan1.Focus();
+                    FinalVideo = new VideoCaptureDevice(VideoCaptureDevices[WebCamSelect.SelectedIndex].MonikerString);
+                    FinalVideo.NewFrame += Streamin;
+                    FinalVideo.Start();
+                    //streaming = true;
+                    //CaptureApp = new Capture();
+                    //Application.Idle += Streamin;
+                    onoffwebcamlbl.ForeColor = Color.LimeGreen;
+                    onoffwebcamlbl.Text = "WEBCAM TURNED ON";
+                    WebCamSelect.Enabled = false;
+                    offpanel2.SendToBack();
+                    offpanel22.SendToBack();
+                }
+				catch (Exception)
+				{
+
+                    MessageBox.Show("No camera detected, Please plug a camera before start capturing. Thank you.","Warning");
+				}
+
             }
         }
 
@@ -953,9 +928,9 @@ namespace AMS_RFID_V2
                         Application.Idle += new EventHandler(FrameGrabber);
                     }
                 }
-                catch (Exception we)
+                catch (Exception)
                 {
-                    MessageBox.Show(we.Message);
+                    MessageBox.Show("No camera detected, Please plug a camera before start capturing. Thank you.", "Warning");
                 }
                 //Initialize the FrameGraber event
 
@@ -1321,6 +1296,7 @@ namespace AMS_RFID_V2
 
                         //Show face added in gray scale
                         ImgeBox.Image = TrainedFace;
+
 
                         //Write the number of triained faces in a file text for further load
                         File.WriteAllText(Application.StartupPath + "/TrainedFaces/TrainedLabels.txt", trainingImages.ToArray().Length.ToString() + "%");
@@ -1976,6 +1952,31 @@ namespace AMS_RFID_V2
             reportsToEmployeeTextBox.Text = employeeNameComboBox.Text;
         }
 
+        //database combobox
+        private void RefreshRepsTo()
+        {
+            try
+            {
+                using (MySqlConnection mswl = new MySqlConnection(MyDsql))
+                {
+                    string Ref = "SELECT EmployeeName FROM Employees";
+                    mswl.Open();
+                    MySqlCommand cmdO = new MySqlCommand(Ref, mswl);
+                    MySqlDataReader readd = cmdO.ExecuteReader();
+
+                    while (readd.Read())
+
+                    {
+                        employeeNameComboBox.Items.Add(readd.GetString("EmployeeName"));
+                    }
+                    mswl.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         #endregion REPORTSto
 
         private void btnRepEdit_Click(object sender, EventArgs e)
@@ -1991,212 +1992,6 @@ namespace AMS_RFID_V2
 
             DEL.ShowDialog();
         }
-
-        #region LEAVE OF Absences
-
-        private void LeaveNew_Click(object sender, EventArgs e)
-        {
-            if (LeaveNew.Text == "New")
-            {
-                aggreement.Visible = true;
-                Note.Visible = true;
-                LeaveNew.Text = "Cancel";
-                EmpSelectcombo.Enabled = true;
-                LAppiedfor.Enabled = true;
-                startD.Enabled = true;
-                endD.Enabled = true;
-                ReasonBox.Enabled = true;
-                LeaveDel.Enabled = false;
-            }
-            else
-            {
-                if (MessageBox.Show("Are you sure to Cancel?", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    aggreement.Visible = false;
-                    Note.Visible = false;
-                    LeaveNew.Text = "New";
-                    EmpSelectcombo.Enabled = false;
-                    LAppiedfor.Enabled = false;
-                    startD.Enabled = false;
-                    endD.Enabled = false;
-                    ReasonBox.Enabled = false;
-                    LeaveDel.Enabled = true;
-                }
-            }
-        }
-
-        private void LeaveSave_Click(object sender, EventArgs e)
-        {
-            if (EmpSelectcombo.Text == " ")
-            {
-                MessageBox.Show("Please select from the Employee List first");
-            }
-            else
-            {
-                try
-                {
-                    DateTime dtToday = metroDateTime3.Value;
-                    string strDate = dtToday.ToString("yyyy/MM/dd");
-                    DateTime dtToday1 = metroDateTime3.Value;
-                    string strDate1 = dtToday1.ToString("yyyy/MM/dd");
-
-                    string LeaveAp = "";
-
-                    if (r1.Checked)
-                    {
-                        LeaveAp = "Sick";
-                    }
-                    else if (r2.Checked)
-                    {
-                        LeaveAp = "Vacation";
-                    }
-                    else if (r3.Checked)
-                    {
-                        LeaveAp = "Funeral";
-                    }
-                    else
-                    {
-                        LeaveAp = ReasonBox.Text;
-                    }
-
-                    if (aggreement.Checked)
-                    {
-                        using (MySqlConnection ns = new MySqlConnection(MyDsql))
-                        {
-                            string ins = "INSERT INTO `onleave`(`employeeName`, `startDate`, `endDate`, `Notice`, `Description`, `Remarks`) VALUES (@employeeName, @strtDate ,@endDate,'Approved',@des,'Onleave')";
-
-                            MySqlCommand c = new MySqlCommand(ins, ns);
-                            ns.Open();
-                            c.Parameters.AddWithValue("@employeeName", EmpSelectcombo.Text);
-                            c.Parameters.AddWithValue("@strtDate", strDate);
-                            c.Parameters.AddWithValue("@endDate", strDate1);
-                            c.Parameters.AddWithValue("@des", LeaveAp);
-
-                            MySqlDataReader r = c.ExecuteReader();
-                            MessageBox.Show("SuccessFully Inserted");
-                            ns.Close();
-
-                            aggreement.Visible = false;
-                            Note.Visible = false;
-                            LeaveNew.Text = "New";
-                            EmpSelectcombo.Enabled = false;
-                            LAppiedfor.Enabled = false;
-                            startD.Enabled = false;
-                            endD.Enabled = false;
-                            ReasonBox.Enabled = false;
-                            LeaveDel.Enabled = true;
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Agreement is not yet acquired.");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-        }
-
-        private void LeaveEdit_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void LeaveDel_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void Clear()
-        {
-            r1.Checked = false;
-            r2.Checked = false;
-            r3.Checked = false;
-        }
-
-        private void guna2Button5_Click_1(object sender, EventArgs e)
-        {
-            Clear();
-        }
-
-        private void LeaveofAbsences()
-        {
-            try
-            {
-                using (MySqlConnection mswl = new MySqlConnection(MyDsql))
-                {
-                    string Ref = "SELECT EmployeeName FROM employees";
-                    mswl.Open();
-                    MySqlCommand cmdO = new MySqlCommand(Ref, mswl);
-                    MySqlDataReader readd = cmdO.ExecuteReader();
-
-                    while (readd.Read())
-
-                    {
-                        EmpSelectcombo.Items.Add(readd.GetString("EmployeeName"));
-                    }
-                    mswl.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void EmpSelectcombo_Click(object sender, EventArgs e)
-        {
-            EmpSelectcombo.Items.Clear();
-            LeaveofAbsences();
-        }
-        private void LeaveTimer_Tick(object sender, EventArgs e)
-        {
-            LeaveDB();
-        }
-        private void guna2ToggleSwitch13_Click(object sender, EventArgs e)
-        {
-            if (guna2ToggleSwitch13.Checked)
-            {
-                LeaveTimer.Enabled = true;
-                LeaveTimer.Start();
-            }
-            else
-            {
-                LeaveTimer.Enabled = false;
-                LeaveTimer.Stop();
-            }
-        }
-        void LeaveDB()
-        {
-            try
-            {
-                using (MySqlConnection ms = new MySqlConnection(MyDsql))
-                {
-                    string QuerryRefresh = "SELECT employeeName,startDate,endDate,Notice,Description,Remarks FROM onleave";
-                    //string QueryRef1 = "select `EmployeeRfid`,`EmployeeName`,`Date`,`Am_In`,`Am_Out`,`Pm_In`,`Pm_Out`,`Remarks`  from attendance  WHERE Date= '" + date + "'";
-
-                    MySqlCommand cmd = new MySqlCommand(QuerryRefresh,ms);
-
-                    ms.Open();
-                    MySqlDataAdapter adp = new MySqlDataAdapter();
-
-                    adp.SelectCommand = cmd;
-
-                    DataTable dTable = new DataTable();
-
-                    adp.Fill(dTable);
-
-                    guna2DataGridView3.DataSource = dTable;
-                    ms.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-        }
-        #endregion LEAVE OF Absences
 
         #region DTR by Date/employee
 
@@ -2410,6 +2205,7 @@ namespace AMS_RFID_V2
         {
             empName.Items.Clear();
             Mysqlloop();
+
         }
 
         private void update()
@@ -2591,6 +2387,7 @@ namespace AMS_RFID_V2
             {
                 MessageBox.Show(e.Message);
             }
+           
         }
 
         private void rep()
@@ -2615,8 +2412,8 @@ namespace AMS_RFID_V2
 
                             MySqlCommand cmd = new MySqlCommand(QueryRef1, conn1k);
 
-                            DateTime dtToday = ReportFromDate.Value;
-                            DateTime dtToday1 = ReportToDate.Value;
+                            DateTime dtToday = strtDate.Value;
+                            DateTime dtToday1 = endDate.Value;
                             string strDate = dtToday.ToString("yyyy/MM/dd");
                             string strDate1 = dtToday1.ToString("yyyy/MM/dd");
 
@@ -2633,10 +2430,13 @@ namespace AMS_RFID_V2
                             AttendanceReport1.SetDataSource(dTable);
 
                             TextObject txtMonth = (TextObject)AttendanceReport1.ReportDefinition.Sections["Section2"].ReportObjects["Month"];
-                            txtMonth.Text = ReportFromDate.Value.ToString("MMMM");
+                            txtMonth.Text = strtDate.Value.ToString("MMMM");
 
                             TextObject EmpName = (TextObject)AttendanceReport1.ReportDefinition.Sections["Section2"].ReportObjects["EmployeeName"];
                             EmpName.Text = empName.Text;
+
+                            TextObject EmpRfid = (TextObject)AttendanceReport1.ReportDefinition.Sections["Section2"].ReportObjects["rfid"];
+                            EmpRfid.Text = rfid.Text;
 
                             TextObject EmpNamepr = (TextObject)AttendanceReport1.ReportDefinition.Sections["Section4"].ReportObjects["EmpNamePr"];
                             EmpNamepr.Text = empName.Text;
@@ -2651,7 +2451,7 @@ namespace AMS_RFID_V2
                     }
                     else
                     {
-                        MessageBox.Show("No data Found");
+                       // MessageBox.Show("No data Found");
                     }
                     selectEmp.Close();
                 }
@@ -2668,7 +2468,7 @@ namespace AMS_RFID_V2
             {
                 try
                 {
-                    string QuerryRefresh = "SELECT `ReportsTo` FROM employees WHERE EmployeeName = @empname";
+                    string QuerryRefresh = "SELECT `EmployeeRfidTag` FROM employees WHERE EmployeeName = @empname";
                     MySqlCommand cmd = new MySqlCommand(QuerryRefresh, conn1);
 
                     cmd.Parameters.AddWithValue("@empname", empName.Text);
@@ -2677,7 +2477,7 @@ namespace AMS_RFID_V2
 
                     if (d.Read())
                     {
-                        incharge.Text = d.GetValue(0).ToString();
+                        rfid.Text = d.GetValue(0).ToString();
                     }
                     conn1.Close();
                 }
@@ -2700,7 +2500,6 @@ namespace AMS_RFID_V2
             }
             else
             {
-                //reps();
                 rep();
                 crystalReportViewer1.Refresh();
                 crystalReportViewer1.Zoom(1);
@@ -2709,255 +2508,7 @@ namespace AMS_RFID_V2
 
         #endregion Report Viewer
 
-        #region TRAVEL
 
-        //database combobox
-        private void RefresTravelCombo()
-        {
-            try
-            {
-                using (MySqlConnection mswl = new MySqlConnection(MyDsql))
-                {
-                    string Ref = "SELECT EmployeeName FROM Employees";
-                    mswl.Open();
-                    MySqlCommand cmdO = new MySqlCommand(Ref, mswl);
-                    MySqlDataReader readd = cmdO.ExecuteReader();
-
-                    while (readd.Read())
-
-                    {
-                        empNamesel.Items.Add(readd.GetString("EmployeeName"));
-                        employeeNameComboBox.Items.Add(readd.GetString("EmployeeName"));
-                    }
-                    mswl.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void RefreshRepsTo()
-        {
-            try
-            {
-                using (MySqlConnection mswl = new MySqlConnection(MyDsql))
-                {
-                    string Ref = "SELECT EmployeeName FROM Employees";
-                    mswl.Open();
-                    MySqlCommand cmdO = new MySqlCommand(Ref, mswl);
-                    MySqlDataReader readd = cmdO.ExecuteReader();
-
-                    while (readd.Read())
-
-                    {
-                        employeeNameComboBox.Items.Add(readd.GetString("EmployeeName"));
-                    }
-                    mswl.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void Travelselectcombo()
-        {
-            try
-            {
-                using (MySqlConnection mswl = new MySqlConnection(MyDsql))
-                {
-                    string Ref = "SELECT EmployeeName FROM ontravel";
-                    mswl.Open();
-                    MySqlCommand cmdO = new MySqlCommand(Ref, mswl);
-                    MySqlDataReader readd = cmdO.ExecuteReader();
-
-                    while (readd.Read())
-
-                    {
-                        travelcombobx.Items.Add(readd.GetString("EmployeeName"));
-                    }
-                    mswl.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void empNamesel_Click(object sender, EventArgs e)
-        {
-            empNamesel.Items.Clear();
-            RefresTravelCombo();
-        }
-
-        private void empNamesel_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void TravelSave_Click(object sender, EventArgs e)
-        {
-            if (empNamesel.Text == "")
-            {
-                MessageBox.Show("Please select from the Combo Box.", "Error");
-            }
-            else
-            {
-                try
-                {
-                    using (MySqlConnection dd = new MySqlConnection(MyDsql))
-                    {
-                        string t = "Select EmployeeName,Date FROM ontravel WHERE EmployeeName = @emp AND Date = @date";
-
-                        MySqlCommand c = new MySqlCommand(t, dd);
-                        DateTime dtToday1 = metroDateTime3.Value;
-                        string strDate1 = dtToday1.ToString("yyyy/MM/dd");
-                        c.Parameters.AddWithValue("@emp", empNamesel.Text);
-                        c.Parameters.AddWithValue("@date", strDate1);
-
-                        dd.Open();
-                        MySqlDataReader r = c.ExecuteReader();
-                        if (r.Read())
-                        {
-                            MessageBox.Show("Duplicate Entry", "Error");
-                        }
-                        else
-                        {
-                            using (MySqlConnection mssql = new MySqlConnection(MyDsql))
-                            {
-                                OpenFileDialog ofpD = new OpenFileDialog();
-                                ofpD.InitialDirectory = @"C:\RFID\EMPSAVEIMG\";
-                                ofpD.Filter = "Choose Image(*.jpg; *.png; *.gif)|*.jpg; *.png; *.gif";
-
-                                if (ofpD.ShowDialog() == DialogResult.OK)
-                                {
-                                    ProofoftravelImage.Image = Image.FromFile(ofpD.FileName);
-                                    DateTime dtToday = metroDateTime3.Value;
-                                }
-                                string I = "INSERT INTO `ontravel` (`EmployeeName`,`Date`,ProofOfTravel) VALUES (@emp ,@date,@image)";
-                                mssql.Open();
-                                MySqlCommand cmdO = new MySqlCommand(I, mssql);
-                                cmdO.Parameters.AddWithValue("@emp", empNamesel.Text);
-                                cmdO.Parameters.AddWithValue("@date", metroDateTime3.Value);
-                                cmdO.Parameters.AddWithValue("@image", File.ReadAllBytes(ofpD.FileName));
-                                MySqlDataReader f = cmdO.ExecuteReader();
-
-                                MessageBox.Show("Successfully inserted.");
-                            }
-                            TravelNew.Text = "New";
-
-                            empNamesel.Enabled = false;
-                            brTravel.Enabled = false;
-                            metroDateTime3.Enabled = false;
-                            TravelSave.Enabled = false;
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-        }
-
-        private void TravelDel_Click_1(object sender, EventArgs e)
-        {
-            if (TravelDel.Text == "Delete")
-            {
-                TravDelPanel.Visible = true;
-                TravelDel.Text = "Exit";
-            }
-            else if (MessageBox.Show("Discard Delete?", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                TravDelPanel.Visible = false;
-                TravelDel.Text = "Delete";
-            }
-        }
-
-        private void TravelNew_Click(object sender, EventArgs e)
-        {
-            if (TravelNew.Text == "New")
-            {
-                Note1.Visible = true;
-                TravelNew.Text = "Cancel";
-                empNamesel.Enabled = true;
-                brTravel.Enabled = true;
-                metroDateTime3.Enabled = true;
-                TravelSave.Enabled = true;
-                brTravel.FillColor = Color.Lime;
-            }
-            else
-            {
-                if (MessageBox.Show("Cancel?", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    TravelNew.Text = "New";
-                    Note1.Visible = false;
-                    empNamesel.Enabled = false;
-                    brTravel.Enabled = false;
-                    metroDateTime3.Enabled = false;
-                    TravelSave.Enabled = false;
-                }
-            }
-        }
-
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-        }
-
-        //combobox del for trtavel spawn
-        private void travelcombobx_Click(object sender, EventArgs e)
-        {
-            travelcombobx.Items.Clear();
-            Travelselectcombo();
-        }
-
-        private void deltravel1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (travelcombobx.Text == "")
-                {
-                    MessageBox.Show("Please select From the list first.", "Warning");
-                }
-                else
-                {
-                    if (MessageBox.Show("Are you sure to Delete selected item?", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    {
-                        using (MySqlConnection ss = new MySqlConnection(MyDsql))
-                        {
-                            string Del = "DELETE FROM `ontravel` WHERE EmployeeName = @emp AND Date =@date";
-                            ss.Open();
-                            MySqlCommand c = new MySqlCommand(Del, ss);
-
-                            DateTime dtToday1 = metroDateTime3.Value;
-                            string strDate1 = dtToday1.ToString("yyyy/MM/dd");
-                            c.Parameters.AddWithValue("@emp", travelcombobx.Text);
-                            c.Parameters.AddWithValue("@date", strDate1);
-
-                            MySqlDataReader read = c.ExecuteReader();
-                            if (read.Read())
-                            {
-                                MessageBox.Show("Successfully Deleted", "Information");
-                            }
-                            else
-                            {
-                                MessageBox.Show("Selected Information not found", "Warning", MessageBoxButtons.RetryCancel, MessageBoxIcon.Warning);
-                            }
-                            ss.Close();
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        #endregion TRAVEL
 
         #region Settings
 
@@ -3094,29 +2645,6 @@ namespace AMS_RFID_V2
             RefreshRepsTo();
         }
 
-        private void TravelDb_Tick(object sender, EventArgs e)
-        {
-            using (MySqlConnection ms = new MySqlConnection(MyDsql))
-            {
-                string QuerryRefresh = "SELECT EmployeeName,Date FROM ontravel";
-                //string QueryRef1 = "select `EmployeeRfid`,`EmployeeName`,`Date`,`Am_In`,`Am_Out`,`Pm_In`,`Pm_Out`,`Remarks`  from attendance  WHERE Date= '" + date + "'";
-
-                MySqlCommand cmd = new MySqlCommand(QuerryRefresh, ms);
-
-                ms.Open();
-                MySqlDataAdapter adp = new MySqlDataAdapter();
-
-                adp.SelectCommand = cmd;
-
-                DataTable dTable = new DataTable();
-
-                adp.Fill(dTable);
-
-                TravelDataGrid.DataSource = dTable;
-                ms.Close();
-            }
-        }
-
         private void employeedetailsdataview_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (employeedetailsdataview.Columns[e.ColumnIndex].Name == "Details11")
@@ -3143,56 +2671,6 @@ namespace AMS_RFID_V2
 
                         EmployeeGrid.DataSource = gs;
                         md.Close();
-                    }
-                }
-            }
-        }
-
-        private void guna2DataGridView7_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (TravelDataGrid.Columns[e.ColumnIndex].Name == "view")
-            {
-                foreach (DataGridViewRow row in TravelDataGrid.SelectedRows)
-                {
-                    string val = row.Cells[1].Value.ToString();
-                    Console.WriteLine(val);
-                    string value1 = row.Cells[2].Value.ToString();
-                    string[] gg = value1.Split(' ');
-
-                    string g = gg[0].ToString();
-                    Console.WriteLine(g);
-                    DateTime startDate;
-                    string[] formats = { "dd/MM/yyyy", "dd/M/yyyy", "d/M/yyyy", "d/MM/yyyy",
-                                                "dd/MM/yy", "dd/M/yy", "d/M/yy", "d/MM/yy", "MM/dd/yyyy"};
-
-                    DateTime.TryParseExact(g, formats,
-                    System.Globalization.CultureInfo.InvariantCulture,
-                    System.Globalization.DateTimeStyles.None, out startDate);
-                    using (MySqlConnection conn12 = new MySqlConnection(MyDsql))
-                    {
-                        try
-                        {
-                            string imges = "SELECT ProofOfTravel FROM ontravel WHERE EmployeeName =@EmployeeName AND date = @date";
-                            MySqlCommand cmdO = new MySqlCommand(imges, conn12);
-
-                            cmdO.Parameters.AddWithValue("@EmployeeName", val);
-                            cmdO.Parameters.AddWithValue("@date", startDate.ToString("yyyy-MM-dd"));
-
-                            MySqlDataAdapter da = new MySqlDataAdapter(cmdO);
-                            DataTable tbk = new DataTable();
-
-                            da.Fill(tbk);
-                            byte[] img = (byte[])tbk.Rows[0][0];
-
-                            MemoryStream ms1 = new MemoryStream(img);
-                            ProofoftravelImage.Image = Image.FromStream(ms1);
-
-                            da.Dispose();
-                        }
-                        catch (Exception)
-                        {
-                            MessageBox.Show("There is No image Attached.");
-                        }
                     }
                 }
             }
@@ -3332,7 +2810,17 @@ namespace AMS_RFID_V2
             NoNoonBreakDb();
         }
 
-        private void NoNoonBreakDb()
+		private void guna2GradientButton11_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void empName_TextChanged(object sender, EventArgs e)
+		{
+            reps();
+        }
+
+		private void NoNoonBreakDb()
         {
             try
             {
