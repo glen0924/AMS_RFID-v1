@@ -59,8 +59,6 @@ namespace AMS_RFID_V2
             departmentNameComboBox.Enabled = false;
             designationNameComboBox.Enabled = false;
             reportsToEmployeeComboBox.Enabled = false;
-            brsweBtn.Enabled = false;
-            FrmWebcam12.Enabled = false;
             guna2GradientButton1.Enabled = false;
             SaveEdit.Enabled = false;
 
@@ -68,6 +66,8 @@ namespace AMS_RFID_V2
 
             Mysqlloop();
 
+            label2.Visible = false;
+            label3.Visible = false;
 
         }
         void Mysqlloop()
@@ -130,8 +130,6 @@ namespace AMS_RFID_V2
             designationNameComboBox.Enabled = true;
             reportsToEmployeeComboBox.Enabled = true;
 
-            brsweBtn.Enabled = true;
-            FrmWebcam12.Enabled = true;
 
             Address.BringToFront();
             departmentNameComboBox.BringToFront();
@@ -156,8 +154,6 @@ namespace AMS_RFID_V2
             departmentNameComboBox.Enabled = false;
             designationNameComboBox.Enabled = false;
             reportsToEmployeeComboBox.Enabled = false;
-            brsweBtn.Enabled = false;
-            FrmWebcam12.Enabled = false;
 
             Address.SendToBack();
             departmentNameComboBox.SendToBack();
@@ -176,11 +172,10 @@ namespace AMS_RFID_V2
                 {
                     btnEmpEdit.Text = "Cancel";
                     EmpTextbx.Focus();
-
-                    brsweBtn.FillColor = Color.Orange;
-                    FrmWebcam12.FillColor = Color.Orange;
                     SaveEdit.FillColor = Color.Orange;
                     editTrue();
+                    label2.Visible = true;
+                    label3.Visible = true;
                 }
             }
             else
@@ -192,6 +187,8 @@ namespace AMS_RFID_V2
                     SaveEdit.FillColor = Color.Lime;
                     SaveEdit.Enabled = false;
                     guna2GradientButton1.Enabled = false;
+                    label2.Visible = false;
+                    label3.Visible = false;
 
                     using (MySqlConnection conn1 = new MySqlConnection(MyDsql))
                     {
@@ -208,7 +205,7 @@ namespace AMS_RFID_V2
                             {
                                 EmployeeRfidTagTextBox1.Text = d1.GetValue(0).ToString();
                                 EmployeeNameTextBox1.Text = d1.GetValue(1).ToString();
-                                EmployeeAddressTextBox1.Text = d1.GetValue(2).ToString();
+                                label3.Text = d1.GetValue(2).ToString();
                                 EmployeeContactNumberTextBox1.Text = d1.GetValue(3).ToString();
                                 DepartmentNameTextBox1.Text = d1.GetValue(4).ToString();
                                 DesignationNameTextBox2.Text = d1.GetValue(5).ToString();
@@ -313,6 +310,9 @@ namespace AMS_RFID_V2
                     btnEmpEdit.Text = "Edit";
                     SaveEdit.Enabled = false;
                     EmpTextbx.Focus();
+
+                    label2.Visible = true;
+                    label3.Visible = true;
                 }
                 Empcmb.Items.Clear();
                 Mysqlloop();

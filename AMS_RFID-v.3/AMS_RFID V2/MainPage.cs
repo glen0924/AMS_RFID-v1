@@ -80,6 +80,7 @@ namespace AMS_RFID_V2
 
         //video Properties
         private readonly FilterInfoCollection VideoCaptureDevices;
+        public FilterInfoCollection VideoCaptureDevices1;
 
         private VideoCaptureDevice FinalVideo;
         private Image<Bgr, Byte> currentFrame;
@@ -139,8 +140,10 @@ namespace AMS_RFID_V2
             face = new HaarCascade("haarcascade_frontalface_default.xml");
             try
             {
+                string fileName = @"C:\\RFID\\TrainedFaces\\TrainedLabels.txt";
+                string fileName1 = @"C:\\RFID\\TrainedFaces\\face";
                 //Load of previus trainned faces and labels for each image
-                string Labelsinfo = File.ReadAllText(Application.StartupPath + "//TrainedFaces/TrainedLabels.txt");
+                string Labelsinfo = File.ReadAllText(Application.StartupPath + fileName);
                 string[] Labels = Labelsinfo.Split('%');
                 NumLabels = Convert.ToInt16(Labels[0]);
                 ContTrain = NumLabels;
@@ -149,7 +152,7 @@ namespace AMS_RFID_V2
                 for (int tf = 1; tf < NumLabels + 1; tf++)
                 {
                     LoadFaces = "face" + tf + ".bmp";
-                    trainingImages.Add(new Image<Gray, byte>(Application.StartupPath + "///TrainedFaces/" + LoadFaces));
+                    trainingImages.Add(new Image<Gray, byte>(Application.StartupPath + fileName1 + LoadFaces));
                     labels.Add(Labels[tf]);
                 }
             }
@@ -252,6 +255,8 @@ namespace AMS_RFID_V2
             departmentNameTextBox.Clear();
             designationNameTextBox1.Clear();
             reportsToTextBox.Clear();
+            firstname.Enabled = false;
+            m_i.Enabled = false;
 
             //REPORTSTO
             reportsToEmployeeTextBox.Enabled = false;
@@ -674,26 +679,37 @@ namespace AMS_RFID_V2
 
         private void DeptAutoRefTbl_Tick(object sender, EventArgs e)
         {
-            string date = DateTime.Now.ToString("yyyy-MM-dd");
+			try
+			{
+                string date = DateTime.Now.ToString("yyyy-MM-dd");
 
-            string QuerryRefresh = "SELECT DepartmentName FROM department";
-            MySqlConnection conn1 = new MySqlConnection(MyDsql);
-            MySqlCommand cmd = new MySqlCommand(QuerryRefresh, conn1);
+                string QuerryRefresh = "SELECT DepartmentName FROM department";
+                MySqlConnection conn1 = new MySqlConnection(MyDsql);
+                MySqlCommand cmd = new MySqlCommand(QuerryRefresh, conn1);
 
-            conn1.Open();
-            MySqlDataAdapter adp = new MySqlDataAdapter();
+                conn1.Open();
+                MySqlDataAdapter adp = new MySqlDataAdapter();
 
-            adp.SelectCommand = cmd;
+                adp.SelectCommand = cmd;
 
-            DataTable dTable = new DataTable();
-            adp.Fill(dTable);
-            departmentGuna2DataGridView.DataSource = dTable;
+                DataTable dTable = new DataTable();
+                adp.Fill(dTable);
+                departmentGuna2DataGridView.DataSource = dTable;
 
-            conn1.Close();
+                conn1.Close();
+            }
+			catch (Exception ex)
+			{
+
+                MessageBox.Show(ex.Message);
+			}
+
         }
 
         private void DesAutoRefTbl_Tick(object sender, EventArgs e)
         {
+			try
+			{
             string date = DateTime.Now.ToString("yyyy-MM-dd");
 
             string QuerryRefresh = "SELECT designationName FROM designation";
@@ -710,6 +726,13 @@ namespace AMS_RFID_V2
             guna2DataGridView6.DataSource = dTable;
 
             conn1.Close();
+			}
+			catch (Exception ex)
+			{
+
+                MessageBox.Show(ex.Message);
+			}
+
         }
 
         #endregion TImer Ticks
@@ -908,6 +931,8 @@ namespace AMS_RFID_V2
         {
             if (metroToggle1.Checked == false)
             {
+				try
+				{
                 using (grabber.QueryFrame())
                 {
                     Application.Idle -= FrameGrabber;
@@ -917,6 +942,13 @@ namespace AMS_RFID_V2
                 //grabber.Dispose();
                 offpanel.BringToFront();
                 offpanel1.BringToFront();
+				}
+				catch (Exception)
+				{
+
+                   // MessageBox.Show(ex.Message);
+				}
+                
             }
             else
             {
@@ -1049,6 +1081,8 @@ namespace AMS_RFID_V2
                 reportsToTextBox.Enabled = false;
                 reportsToEmployeeComboBox.Enabled = true;
                 NA.Enabled = true;
+                firstname.Enabled = true;
+                m_i.Enabled = true;
 
                 Address.BringToFront();
                 Address.Text = "Select..";
@@ -1104,6 +1138,8 @@ namespace AMS_RFID_V2
                         designationNameTextBox1.Clear();
                         reportsToTextBox.Clear();
                         RefreshDb.Enabled = true;
+                        firstname.Enabled = false; ;
+                        m_i.Enabled = false ;
                     }
                     catch (Exception ex)
                     {
@@ -1134,7 +1170,7 @@ namespace AMS_RFID_V2
                         MySqlCommand cmd1 = new MySqlCommand(ins, msqll);
 
                         cmd1.Parameters.AddWithValue("@EmployeeRfidTag", employeeRfidTagTextBox.Text);
-                        cmd1.Parameters.AddWithValue("@EmployeeName", employeeNameTextBox.Text + ", " + metroTextBox1.Text + " " + metroTextBox2.Text);
+                        cmd1.Parameters.AddWithValue("@EmployeeName", employeeNameTextBox.Text + ", " + firstname.Text + " " + m_i.Text);
                         cmd1.Parameters.AddWithValue("@EmployeeAddress", employeeAddressTextBox.Text);
                         cmd1.Parameters.AddWithValue("@EmployeeContactNumber", employeeContactNumberTextBox.Text);
                         cmd1.Parameters.AddWithValue("@DepartmentName", departmentNameTextBox.Text);
@@ -1203,6 +1239,8 @@ namespace AMS_RFID_V2
                     reportsToTextBox.Clear();
                     designationNameComboBox.Enabled = false;
                     RefreshDb.Enabled = true;
+                    firstname.Enabled = false;
+                    m_i.Enabled = false;
                 }
                 catch (Exception ex)
                 {
@@ -1297,18 +1335,20 @@ namespace AMS_RFID_V2
                         //Show face added in gray scale
                         ImgeBox.Image = TrainedFace;
 
+                        //File and path you want to create and write to
+                        string fileName = @"C:\\RFID\\TrainedFaces\\TrainedLabels.txt";
+                        string fileName1 = @"C:\\RFID\\TrainedFaces\\face";
 
                         //Write the number of triained faces in a file text for further load
-                        File.WriteAllText(Application.StartupPath + "/TrainedFaces/TrainedLabels.txt", trainingImages.ToArray().Length.ToString() + "%");
+                        File.WriteAllText(fileName, trainingImages.ToArray().Length.ToString() + "%");
+						//Write the labels of triained faces in a file text for further load
+						for (int i = 1; i < trainingImages.ToArray().Length + 1; i++)
+						{
+							trainingImages.ToArray()[i - 1].Save(fileName1 + i + ".bmp");
+							File.AppendAllText(fileName, labels.ToArray()[i - 1] + "%");
+						}
 
-                        //Write the labels of triained faces in a file text for further load
-                        for (int i = 1; i < trainingImages.ToArray().Length + 1; i++)
-                        {
-                            trainingImages.ToArray()[i - 1].Save(Application.StartupPath + "/TrainedFaces/face" + i + ".bmp");
-                            File.AppendAllText(Application.StartupPath + "/TrainedFaces/TrainedLabels.txt", labels.ToArray()[i - 1] + "%");
-                        }
-
-                        MessageBox.Show(rfidtxtbx.Text + "´s face detected and added", "Training OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						MessageBox.Show(rfidtxtbx.Text + "´s face detected and added", "Training OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception ex)
                     {
@@ -2530,6 +2570,20 @@ namespace AMS_RFID_V2
                     }
                 }
             }
+            string backup1 = @"C:\RFID\BROWSE\BACKUP\ams_rfid.sql";
+            using (MySqlConnection conn = new MySqlConnection(MyDsql))
+            {
+                using (MySqlCommand cmd = new MySqlCommand())
+                {
+                    using (MySqlBackup mb = new MySqlBackup(cmd))
+                    {
+                        cmd.Connection = conn;
+                        conn.Open();
+                        mb.ExportToFile(backup1);
+                        conn.Close();
+                    }
+                }
+            }
             MessageBox.Show("SUCCESSFULLY BACK UP.", "Information");
         }
 
@@ -2549,6 +2603,7 @@ namespace AMS_RFID_V2
                     }
                 }
             }
+            MessageBox.Show("SUCCESSFULLY RESTORED.", "Information");
         }
 
         #endregion export/import
@@ -2679,7 +2734,7 @@ namespace AMS_RFID_V2
         private void guna2GradientButton9_Click(object sender, EventArgs e)
         {
             string Labelsinfo = File.ReadAllText(Application.StartupPath + "/TrainedFaces/TrainedLabels.txt");
-            trainimages.Text = Labelsinfo;
+            
         }
 
         private void guna2CirclePictureBox4_Click(object sender, EventArgs e)
@@ -2820,7 +2875,61 @@ namespace AMS_RFID_V2
             reps();
         }
 
-		private void NoNoonBreakDb()
+		private void BrwsTrainFile_Click(object sender, EventArgs e)
+		{
+            Process.Start("C:\\RFID\\TrainedFaces\\TrainedLabels.txt");
+		}
+
+		private void WebCamSelect1_Click(object sender, EventArgs e)
+		{
+            WebCamSelect1.Items.Clear();
+            //video source
+            VideoCaptureDevices1 = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            foreach (FilterInfo VideoCaptureDevice in VideoCaptureDevices1)
+            {
+                WebCamSelect.Items.Add(VideoCaptureDevice.Name);
+                WebCamSelect.SelectedIndex = 0;
+            }
+            FinalVideo = new VideoCaptureDevice();
+            //CaptureApp = new Capture(WebCamSelect.SelectedIndex);
+
+            //video source
+            VideoCaptureDevices1 = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            foreach (FilterInfo VideoCaptureDevice in VideoCaptureDevices1)
+            {
+                WebCamSelect1.Items.Add(VideoCaptureDevice.Name);
+                WebCamSelect.SelectedIndex = 0;
+            }
+            FinalVideo = new VideoCaptureDevice();
+            //CaptureApp = new Capture(WebCamSelect.SelectedIndex);
+
+        }
+
+		private void WebCamSelect_Click(object sender, EventArgs e)
+		{
+            WebCamSelect.Items.Clear();
+            //video source
+            VideoCaptureDevices1 = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            foreach (FilterInfo VideoCaptureDevice in VideoCaptureDevices1)
+            {
+                WebCamSelect.Items.Add(VideoCaptureDevice.Name);
+                WebCamSelect.SelectedIndex = 0;
+            }
+            FinalVideo = new VideoCaptureDevice();
+            //CaptureApp = new Capture(WebCamSelect.SelectedIndex);
+
+            //video source
+            VideoCaptureDevices1 = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            foreach (FilterInfo VideoCaptureDevice in VideoCaptureDevices1)
+            {
+                WebCamSelect.Items.Add(VideoCaptureDevice.Name);
+                WebCamSelect.SelectedIndex = 0;
+            }
+            FinalVideo = new VideoCaptureDevice();
+            //CaptureApp = new Capture(WebCamSelect.SelectedIndex);
+        }
+
+        private void NoNoonBreakDb()
         {
             try
             {
