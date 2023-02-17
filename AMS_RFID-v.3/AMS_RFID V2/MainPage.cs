@@ -12,6 +12,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 
 namespace AMS_RFID_V2
@@ -793,7 +794,7 @@ namespace AMS_RFID_V2
                 {
                     if (File.Exists(path))
                     {
-                        if (MessageBox.Show("ID exist if the folder. Overwrite ?", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        if (MessageBox.Show("ID exist in the folder. Overwrite ?", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
                             //var img = CaptureApp.QueryFrame();
                             //var bmp = img.ToBitmap();
@@ -931,24 +932,24 @@ namespace AMS_RFID_V2
         {
             if (metroToggle1.Checked == false)
             {
-				try
-				{
-                using (grabber.QueryFrame())
+                try
                 {
-                    Application.Idle -= FrameGrabber;
-                    grabber.Dispose();
+                    using (grabber.QueryFrame())
+                    {
+                        Application.Idle -= FrameGrabber;
+                        grabber.Dispose();
+                    }
+
+                    //grabber.Dispose();
+                    offpanel.BringToFront();
+                    offpanel1.BringToFront();
+                }
+                catch (Exception)
+                {
+
+                    // MessageBox.Show(ex.Message);
                 }
 
-                //grabber.Dispose();
-                offpanel.BringToFront();
-                offpanel1.BringToFront();
-				}
-				catch (Exception)
-				{
-
-                   // MessageBox.Show(ex.Message);
-				}
-                
             }
             else
             {
@@ -958,7 +959,32 @@ namespace AMS_RFID_V2
                     using (grabber.QueryFrame())
                     {
                         Application.Idle += new EventHandler(FrameGrabber);
+                        face = new HaarCascade("haarcascade_frontalface_default.xml");
+                        try
+                        {
+                            string path = @"C:/RFID/TrainedFaces/TrainedLabels.txt";
+                            string path1 = @"C:/RFID/TrainedFaces/";
+                            //Load of previus trainned faces and labels for each image
+                            string Labelsinfo = File.ReadAllText(path, Encoding.UTF8);
+                            //string readText = File.ReadAllText(path, Encoding.UTF8);
+                            string[] Labels = Labelsinfo.Split('%');
+                            NumLabels = Convert.ToInt16(Labels[0]);
+                            ContTrain = NumLabels;
+                            string LoadFaces;
+
+                            for (int tf = 1; tf < NumLabels + 1; tf++)
+                            {
+                                LoadFaces = "face" + tf + ".bmp";
+                                trainingImages.Add(new Image<Gray, byte>(path1 + LoadFaces));
+                                labels.Add(Labels[tf]);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
                     }
+                    
                 }
                 catch (Exception)
                 {
@@ -968,9 +994,10 @@ namespace AMS_RFID_V2
 
                 offpanel.SendToBack();
                 offpanel1.SendToBack();
+
+                
             }
         }
-
         #endregion Train Images
 
         #region Employe View Details
@@ -2990,30 +3017,10 @@ namespace AMS_RFID_V2
         }
 
         //General
-        private void empCombo_Click(object sender, EventArgs e)
-        {
-            empCombo.Items.Clear();
-            EmpGenUp();
-        }
+
 
         //General Employee db+Combo
-        private void EmpGenUp()
-        {
-            using (MySqlConnection ms = new MySqlConnection(MyDsql))
-            {
-                string Ref = "SELECT EmployeeName FROM employees";
-                ms.Open();
-                MySqlCommand cmdO = new MySqlCommand(Ref, ms);
-                MySqlDataReader readd = cmdO.ExecuteReader();
 
-                while (readd.Read())
-
-                {
-                    empCombo.Items.Add(readd.GetString("EmployeeName"));
-                }
-                ms.Close();
-            }
-        }
 
         #endregion Settings
     }

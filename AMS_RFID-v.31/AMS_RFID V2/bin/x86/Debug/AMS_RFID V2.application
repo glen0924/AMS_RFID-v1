@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="AMS_RFID V2.exe.manifest" size="46768">
+    <dependentAssembly dependencyType="install" codebase="AMS_RFID V2.exe.manifest" size="59239">
       <assemblyIdentity name="AMS_RFID V2.exe" version="1.0.0.26" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>1fVp0kv6DivuFZVmcc7D9whvjdAEKkRlfzOfAv01mrY=</dsig:DigestValue>
+        <dsig:DigestValue>yXWU0nox3kilMs7LpoUuBczSFzJ3gQbYojgD63oHw+Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

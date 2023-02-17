@@ -72,8 +72,8 @@ namespace AMS_RFID_V2
             face = new HaarCascade("haarcascade_frontalface_default.xml");
             try
             {
-                string path = @"I:/TrainedFaces/TrainedLabels.txt";
-                string path1 = @"I:/TrainedFaces/";
+                string path = @"C:/RFID/TrainedFaces/TrainedLabels.txt";
+                string path1 = @"C:/RFID/TrainedFaces/";
                 //Load of previus trainned faces and labels for each image
                 string Labelsinfo = File.ReadAllText(path, Encoding.UTF8);
                 //string readText = File.ReadAllText(path, Encoding.UTF8);

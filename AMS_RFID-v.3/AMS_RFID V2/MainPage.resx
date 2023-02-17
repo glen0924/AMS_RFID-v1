@@ -3386,6 +3386,9 @@
         AACQL7MQAAAAAADkyywEAAAAAAD5MgsBAAAAAECeDlT+f9xSL4xWjRz9AAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="metroToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>765, 89</value>
+  </metadata>
   <data name="guna2PictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAYAAAA+s9J6AAAABGdBTUEAALGPC/xhBQAAD6VJREFUeF7t

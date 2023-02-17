@@ -583,3 +583,154 @@ J:\AMS_RFID-v.31\AMS_RFID V2\obj\x86\Debug\AMS_RFID V2.application
 J:\AMS_RFID-v.31\AMS_RFID V2\obj\x86\Debug\AMS_RFID V2.csproj.CopyComplete
 J:\AMS_RFID-v.31\AMS_RFID V2\obj\x86\Debug\AMS_RFID V2.exe
 J:\AMS_RFID-v.31\AMS_RFID V2\obj\x86\Debug\AMS_RFID V2.pdb
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\System.Buffers.xml
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\System.Numerics.Vectors.xml
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\x86\concrt140.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\x86\cvextern.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\x86\msvcp140.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\x86\msvcp140_1.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\x86\msvcp140_2.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\x86\msvcp140_codecvt_ids.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\x86\opencv_videoio_ffmpeg430.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\x86\vcruntime140.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\cv110.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\cvaux110.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\cvextern.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\cxcore110.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Emgu.CV.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Emgu.CV.GPU.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Emgu.CV.ML.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Emgu.CV.UI.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Emgu.Util.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\highgui110.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\opencv_calib3d220.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\opencv_contrib220.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\opencv_core220.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\opencv_features2d220.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\opencv_ffmpeg220.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\opencv_flann220.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\opencv_gpu220.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\opencv_highgui220.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\opencv_imgproc220.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\opencv_legacy220.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\opencv_ml220.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\opencv_objdetect220.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\opencv_video220.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\TrainedFaces\TrainedLabels.txt
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Emgu.CV.Runtime.Windows.projitems
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Emgu.CV.Runtime.Windows.shproj
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\haarcascade_frontalface_alt_tree.xml
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\haarcascade_frontalface_alt2.xml
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\haarcascade_frontalface_default.xml
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Resources\haarcascade_frontalface_default.xml
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Resources\ico.png
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Resources\Image1.png
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Resources\cam.jpg
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Resources\tes.gif
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Resources\sun.gif
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Resources\morningasfck.png
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Resources\sunrise.png
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Resources\dtr-1.jpg
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Resources\1160356.png
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Resources\logo.png
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Resources\sta_logo-removebg-preview.png
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Resources\sta_logo-removebg-preview1.png
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Resources\images-removebg-preview.png
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Resources\password-not-visible-4.png
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Resources\opened_folder_512px.png
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Resources\MAIN ICO.png
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Resources\logo v1.png
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Resources\logo v2.png
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Resources\close.png
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Resources\329c46571cf818b8cd751368644ff893.png
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Resources\eyeopen.png
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Resources\closeeye.png
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\haarcascade_eye.xml
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Resources\c.png
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Resources\logout.png
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\AMS_RFID V2.exe.config
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\AMS_RFID V2.exe.manifest
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\AMS_RFID V2.application
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\AMS_RFID V2.exe
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\AMS_RFID V2.pdb
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\AForge.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\AForge.Video.DirectShow.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\AForge.Video.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\CrystalDecisions.ReportSource.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\CrystalDecisions.Shared.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Google.Protobuf.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Guna.UI2.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\K4os.Compression.LZ4.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\K4os.Hash.xxHash.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\MetroFramework.Design.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\MetroFramework.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\MetroFramework.Fonts.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\MySql.Data.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\MySqlBackup.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Nager.Date.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Renci.SshNet.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Syncfusion.Licensing.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Syncfusion.Shared.Base.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Syncfusion.Shared.Windows.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\System.Buffers.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\System.Drawing.Common.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\System.Memory.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\System.Numerics.Vectors.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\ZedGraph.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\ZstdNet.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\stdole.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\AForge.xml
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\AForge.Video.xml
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\AForge.Video.DirectShow.xml
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Google.Protobuf.pdb
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Google.Protobuf.xml
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\K4os.Compression.LZ4.xml
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\K4os.Hash.xxHash.xml
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\MySql.Data.xml
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Nager.Date.xml
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Renci.SshNet.xml
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Syncfusion.Shared.Base.xml
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Syncfusion.Shared.Windows.xml
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\System.Memory.xml
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\ZedGraph.xml
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\de\ZedGraph.resources.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\es\ZedGraph.resources.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\fr\ZedGraph.resources.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\hu\ZedGraph.resources.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\it\ZedGraph.resources.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\ja\ZedGraph.resources.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\pt\ZedGraph.resources.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\ru\ZedGraph.resources.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\sk\ZedGraph.resources.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\sv\ZedGraph.resources.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\tr\ZedGraph.resources.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\zh-cn\ZedGraph.resources.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\zh-tw\ZedGraph.resources.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\obj\x86\Debug\AMS_RFID_V2.EmployeeAttendance.resources
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\obj\x86\Debug\AMS_RFID_V2.Properties.Resources.resources
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\obj\x86\Debug\AMS_RFID V2.csproj.GenerateResource.cache
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\obj\x86\Debug\AMS_RFID V2.csproj.CoreCompileInputs.cache
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\obj\x86\Debug\AMS_RFID V2.exe.manifest
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\obj\x86\Debug\AMS_RFID V2.application
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\obj\x86\Debug\AMS_RFID V2.csproj.CopyComplete
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\obj\x86\Debug\AMS_RFID V2.exe
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\obj\x86\Debug\AMS_RFID V2.pdb
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\obj\x86\Debug\AMS_RFID V2.csproj.AssemblyReference.cache

@@ -584,7 +584,6 @@ C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.3\AMS_RFID V2\bin\x86\Debug\
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.3\AMS_RFID V2\bin\x86\Debug\tr\ZedGraph.resources.dll
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.3\AMS_RFID V2\bin\x86\Debug\zh-cn\ZedGraph.resources.dll
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.3\AMS_RFID V2\bin\x86\Debug\zh-tw\ZedGraph.resources.dll
-C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.3\AMS_RFID V2\obj\x86\Debug\AMS_RFID V2.csproj.AssemblyReference.cache
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.3\AMS_RFID V2\obj\x86\Debug\AMS_RFID_V2.DEptDel.resources
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.3\AMS_RFID V2\obj\x86\Debug\AMS_RFID_V2.DeptEditForm.resources
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.3\AMS_RFID V2\obj\x86\Debug\AMS_RFID_V2.DEsDel.resources
@@ -609,3 +608,4 @@ C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.3\AMS_RFID V2\obj\x86\Debug\
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.3\AMS_RFID V2\obj\x86\Debug\AMS_RFID V2.csproj.CopyComplete
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.3\AMS_RFID V2\obj\x86\Debug\AMS_RFID V2.exe
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.3\AMS_RFID V2\obj\x86\Debug\AMS_RFID V2.pdb
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.3\AMS_RFID V2\obj\x86\Debug\AMS_RFID V2.csproj.AssemblyReference.cache

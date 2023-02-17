@@ -79,14 +79,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AMS_RFID V2.exe" size="19492808">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AMS_RFID V2.exe" size="19479496">
       <assemblyIdentity name="AMS_RFID V2" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>hliUcTyaCVvas+pxXgZiobtteX6zy2B1x5TCtV11Gto=</dsig:DigestValue>
+        <dsig:DigestValue>IK7NXEDpsHt/WJMXnkJxqRvvHpeYOj2pHEfugUehZvg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
