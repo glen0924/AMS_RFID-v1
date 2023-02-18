@@ -1,0 +1,10 @@
+Admin Credetials
+username: admin
+password: admin
+
+database user account: 
+username: AMS_RFID
+password: @M$_Rf1d2O22
+
+server : localhost
+database name: ams_rfid
