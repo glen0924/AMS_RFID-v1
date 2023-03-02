@@ -1,1 +1,1 @@
-test Github
+test Git v1
