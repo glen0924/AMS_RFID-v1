@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace AMS_RFID_V2
 {
@@ -31,6 +32,7 @@ namespace AMS_RFID_V2
 
         //mysql COnnections
         string MyDsql = "Datasource=localhost;port=3306;username=AMS_RFID;password=@M$_Rf1d2O22; database = ams_rfid; Max Pool Size=1000;Convert Zero Datetime=True";
+        string MyConn = ConfigurationManager.ConnectionStrings["AMS_RFID_V2.Properties.Settings.ams_rfidConnectionString1"].ConnectionString;
 
         public const int WM_NCLBUTTONDOWN = 0xA1;
 

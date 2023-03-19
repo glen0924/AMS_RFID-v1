@@ -79,14 +79,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AMS_RFID V2.exe" size="19479496">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AMS_RFID V2.exe" size="19480008">
       <assemblyIdentity name="AMS_RFID V2" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ype+7qkkVyHWcjba+Wyz7Cqh8hT6WwSl6569jym8KK0=</dsig:DigestValue>
+        <dsig:DigestValue>j+sElmBJB065v6oDyy2NbeEZVbNhlmhr0tMPj6xz7Rg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1059,13 +1059,13 @@
       <dsig:DigestValue>uRuiGS7og4Uhno9eXt5VfEZkpnGFpuf36kxUam5cu1Y=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="test1.txt" size="11">
+  <file name="test1.txt" size="657">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>0LbVKHziTtz69VhEOHAswnEPypvki5Wqpckx/Q7zdCw=</dsig:DigestValue>
+      <dsig:DigestValue>Eq1KYPoNlfqjW4Arh9vYDHTOIShklIK9Jzm+mD61If4=</dsig:DigestValue>
     </hash>
   </file>
   <file name="TrainedFaces\TrainedLabels.txt" size="3">

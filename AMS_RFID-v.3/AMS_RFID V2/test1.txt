@@ -1,1 +1,25 @@
-test Github
+resources :
+https://www.c-sharpcorner.com/UploadFile/8ea152/create-connection-string-and-use-in-multiple-form-in-C-Sharp/
+resources :
+sql connection:
+https://www.youtube.com/watch?v=C7ukAjQtsxE
+
+Create a connection string in c# app
+
+goto config file or in app settings
+
+Config File
+create a connection string
+
+<connectionStrings>
+
+    <add name ="Myconnectionstring" connectionString ="Data Source=.;Initial Catalog=pulkit;User ID=sa;Password=Wintellect" />
+
+</connectionStrings>
+
+
+you can use now:
+
+using System.Configuration;
+
+string connectionString = ConfigurationManager.ConnectionStrings["MyconnectionString"].ConnectionString;
