@@ -80,39 +80,46 @@ namespace AMS_RFID_V2
         {
             if (username.Text == "" || password.Text == "")
             {
-                MessageBox.Show("User Input!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("User Input required.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 username.Focus();
             }
             else
             {
-
-                using (MySqlConnection iconnect = new MySqlConnection("Datasource=localhost;port=3306;username=AMS_RFID;password=@M$_Rf1d2O22; database = ams_rfid"))
-                {
-                    string query = ("SELECT username , password FROM login WHERE username=@username AND password=@password");
-
-                    MySqlCommand cmdO = new MySqlCommand(query, iconnect);
-
-                    cmdO.Parameters.AddWithValue("@username", username.Text);
-                    cmdO.Parameters.AddWithValue("@password", password.Text);
-                    iconnect.Open();
-                    MySqlDataReader readd = cmdO.ExecuteReader();
-                    if (readd.Read())
+				try
+				{
+                    using (MySqlConnection iconnect = new MySqlConnection("Datasource=localhost;port=3306;username=AMS_RFID;password=@M$_Rf1d2O22; database = ams_rfid"))
                     {
-                        MessageBox.Show("Welcome Admin!", "Successfully Login", MessageBoxButtons.OK);
-                        MainPage Mp = new MainPage();
-                        Mp.Show();
-                        this.Hide();
-                        
-                    }
-                    else
-                    {
-                        if (MessageBox.Show("Incorrect credentials. Are You ADMIN? ", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) == DialogResult.Retry)
+                        string query = ("SELECT username , password FROM login WHERE username=@username AND password=@password");
+
+                        MySqlCommand cmdO = new MySqlCommand(query, iconnect);
+
+                        cmdO.Parameters.AddWithValue("@username", username.Text);
+                        cmdO.Parameters.AddWithValue("@password", password.Text);
+                        iconnect.Open();
+                        MySqlDataReader readd = cmdO.ExecuteReader();
+                        if (readd.Read())
                         {
-                            password.Focus();
+                            MessageBox.Show("Welcome Admin!", "Successfully Login", MessageBoxButtons.OK);
+                            MainPage Mp = new MainPage();
+                            Mp.Show();
+                            this.Hide();
+
                         }
+                        else
+                        {
+                            if (MessageBox.Show("Incorrect credentials. Are You ADMIN? ", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) == DialogResult.Retry)
+                            {
+                                password.Focus();
+                            }
+                        }
+                        iconnect.Close();
                     }
-                    iconnect.Close();
                 }
+				catch
+				{
+                    MessageBox.Show("Database not found. Please contact admin.","Connection Error");
+				}
+                
             }
             
         }
@@ -144,33 +151,41 @@ namespace AMS_RFID_V2
                 }
                 else
                 {
-                    using (MySqlConnection iconnect = new MySqlConnection("Datasource=localhost;port=3306;username=AMS_RFID;password=@M$_Rf1d2O22; database = ams_rfid"))
-                    {
-                        string query = ("SELECT username , password FROM login WHERE username=@username AND password=@password");
-
-                        MySqlCommand cmdO = new MySqlCommand(query, iconnect);
-
-                        cmdO.Parameters.AddWithValue("@username", username.Text);
-                        cmdO.Parameters.AddWithValue("@password", password.Text);
-                        iconnect.Open();
-                        MySqlDataReader readd = cmdO.ExecuteReader();
-                        if (readd.Read())
+					try
+					{
+                        using (MySqlConnection iconnect = new MySqlConnection("Datasource=localhost;port=3306;username=AMS_RFID;password=@M$_Rf1d2O22; database = ams_rfid"))
                         {
-                            MessageBox.Show("Welcome Admin!", "Successfully Login", MessageBoxButtons.OK);
-                            MainPage Mp = new MainPage();
-                            Mp.Show();
-                            this.Hide();
+                            string query = ("SELECT username , password FROM login WHERE username=@username AND password=@password");
 
-                        }
-                        else
-                        {
-                            if (MessageBox.Show("Incorrect credentials. Are You ADMIN? ", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) == DialogResult.Retry)
+                            MySqlCommand cmdO = new MySqlCommand(query, iconnect);
+
+                            cmdO.Parameters.AddWithValue("@username", username.Text);
+                            cmdO.Parameters.AddWithValue("@password", password.Text);
+                            iconnect.Open();
+                            MySqlDataReader readd = cmdO.ExecuteReader();
+                            if (readd.Read())
                             {
-                                password.Focus();
+                                MessageBox.Show("Welcome Admin!", "Successfully Login", MessageBoxButtons.OK);
+                                MainPage Mp = new MainPage();
+                                Mp.Show();
+                                this.Hide();
+
                             }
+                            else
+                            {
+                                if (MessageBox.Show("Incorrect credentials. Are You ADMIN? ", "Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) == DialogResult.Retry)
+                                {
+                                    password.Focus();
+                                }
+                            }
+                            iconnect.Close();
                         }
-                        iconnect.Close();
                     }
+					catch
+					{
+                        MessageBox.Show("Database not found. Please contact admin.", "Connection Error");
+                    }
+
 
                 }
             }
