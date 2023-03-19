@@ -79,14 +79,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AMS_RFID V2.exe" size="19480008">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AMS_RFID V2.exe" size="19480520">
       <assemblyIdentity name="AMS_RFID V2" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>j+sElmBJB065v6oDyy2NbeEZVbNhlmhr0tMPj6xz7Rg=</dsig:DigestValue>
+        <dsig:DigestValue>nyJagwMV/CK2TeSG1+wRnRyV7019vRdfCyyw5uvTCew=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -762,13 +762,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="AMS_RFID V2.exe.config" size="2142">
+  <file name="AMS_RFID V2.exe.config" size="2773">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>aoZAnBm54BC3XaayEBfI2g+xQiVfr1xahge+S1Mj78A=</dsig:DigestValue>
+      <dsig:DigestValue>NKL80UauD6GJzhAnTlxxPfpsw0NtnTQFDcQ+xVvkIM8=</dsig:DigestValue>
     </hash>
   </file>
   <file name="cv110.dll" size="881960">
