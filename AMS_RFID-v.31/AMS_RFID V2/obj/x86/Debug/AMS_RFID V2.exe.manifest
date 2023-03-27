@@ -79,14 +79,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AMS_RFID V2.exe" size="17744328">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AMS_RFID V2.exe" size="17746376">
       <assemblyIdentity name="AMS_RFID V2" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ldsAhjRFkyGtb6Vje8YG70C9BpAD9+Yqn2wrMx3R8mc=</dsig:DigestValue>
+        <dsig:DigestValue>6x+Iz9VfmeHcb0Gf7YjjQzU7Dj7rhAQwDr/jbayhxcY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -331,14 +331,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Guna.UI2.dll" size="2254728">
-      <assemblyIdentity name="Guna.UI2" version="2.0.4.0" publicKeyToken="8B9D14AA5142E261" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Guna.UI2.dll" size="2034056">
+      <assemblyIdentity name="Guna.UI2" version="2.0.4.4" publicKeyToken="8B9D14AA5142E261" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>k4dfkFZoTa1/NFrWOp2futj+PIOum9gvYYoeHLXx6KY=</dsig:DigestValue>
+        <dsig:DigestValue>z0I6RH5cHci8C4TvAF4ulC+hSbpPnK9+LxL2csrVU4U=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -451,18 +451,6 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Nager.Date.dll" size="247296">
-      <assemblyIdentity name="Nager.Date" version="1.37.0.0" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ssD+FYNtDriJ6vFTRD7oLldPQTi4hBCjv6RoSKez7Xk=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Renci.SshNet.dll" size="422912">
       <assemblyIdentity name="Renci.SshNet" version="2016.1.0.0" publicKeyToken="1CEE9F8BDE3DB106" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -483,42 +471,6 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>2nbLf/RLhWBUej5XjBjxWPu6uxm4KuQbKC9HgBJ370k=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Syncfusion.Licensing.dll" size="815104">
-      <assemblyIdentity name="Syncfusion.Licensing" version="19.3460.0.48" publicKeyToken="632609B4D040F6B4" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>4DESoJcqlLSJdF5iK07y/kdZJeRPMA0O8PljI4CFd3o=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Syncfusion.Shared.Base.dll" size="4890624">
-      <assemblyIdentity name="Syncfusion.Shared.Base" version="19.3460.0.48" publicKeyToken="3D67ED1F87D44C89" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>EcG+oR/sRcsCrQHd2bwXdo4lpAmmWz5ULHRUNQhhgwU=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Syncfusion.Shared.Windows.dll" size="25600">
-      <assemblyIdentity name="Syncfusion.Shared.Windows" version="19.3460.0.48" publicKeyToken="3D67ED1F87D44C89" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>LeU8qMhz7qSOaLmYKLU3NySL8PTPAS9cjAhRY3+bnww=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

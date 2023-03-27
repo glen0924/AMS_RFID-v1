@@ -9,11 +9,31 @@ using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
-
+using static AMS_RFID_V2.TimeClass;
 namespace AMS_RFID_V2
 {
+    
     public partial class EmployeeAttendance : Form
     {
+        public static bool IsLocalDateCorrect()
+        {
+            //TimeClass timeclass = new TimeClass();
+            DateTime? internetTime = GetInternetTime();
+            if (internetTime == null)
+            {
+                return false;
+            }
+            DateTime localTime = DateTime.Now;
+            TimeSpan difference = localTime - internetTime.Value;
+            if (Math.Abs(difference.TotalSeconds) <= 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         // private bool streaming;
         // private Capture CaptureApp;
         //private HaarCascade haar;
@@ -31,6 +51,7 @@ namespace AMS_RFID_V2
         private int ContTrain, NumLabels, t;
         private string name, names = null;
 
+        bool isCorrect = EmployeeAttendance.IsLocalDateCorrect();
         //MainPage AttendanceGridView;
         public EmployeeAttendance()
         {
@@ -93,6 +114,30 @@ namespace AMS_RFID_V2
             {
                 MessageBox.Show("Please copy trained images from the admin, Thank you");
             }
+
+            //for checking internet time
+            
+
+            if (isCorrect)
+            {
+                Console.WriteLine("Local date is correct!");
+            }
+            else
+            {
+                //Console.WriteLine("Time not set correctly");
+                AutoClosingMessageBox.Show("Time not set correctly. Please set time or connect to internet", "System Time Error", 5000);
+                AutoClosingMessageBox.Show("Exiting Application", "System Time Error", 1500);
+                Application.Exit();
+            }
+
+            DateTime? internetTime = TimeClass.GetInternetTime();
+            if (internetTime == null)
+            {
+                //Console.WriteLine("Failed to get internet time.");
+                AutoClosingMessageBox.Show("Cannot check time. Please Connect to a Network","System Time Error",5000);
+                AutoClosingMessageBox.Show("Exiting Application","System Time Error",1500);
+                Application.Exit();
+            }           
         }
 
         #region OTHERS
@@ -556,382 +601,163 @@ namespace AMS_RFID_V2
             {
                 if (btnScan.Text == RFID.Text)
                 {
-                    using (MySqlConnection iconnect = new MySqlConnection(MyDsql))
-                    {
-                        string selectquery = string.Format("SELECT * from employees Where EmployeeRfidTag = '{0}'", btnScan.Text);
-
-                        MySqlCommand command = new MySqlCommand(selectquery, iconnect);
-                        iconnect.Open();
-                        var dtime = DateTime.Now;
-                        dtime.ToString("hh:mm:ss");
-                        using (MySqlDataReader reader = command.ExecuteReader())
+					if (isCorrect)
+					{
+						#region Attendance
+						try
+						{
+                        using (MySqlConnection iconnect = new MySqlConnection(MyDsql))
                         {
-                            string catchTime0 = DateTime.Now.ToString("hh:mm tt");
+                            string selectquery = string.Format("SELECT * from employees Where EmployeeRfidTag = '{0}'", btnScan.Text);
 
-                            if (reader.Read())
+                            MySqlCommand command = new MySqlCommand(selectquery, iconnect);
+                            iconnect.Open();
+                            var dtime = DateTime.Now;
+                            dtime.ToString("hh:mm:ss");
+                            using (MySqlDataReader reader = command.ExecuteReader())
                             {
-                                string info;
-                                string catchTime;
-                                string remarks;
+                                string catchTime0 = DateTime.Now.ToString("hh:mm tt");
 
-                                #region TimeSpan
-
-                                TimeSpan startam = new TimeSpan(8, 0, 0); //10 o'clock
-                                                                          //TimeSpan endam = new TimeSpan(8, 15, 0); //12 o'clock
-                                TimeSpan now = DateTime.Now.TimeOfDay;
-                                DateTime theDate = DateTime.Today;
-
-                                TimeSpan startam8 = new TimeSpan(8, 0, 0); //10 o'clock
-                                TimeSpan endam8 = new TimeSpan(8, 15, 0); //12 o'clock
-                                now = DateTime.Now.TimeOfDay;
-
-                                TimeSpan startam1 = new TimeSpan(8, 15, 0); //10 o'clock
-                                TimeSpan endam1 = new TimeSpan(8, 31, 0); //12 o'clock
-                                now = DateTime.Now.TimeOfDay;
-
-                                TimeSpan start830 = new TimeSpan(8, 30, 0); //10 o'clock
-                                TimeSpan end12 = new TimeSpan(11, 59, 0); //12 o'clock
-                                now = DateTime.Now.TimeOfDay;
-
-                                TimeSpan start11 = new TimeSpan(10, 0, 0); //10 o'clock
-                                TimeSpan end11 = new TimeSpan(11, 0, 0); //12 o'clock
-                                now = DateTime.Now.TimeOfDay;
-
-                                TimeSpan start12 = new TimeSpan(11, 0, 0); //10 o'clock
-                                TimeSpan end1122 = new TimeSpan(12, 0, 0); //12 o'clock
-                                now = DateTime.Now.TimeOfDay;
-
-                                TimeSpan start111pm = new TimeSpan(12, 0, 0); //10 o'clock
-                                TimeSpan end1pm = new TimeSpan(13, 0, 0); //12 o'clock
-                                now = DateTime.Now.TimeOfDay;
-
-                                TimeSpan startinpm = new TimeSpan(15, 0, 0); //10 o'clock
-                                TimeSpan end1inpm = new TimeSpan(16, 0, 0); //12 o'clock
-                                now = DateTime.Now.TimeOfDay;
-
-                                var str1 = start111pm.Subtract(TimeSpan.FromHours(11));//1
-                                var endt = end1pm.Subtract(TimeSpan.FromHours(11));//2
-
-                                var ttimeOut = startinpm.Subtract(TimeSpan.FromHours(13));//2
-                                var end5time = end1pm.Subtract(TimeSpan.FromHours(14));//3
-
-                                #endregion TimeSpan
-
-                                // <8:00
-                                if ((now < startam))
+                                if (reader.Read())
                                 {
-                                    string date = DateTime.Now.ToString("yyyy-MM-dd");
+                                    string info;
+                                    string catchTime;
+                                    string remarks;
 
-                                    catchTime = DateTime.Now.ToString("hh:mm tt");
-                                    IDrecognaizer.Visible = true;
-                                    tme.Visible = true;
-                                    timed.Visible = true;
-                                    rem.Visible = true;
-                                    inff.Visible = true;
+                                    #region TimeSpan
 
-                                    info = "Time in_0";
-                                    remarks = "Early " + catchTime0;
-                                    //LESS THEN 8AM
-                                    using (MySqlConnection iconnectSelect = new MySqlConnection(MyDsql))
+                                    TimeSpan startam = new TimeSpan(8, 0, 0); //10 o'clock
+                                                                              //TimeSpan endam = new TimeSpan(8, 15, 0); //12 o'clock
+                                    TimeSpan now = DateTime.Now.TimeOfDay;
+                                    DateTime theDate = DateTime.Today;
+
+                                    TimeSpan startam8 = new TimeSpan(8, 0, 0); //10 o'clock
+                                    TimeSpan endam8 = new TimeSpan(8, 15, 0); //12 o'clock
+                                    now = DateTime.Now.TimeOfDay;
+
+                                    TimeSpan startam1 = new TimeSpan(8, 15, 0); //10 o'clock
+                                    TimeSpan endam1 = new TimeSpan(8, 31, 0); //12 o'clock
+                                    now = DateTime.Now.TimeOfDay;
+
+                                    TimeSpan start830 = new TimeSpan(8, 30, 0); //10 o'clock
+                                    TimeSpan end12 = new TimeSpan(11, 59, 0); //12 o'clock
+                                    now = DateTime.Now.TimeOfDay;
+
+                                    TimeSpan start11 = new TimeSpan(10, 0, 0); //10 o'clock
+                                    TimeSpan end11 = new TimeSpan(11, 0, 0); //12 o'clock
+                                    now = DateTime.Now.TimeOfDay;
+
+                                    TimeSpan start12 = new TimeSpan(11, 0, 0); //10 o'clock
+                                    TimeSpan end1122 = new TimeSpan(12, 0, 0); //12 o'clock
+                                    now = DateTime.Now.TimeOfDay;
+
+                                    TimeSpan start111pm = new TimeSpan(12, 0, 0); //10 o'clock
+                                    TimeSpan end1pm = new TimeSpan(13, 0, 0); //12 o'clock
+                                    now = DateTime.Now.TimeOfDay;
+
+                                    TimeSpan startinpm = new TimeSpan(15, 0, 0); //10 o'clock
+                                    TimeSpan end1inpm = new TimeSpan(16, 0, 0); //12 o'clock
+                                    now = DateTime.Now.TimeOfDay;
+
+                                    var str1 = start111pm.Subtract(TimeSpan.FromHours(11));//1
+                                    var endt = end1pm.Subtract(TimeSpan.FromHours(11));//2
+
+                                    var ttimeOut = startinpm.Subtract(TimeSpan.FromHours(13));//2
+                                    var end5time = end1pm.Subtract(TimeSpan.FromHours(14));//3
+
+                                    #endregion TimeSpan
+
+                                    // <8:00
+                                    if ((now < startam))
                                     {
-                                        string selectquerry1 = "SELECT `EmployeeRfid`, `Date` FROM `attendance` WHERE EmployeeRfid = @rfid AND Date= '" + date + "' AND Am_In IS NULL ";
-
-                                        MySqlCommand commandSelect = new MySqlCommand(selectquerry1, iconnectSelect);
-
-                                        commandSelect.Parameters.AddWithValue("@rfid", btnScan.Text);
-
-                                        MySqlDataReader readerSelect;
-                                        iconnectSelect.Open();
-
-                                        readerSelect = commandSelect.ExecuteReader();
-                                        if (readerSelect.Read())
-                                        {
-                                            MySqlConnection iconnect12 = new MySqlConnection(MyDsql);
-
-                                            string insertquerry1 = "UPDATE `attendance` SET `Am_In` = current_timestamp() , remarks = 'Early' WHERE `attendance`.`Date` = '" + date + "' AND `attendance`.`EmployeeRfid` = @EmployeeRfid";
-
-                                            MySqlCommand command123 = new MySqlCommand(insertquerry1, iconnect12);
-                                            command123.Parameters.AddWithValue("@EmployeeRfid", btnScan.Text);
-                                            MySqlDataReader reader23;
-                                            iconnect12.Open();
-                                            reader23 = command123.ExecuteReader();
-
-                                            
-                                        }
-                                        else
-                                        {
-                                            AutoClosingMessageBox.Show("Already Log", "Information : < 8", 2000);
-                                        }
+                                        string date = DateTime.Now.ToString("yyyy-MM-dd");
 
                                         catchTime = DateTime.Now.ToString("hh:mm tt");
-                                        IDrecognaizer.Text = "Hello";
-                                        cvname.Text = reader["EmployeeName"].ToString();
-                                        timed.Text = catchTime;
-                                        Remarks.Text = remarks;
-                                        info32.Text = info;
-                                        btnScan.Clear();
-                                    }
-                                }
-                                //8:00 - 8:15
-                                else if ((now > startam8) && (now < endam8))
-                                {
-                                    string date = DateTime.Now.ToString("yyyy-MM-dd");
+                                        IDrecognaizer.Visible = true;
+                                        tme.Visible = true;
+                                        timed.Visible = true;
+                                        rem.Visible = true;
+                                        inff.Visible = true;
 
-                                    catchTime = DateTime.Now.ToString("hh:mm tt");
-                                    IDrecognaizer.Visible = true;
-                                    tme.Visible = true;
-                                    timed.Visible = true;
-                                    rem.Visible = true;
-                                    inff.Visible = true;
-
-                                    theDate = DateTime.Today;
-                                    info = "Time in_0";
-                                    remarks = "On Time " + catchTime0;
-                                    //LESS THEN 8AM
-                                    using (MySqlConnection iconnectSelect = new MySqlConnection(MyDsql))
-                                    {
-                                        string selectquerry1 = "SELECT `EmployeeRfid`, `Date` FROM `attendance` WHERE EmployeeRfid = @rfid AND Date= '" + date + "' AND Am_in IS NULL";
-
-                                        MySqlCommand commandSelect = new MySqlCommand(selectquerry1, iconnectSelect);
-                                        commandSelect.Parameters.AddWithValue("@rfid", btnScan.Text);
-
-                                        MySqlDataReader readerSelect;
-                                        iconnectSelect.Open();
-
-                                        readerSelect = commandSelect.ExecuteReader();
-                                        if (readerSelect.Read())
+                                        info = "Time in_0";
+                                        remarks = "Early " + catchTime0;
+                                        //LESS THEN 8AM
+                                        using (MySqlConnection iconnectSelect = new MySqlConnection(MyDsql))
                                         {
-                                            MySqlConnection iconnect12 = new MySqlConnection(MyDsql);
+                                            string selectquerry1 = "SELECT `EmployeeRfid`, `Date` FROM `attendance` WHERE EmployeeRfid = @rfid AND Date= '" + date + "' AND Am_In IS NULL ";
 
-                                            string insertquerry1 = "UPDATE `attendance` SET `Am_In` = current_timestamp() , remarks = 'Ontime' WHERE `attendance`.`Date` = '" + date + "' AND `attendance`.`EmployeeRfid` = @EmployeeRfid";
+                                            MySqlCommand commandSelect = new MySqlCommand(selectquerry1, iconnectSelect);
 
-                                            MySqlCommand command123 = new MySqlCommand(insertquerry1, iconnect12);
-                                            command123.Parameters.AddWithValue("@EmployeeRfid", btnScan.Text);
+                                            commandSelect.Parameters.AddWithValue("@rfid", btnScan.Text);
 
-                                            MySqlDataReader reader23;
-                                            iconnect12.Open();
-                                            reader23 = command123.ExecuteReader();
+                                            MySqlDataReader readerSelect;
+                                            iconnectSelect.Open();
 
-                                            using (MySqlConnection conn12 = new MySqlConnection(MyDsql))
-                                            {
-                                                string imges = "SELECT image FROM employees WHERE EmployeeRfidTag =@EmployeeRfidTag";
-                                                MySqlCommand cmdO = new MySqlCommand(imges, conn12);
-
-                                                cmdO.Parameters.AddWithValue("@EmployeeRfidTag", btnScan.Text);
-
-                                                MySqlDataAdapter da = new MySqlDataAdapter(cmdO);
-                                                DataTable tbk = new DataTable();
-
-                                                da.Fill(tbk);
-                                                byte[] img = (byte[])tbk.Rows[0][0];
-
-                                                MemoryStream ms1 = new MemoryStream(img);
-                                                Imagebox.Image = Image.FromStream(ms1);
-
-                                                da.Dispose();
-                                            }
-                                        }
-                                        else
-                                        {
-                                            AutoClosingMessageBox.Show("Already Log", "Information : 8 - 8:15", 2000);
-                                        }
-                                        catchTime = DateTime.Now.ToString("hh:mm tt");
-                                        IDrecognaizer.Text = "Hello";
-                                        cvname.Text = reader["EmployeeName"].ToString();
-                                        timed.Text = catchTime;
-                                        Remarks.Text = remarks;
-                                        info32.Text = info;
-                                        btnScan.Clear();
-                                    }
-                                }
-                                //8:15 - 8:30
-                                else if ((now > startam1) && (now <= endam1))
-                                {
-                                    string date = DateTime.Now.ToString("yyyy-MM-dd");
-
-                                    IDrecognaizer.Visible = true;
-                                    tme.Visible = true;
-                                    timed.Visible = true;
-                                    rem.Visible = true;
-                                    inff.Visible = true;
-                                    //Notif.Visible = false;
-
-                                    info = "Time in_1";
-                                    remarks = "Late";
-
-                                    using (MySqlConnection iconnectSelect1 = new MySqlConnection(MyDsql))
-                                    {
-                                        DateTime time = DateTime.Now;
-                                        string selectquerry11 = "SELECT `EmployeeRfid`, `Date` FROM `attendance` WHERE EmployeeRfid = @rfid AND `attendance`.`Date` = '" + date + "' AND Am_In IS NULL";
-
-                                        MySqlCommand commandSelect = new MySqlCommand(selectquerry11, iconnectSelect1);
-                                        commandSelect.Parameters.AddWithValue("@rfid", btnScan.Text);
-
-                                        MySqlDataReader readerSelect11;
-                                        iconnectSelect1.Open();
-
-                                        readerSelect11 = commandSelect.ExecuteReader();
-                                        if (readerSelect11.Read())
-                                        {
-                                            MySqlConnection iconnect12 = new MySqlConnection(MyDsql);
-
-                                            string insertquerry1 = "UPDATE `attendance` SET `Am_In` = current_timestamp(), remarks='Late' WHERE `attendance`.`Date` = '" + date + "' AND `attendance`.`EmployeeRfid` = @EmployeeRfid ";
-
-                                            MySqlCommand command123 = new MySqlCommand(insertquerry1, iconnect12);
-                                            command123.Parameters.AddWithValue("@EmployeeRfid", btnScan.Text);
-
-                                            MySqlDataReader reader23;
-                                            iconnect12.Open();
-                                            reader23 = command123.ExecuteReader();
-
-                                            using (MySqlConnection conn12 = new MySqlConnection(MyDsql))
-                                            {
-                                                string imges = "SELECT image FROM employees WHERE EmployeeRfidTag =@EmployeeRfidTag";
-                                                MySqlCommand cmdO = new MySqlCommand(imges, conn12);
-
-                                                cmdO.Parameters.AddWithValue("@EmployeeRfidTag", btnScan.Text);
-                                                //cmdO.Parameters.AddWithValue("@image", empImg1.Image);
-
-                                                MySqlDataAdapter da = new MySqlDataAdapter(cmdO);
-                                                DataTable tbk = new DataTable();
-
-                                                da.Fill(tbk);
-                                                byte[] img = (byte[])tbk.Rows[0][0];
-
-                                                MemoryStream ms1 = new MemoryStream(img);
-                                                Imagebox.Image = Image.FromStream(ms1);
-
-                                                da.Dispose();
-                                            }
-                                        }
-                                        else
-                                        {
-                                            AutoClosingMessageBox.Show("Already Log :)", "Information : 8:15 - 9:00", 1500);
-                                        }
-                                        catchTime = DateTime.Now.ToString("hh:mm tt");
-                                        IDrecognaizer.Text = "Hello";
-                                        cvname.Text = reader["EmployeeName"].ToString();
-                                        timed.Text = catchTime;
-                                        Remarks.Text = remarks;
-                                        info32.Text = info;
-                                        //Notif.Visible = false;
-                                        btnScan.Clear();
-                                    }
-                                }
-                                //8:30 - 11:59
-                                else if ((now > start830) && (now <= end12))
-                                {
-                                    string date = DateTime.Now.ToString("yyyy-MM-dd");
-
-                                    IDrecognaizer.Visible = true;
-                                    tme.Visible = true;
-                                    timed.Visible = true;
-                                    rem.Visible = true;
-                                    inff.Visible = true;
-                                    //Notif.Visible = false;
-
-                                    info = "Time in_1";
-                                    remarks = "Late";
-
-                                    using (MySqlConnection iconnectSelect1 = new MySqlConnection(MyDsql))
-                                    {
-                                        DateTime time = DateTime.Now;
-                                        string selectquerry11 = "SELECT `EmployeeRfid`, `Date` FROM `attendance` WHERE EmployeeRfid = @rfid AND `attendance`.`Date` = '" + date + "' AND Am_In IS NULL";
-
-                                        MySqlCommand commandSelect = new MySqlCommand(selectquerry11, iconnectSelect1);
-                                        commandSelect.Parameters.AddWithValue("@rfid", btnScan.Text);
-
-                                        MySqlDataReader readerSelect11;
-                                        iconnectSelect1.Open();
-
-                                        readerSelect11 = commandSelect.ExecuteReader();
-                                        if (readerSelect11.Read())
-                                        {
-                                            MySqlConnection iconnect12 = new MySqlConnection(MyDsql);
-
-                                            string insertquerry1 = "UPDATE `attendance` SET `Am_In` = current_timestamp(), remarks='Late' WHERE `attendance`.`Date` = '" + date + "' AND `attendance`.`EmployeeRfid` = @EmployeeRfid ";
-
-                                            MySqlCommand command123 = new MySqlCommand(insertquerry1, iconnect12);
-                                            command123.Parameters.AddWithValue("@EmployeeRfid", btnScan.Text);
-
-                                            MySqlDataReader reader23;
-                                            iconnect12.Open();
-                                            reader23 = command123.ExecuteReader();
-
-                                            using (MySqlConnection conn12 = new MySqlConnection(MyDsql))
-                                            {
-                                                string imges = "SELECT image FROM employees WHERE EmployeeRfidTag =@EmployeeRfidTag";
-                                                MySqlCommand cmdO = new MySqlCommand(imges, conn12);
-
-                                                cmdO.Parameters.AddWithValue("@EmployeeRfidTag", btnScan.Text);
-                                                //cmdO.Parameters.AddWithValue("@image", empImg1.Image);
-
-                                                MySqlDataAdapter da = new MySqlDataAdapter(cmdO);
-                                                DataTable tbk = new DataTable();
-
-                                                da.Fill(tbk);
-                                                byte[] img = (byte[])tbk.Rows[0][0];
-
-                                                MemoryStream ms1 = new MemoryStream(img);
-                                                Imagebox.Image = Image.FromStream(ms1);
-
-                                                da.Dispose();
-                                            }
-                                        }
-                                        else
-                                        {
-                                            AutoClosingMessageBox.Show("Already Log :)", "Information : 8:15 - 9:00", 1500);
-                                        }
-                                        catchTime = DateTime.Now.ToString("hh:mm tt");
-                                        IDrecognaizer.Text = "Hello";
-                                        cvname.Text = reader["EmployeeName"].ToString();
-                                        timed.Text = catchTime;
-                                        Remarks.Text = remarks;
-                                        info32.Text = info;
-                                        //Notif.Visible = false;
-                                        btnScan.Clear();
-                                    }
-                                }
-                                // 12:00 - 12:59
-                                else if (dtime.Hour == 12 && dtime.Minute <= 59)
-                                {
-                                    string date = DateTime.Now.ToString("yyyy-MM-dd");
-
-                                    IDrecognaizer.Visible = true;
-                                    tme.Visible = true;
-                                    timed.Visible = true;
-                                    rem.Visible = true;
-                                    inff.Visible = true;
-                                    //Notif.Visible = false;
-
-                                    info = "Time out_2";
-                                    remarks = "None";
-
-                                    using (MySqlConnection iconnectSelect = new MySqlConnection(MyDsql))
-                                    {
-                                        DateTime time = DateTime.Now;
-                                        string selectquerry1 = "SELECT `EmployeeRfid`, `Date` ,`Am_Out` FROM `attendance` WHERE EmployeeRfid = @EmployeeRfid AND Date= '" + date + "'  AND Am_Out IS  NULL";
-                                        //string insquerry = "insert into ams_rfid.attendance(AttendanceID,EmployeeRfid,EmployeeName,Date,Am_In,Am_Out,Pm_In,Pm_Out,Remarks) values('','" + this.btnScan.Text + "','"+ reader["EmployeeName"]+ "','""','8:00:00', NULL,NULL,NULL, '"+ remarks +"')";
-
-                                        MySqlCommand commandSelect = new MySqlCommand(selectquerry1, iconnectSelect);
-                                        commandSelect.Parameters.AddWithValue("@EmployeeRfid", btnScan.Text);
-
-                                        MySqlDataReader readerSelect;
-                                        iconnectSelect.Open();
-                                        DateTime catchTime1 = DateTime.Now;
-
-                                        readerSelect = commandSelect.ExecuteReader();
-                                        if (readerSelect.Read())
-                                        {
-                                            using (MySqlConnection pmsearchin = new MySqlConnection(MyDsql))
+                                            readerSelect = commandSelect.ExecuteReader();
+                                            if (readerSelect.Read())
                                             {
                                                 MySqlConnection iconnect12 = new MySqlConnection(MyDsql);
 
-                                                string insertquerry1 = "UPDATE `attendance` SET `Am_Out` = current_timestamp() WHERE `attendance`.`Date` = '" + date + "' AND `attendance`.`EmployeeRfid` = @rfid";
-
+                                                string insertquerry1 = "UPDATE `attendance` SET `Am_In` = current_timestamp() , remarks = 'Early' WHERE `attendance`.`Date` = '" + date + "' AND `attendance`.`EmployeeRfid` = @EmployeeRfid";
 
                                                 MySqlCommand command123 = new MySqlCommand(insertquerry1, iconnect12);
-                                                command123.Parameters.AddWithValue("@rfid", btnScan.Text);
+                                                command123.Parameters.AddWithValue("@EmployeeRfid", btnScan.Text);
+                                                MySqlDataReader reader23;
+                                                iconnect12.Open();
+                                                reader23 = command123.ExecuteReader();
+
+                                            
+                                            }
+                                            else
+                                            {
+                                                AutoClosingMessageBox.Show("Already Log", "Information : < 8", 2000);
+                                            }
+
+                                            catchTime = DateTime.Now.ToString("hh:mm tt");
+                                            IDrecognaizer.Text = "Hello";
+                                            cvname.Text = reader["EmployeeName"].ToString();
+                                            timed.Text = catchTime;
+                                            Remarks.Text = remarks;
+                                            info32.Text = info;
+                                            btnScan.Clear();
+                                        }
+                                    }
+                                    //8:00 - 8:15
+                                    else if ((now > startam8) && (now < endam8))
+                                    {
+                                        string date = DateTime.Now.ToString("yyyy-MM-dd");
+
+                                        catchTime = DateTime.Now.ToString("hh:mm tt");
+                                        IDrecognaizer.Visible = true;
+                                        tme.Visible = true;
+                                        timed.Visible = true;
+                                        rem.Visible = true;
+                                        inff.Visible = true;
+
+                                        theDate = DateTime.Today;
+                                        info = "Time in_0";
+                                        remarks = "On Time " + catchTime0;
+                                        //LESS THEN 8AM
+                                        using (MySqlConnection iconnectSelect = new MySqlConnection(MyDsql))
+                                        {
+                                            string selectquerry1 = "SELECT `EmployeeRfid`, `Date` FROM `attendance` WHERE EmployeeRfid = @rfid AND Date= '" + date + "' AND Am_in IS NULL";
+
+                                            MySqlCommand commandSelect = new MySqlCommand(selectquerry1, iconnectSelect);
+                                            commandSelect.Parameters.AddWithValue("@rfid", btnScan.Text);
+
+                                            MySqlDataReader readerSelect;
+                                            iconnectSelect.Open();
+
+                                            readerSelect = commandSelect.ExecuteReader();
+                                            if (readerSelect.Read())
+                                            {
+                                                MySqlConnection iconnect12 = new MySqlConnection(MyDsql);
+
+                                                string insertquerry1 = "UPDATE `attendance` SET `Am_In` = current_timestamp() , remarks = 'Ontime' WHERE `attendance`.`Date` = '" + date + "' AND `attendance`.`EmployeeRfid` = @EmployeeRfid";
+
+                                                MySqlCommand command123 = new MySqlCommand(insertquerry1, iconnect12);
+                                                command123.Parameters.AddWithValue("@EmployeeRfid", btnScan.Text);
+
                                                 MySqlDataReader reader23;
                                                 iconnect12.Open();
                                                 reader23 = command123.ExecuteReader();
@@ -955,289 +781,9 @@ namespace AMS_RFID_V2
                                                     da.Dispose();
                                                 }
                                             }
-                                        }
-                                        else
-                                        {
-                                            using (MySqlConnection pmsearchinX = new MySqlConnection(MyDsql))
+                                            else
                                             {
-                                                string tm = DateTime.Now.ToString("hh:mm:ss");
-                                                DateTime dt1 = DateTime.Now;
-                                                DateTime dt2 = dt1.AddMinutes(1);
-                                                Console.WriteLine(dt2.Minute);
-                                                string selectquerry1q2 = "select MINUTE(Am_Out) FROM `attendance` WHERE EmployeeRfid = @EmployeeRfid AND Date = '" + date + "'  AND Am_Out IS NOT NULL";
-                                                MySqlCommand commandSelect1S = new MySqlCommand(selectquerry1q2, pmsearchinX);
-                                                commandSelect1S.Parameters.AddWithValue("@EmployeeRfid", btnScan.Text);
-                                                MySqlDataReader readerSelect1X;
-                                                pmsearchinX.Open();
-                                                DateTime catchTime12 = DateTime.Now;
-                                                readerSelect1X = commandSelect1S.ExecuteReader();
-
-                                                if (readerSelect1X.Read())
-                                                {
-                                                    //MessageBox.Show("GOOD");
-
-                                                    if (dt2.Minute > (int)readerSelect1X["MINUTE(Am_Out)"] + 5)
-                                                    {
-                                                        {
-                                                            MySqlConnection iconnect12 = new MySqlConnection(MyDsql);
-
-                                                            string insertquerry1 = "UPDATE `attendance` SET `Pm_In` = current_timestamp() WHERE `attendance`.`Date` = '" + date + "' AND `attendance`.`EmployeeRfid` = @rfid";
-
-
-                                                            MySqlCommand command123 = new MySqlCommand(insertquerry1, iconnect12);
-                                                            command123.Parameters.AddWithValue("@rfid", btnScan.Text);
-                                                            MySqlDataReader reader23;
-                                                            iconnect12.Open();
-                                                            reader23 = command123.ExecuteReader();
-
-                                                            using (MySqlConnection conn12 = new MySqlConnection(MyDsql))
-                                                            {
-                                                                string imges = "SELECT image FROM employees WHERE EmployeeRfidTag =@EmployeeRfidTag";
-                                                                MySqlCommand cmdO = new MySqlCommand(imges, conn12);
-
-                                                                cmdO.Parameters.AddWithValue("@EmployeeRfidTag", btnScan.Text);
-
-                                                                MySqlDataAdapter da = new MySqlDataAdapter(cmdO);
-                                                                DataTable tbk = new DataTable();
-
-                                                                da.Fill(tbk);
-                                                                byte[] img = (byte[])tbk.Rows[0][0];
-
-                                                                MemoryStream ms1 = new MemoryStream(img);
-                                                                Imagebox.Image = Image.FromStream(ms1);
-
-                                                                da.Dispose();
-                                                            }
-                                                        }
-                                                    }
-                                                    else
-                                                    {
-                                                        AutoClosingMessageBox.Show("Time In Not Available: Comeback After 5 minutes. Thank you", "Info", 1500);
-                                                    }
-                                                }
-                                                else
-                                                {
-                                                    MessageBox.Show("ERROR");
-                                                }
-                                            }
-                                        }
-                                    }
-                                    catchTime = DateTime.Now.ToString("hh:mm tt");
-                                    IDrecognaizer.Text = "Hello";
-                                    cvname.Text = reader["EmployeeName"].ToString();
-                                    timed.Text = catchTime;
-                                    Remarks.Text = remarks;
-                                    info32.Text = info;
-                                    btnScan.Clear();
-                                }
-                                // 1:00 - 1:15
-                                else if (dtime.Hour == 13 && dtime.Minute <= 15)
-                                {
-                                    string date = DateTime.Now.ToString("yyyy-MM-dd");
-
-                                    dtime.Hour.ToString("hh");
-                                    IDrecognaizer.Visible = true;
-                                    tme.Visible = true;
-                                    timed.Visible = true;
-                                    rem.Visible = true;
-                                    inff.Visible = true;
-                                    //Notif.Visible = false;
-
-                                    info = "Time In ";
-                                    remarks = "None";
-
-                                    using (MySqlConnection iconnectSelect = new MySqlConnection(MyDsql))
-                                    {
-                                        DateTime time = DateTime.Now;
-                                        string selectquerry1 = "SELECT `EmployeeRfid`, `Date` ,`Pm_In` FROM `attendance` WHERE EmployeeRfid = @EmployeeRfid AND Date= '" + date + "' AND Pm_In IS NULL ";
-
-                                        MySqlCommand commandSelect = new MySqlCommand(selectquerry1, iconnectSelect);
-                                        commandSelect.Parameters.AddWithValue("@EmployeeRfid", btnScan.Text);
-                                        MySqlDataReader readerSelect;
-                                        iconnectSelect.Open();
-
-                                        readerSelect = commandSelect.ExecuteReader();
-                                        if (readerSelect.Read())
-                                        {
-                                            string dtime1 = DateTime.Now.ToString("hh:mm:ss");
-                                            MySqlConnection iconnect12 = new MySqlConnection(MyDsql);
-
-                                            string insertquerry1 = "UPDATE `attendance` SET `Pm_In` = '" + dtime1 + "' WHERE `attendance`.`Date` = '" + date + "' AND `attendance`.`EmployeeRfid`= @EmployeeRfid";
-
-
-                                            MySqlCommand command123 = new MySqlCommand(insertquerry1, iconnect12);
-                                            command123.Parameters.AddWithValue("@EmployeeRfid", btnScan.Text);
-
-                                            MySqlDataReader reader23;
-                                            iconnect12.Open();
-                                            reader23 = command123.ExecuteReader();
-
-                                            using (MySqlConnection conn12 = new MySqlConnection(MyDsql))
-                                            {
-                                                string imges = "SELECT image FROM employees WHERE EmployeeRfidTag =@EmployeeRfidTag";
-                                                MySqlCommand cmdO = new MySqlCommand(imges, conn12);
-
-                                                cmdO.Parameters.AddWithValue("@EmployeeRfidTag", btnScan.Text);
-
-                                                MySqlDataAdapter da = new MySqlDataAdapter(cmdO);
-                                                DataTable tbk = new DataTable();
-
-                                                da.Fill(tbk);
-                                                byte[] img = (byte[])tbk.Rows[0][0];
-
-                                                MemoryStream ms1 = new MemoryStream(img);
-                                                Imagebox.Image = Image.FromStream(ms1);
-
-                                                da.Dispose();
-                                            }
-                                        }
-                                        else
-                                        {
-                                            AutoClosingMessageBox.Show("Already Log", "Information: 1:00 - 1:15", 2000);
-                                        }
-                                    }
-
-                                    catchTime = DateTime.Now.ToString("hh:mm tt");
-                                    IDrecognaizer.Text = "Hello";
-                                    cvname.Text = reader["EmployeeName"].ToString();
-                                    timed.Text = catchTime;
-                                    Remarks.Text = remarks;
-                                    info32.Text = info;
-                                    btnScan.Clear();
-                                }
-                                //1:16 - 1:30
-                                else if (dtime.Hour == 13 && dtime.Minute <= 30)
-                                {
-                                    string date = DateTime.Now.ToString("yyyy-MM-dd");
-
-                                    dtime.Hour.ToString("hh");
-                                    IDrecognaizer.Visible = true;
-                                    tme.Visible = true;
-                                    timed.Visible = true;
-                                    rem.Visible = true;
-                                    inff.Visible = true;
-
-                                    info = "Time In ";
-                                    remarks = "None";
-
-                                    using (MySqlConnection iconnectSelect = new MySqlConnection(MyDsql))
-                                    {
-                                        DateTime time = DateTime.Now;
-                                        string selectquerry1 = "SELECT `EmployeeRfid`, `Date`  FROM `attendance` WHERE EmployeeRfid = @EmployeeRfid AND Date= '" + date + "' AND Pm_In IS NULL";
-
-                                        MySqlCommand commandSelect = new MySqlCommand(selectquerry1, iconnectSelect);
-                                        commandSelect.Parameters.AddWithValue("@EmployeeRfid", btnScan.Text);
-
-                                        MySqlDataReader readerSelect;
-                                        iconnectSelect.Open();
-
-                                        readerSelect = commandSelect.ExecuteReader();
-                                        if (readerSelect.Read())
-                                        {
-                                            string dtime1 = DateTime.Now.ToString("hh:mm:ss");
-                                            MySqlConnection iconnect12 = new MySqlConnection(MyDsql);
-
-                                            string insertquerry1 = "UPDATE `attendance` SET `Pm_In` = '" + dtime1 + "' WHERE `attendance`.`Date` = '" + date + "' AND `attendance`.`EmployeeRfid`= @EmployeeRfid";
-
-
-                                            MySqlCommand command123 = new MySqlCommand(insertquerry1, iconnect12);
-                                            command123.Parameters.AddWithValue("@EmployeeRfid", btnScan.Text);
-                                            MySqlDataReader reader23;
-                                            iconnect12.Open();
-                                            reader23 = command123.ExecuteReader();
-
-                                            using (MySqlConnection conn12 = new MySqlConnection(MyDsql))
-                                            {
-                                                string imges = "SELECT image FROM employees WHERE EmployeeRfidTag =@EmployeeRfidTag";
-                                                MySqlCommand cmdO = new MySqlCommand(imges, conn12);
-
-                                                cmdO.Parameters.AddWithValue("@EmployeeRfidTag", btnScan.Text);
-
-                                                MySqlDataAdapter da = new MySqlDataAdapter(cmdO);
-                                                DataTable tbk = new DataTable();
-
-                                                da.Fill(tbk);
-                                                byte[] img = (byte[])tbk.Rows[0][0];
-
-                                                MemoryStream ms1 = new MemoryStream(img);
-                                                Imagebox.Image = Image.FromStream(ms1);
-
-                                                da.Dispose();
-                                            }
-                                        }
-                                        else
-                                        {
-                                            AutoClosingMessageBox.Show("Already Log", "Information: 1:15 - 1:30", 2000);
-                                        }
-                                    }
-
-                                    catchTime = DateTime.Now.ToString("hh:mm tt");
-                                    IDrecognaizer.Text = "Hello";
-                                    cvname.Text = reader["EmployeeName"].ToString();
-                                    timed.Text = catchTime;
-                                    Remarks.Text = remarks;
-                                    info32.Text = info;
-                                    btnScan.Clear();
-                                }
-                                //1:30 > // 2:00 . 3:00 . 4:00
-                                else if (dtime.Hour == 13 && dtime.Minute > 30 || dtime.Hour == 14 || dtime.Hour == 15 || dtime.Hour == 16)
-                                {
-                                    string date = DateTime.Now.ToString("yyyy-MM-dd");
-
-                                    dtime.Hour.ToString("hh");
-                                    IDrecognaizer.Visible = true;
-                                    tme.Visible = true;
-                                    timed.Visible = true;
-                                    rem.Visible = true;
-                                    inff.Visible = true;
-
-                                    info = "Time In ";
-                                    remarks = "None";
-
-                                    using (MySqlConnection iconnectSelect = new MySqlConnection(MyDsql))
-                                    {
-                                        DateTime time = DateTime.Now;
-                                        string selectquerry1 = "SELECT `EmployeeRfid`, `Date`  FROM `attendance` WHERE EmployeeRfid = @EmployeeRfid AND Date= '" + date + "' AND Pm_In IS NULL";
-
-                                        MySqlCommand commandSelect = new MySqlCommand(selectquerry1, iconnectSelect);
-                                        commandSelect.Parameters.AddWithValue("@EmployeeRfid", btnScan.Text);
-
-                                        MySqlDataReader readerSelect;
-                                        iconnectSelect.Open();
-
-                                        readerSelect = commandSelect.ExecuteReader();
-                                        if (readerSelect.Read())
-                                        {
-                                            string dtime1 = DateTime.Now.ToString("hh:mm:ss");
-                                            MySqlConnection iconnect12 = new MySqlConnection(MyDsql);
-
-                                            string insertquerry1 = "UPDATE `attendance` SET `Pm_In` = '" + dtime1 + "' WHERE `attendance`.`Date` = '" + date + "' AND `attendance`.`EmployeeRfid`= @EmployeeRfid";
-
-
-                                            MySqlCommand command123 = new MySqlCommand(insertquerry1, iconnect12);
-                                            command123.Parameters.AddWithValue("@EmployeeRfid", btnScan.Text);
-                                            MySqlDataReader reader23;
-                                            iconnect12.Open();
-                                            reader23 = command123.ExecuteReader();
-
-                                            using (MySqlConnection conn12 = new MySqlConnection(MyDsql))
-                                            {
-                                                string imges = "SELECT image FROM employees WHERE EmployeeRfidTag =@EmployeeRfidTag";
-                                                MySqlCommand cmdO = new MySqlCommand(imges, conn12);
-
-                                                cmdO.Parameters.AddWithValue("@EmployeeRfidTag", btnScan.Text);
-                                                //cmdO.Parameters.AddWithValue("@image", empImg1.Image);
-
-                                                MySqlDataAdapter da = new MySqlDataAdapter(cmdO);
-                                                DataTable tbk = new DataTable();
-
-                                                da.Fill(tbk);
-                                                byte[] img = (byte[])tbk.Rows[0][0];
-
-                                                MemoryStream ms1 = new MemoryStream(img);
-                                                Imagebox.Image = Image.FromStream(ms1);
-
-                                                da.Dispose();
+                                                AutoClosingMessageBox.Show("Already Log", "Information : 8 - 8:15", 2000);
                                             }
                                             catchTime = DateTime.Now.ToString("hh:mm tt");
                                             IDrecognaizer.Text = "Hello";
@@ -1247,99 +793,627 @@ namespace AMS_RFID_V2
                                             info32.Text = info;
                                             btnScan.Clear();
                                         }
-                                        else
+                                    }
+                                    //8:15 - 8:30
+                                    else if ((now > startam1) && (now <= endam1))
+                                    {
+                                        string date = DateTime.Now.ToString("yyyy-MM-dd");
+
+                                        IDrecognaizer.Visible = true;
+                                        tme.Visible = true;
+                                        timed.Visible = true;
+                                        rem.Visible = true;
+                                        inff.Visible = true;
+                                        //Notif.Visible = false;
+
+                                        info = "Time in_1";
+                                        remarks = "Late";
+
+                                        using (MySqlConnection iconnectSelect1 = new MySqlConnection(MyDsql))
                                         {
-                                            AutoClosingMessageBox.Show("Already Log", "Information: Late", 2000);
+                                            DateTime time = DateTime.Now;
+                                            string selectquerry11 = "SELECT `EmployeeRfid`, `Date` FROM `attendance` WHERE EmployeeRfid = @rfid AND `attendance`.`Date` = '" + date + "' AND Am_In IS NULL";
+
+                                            MySqlCommand commandSelect = new MySqlCommand(selectquerry11, iconnectSelect1);
+                                            commandSelect.Parameters.AddWithValue("@rfid", btnScan.Text);
+
+                                            MySqlDataReader readerSelect11;
+                                            iconnectSelect1.Open();
+
+                                            readerSelect11 = commandSelect.ExecuteReader();
+                                            if (readerSelect11.Read())
+                                            {
+                                                MySqlConnection iconnect12 = new MySqlConnection(MyDsql);
+
+                                                string insertquerry1 = "UPDATE `attendance` SET `Am_In` = current_timestamp(), remarks='Late' WHERE `attendance`.`Date` = '" + date + "' AND `attendance`.`EmployeeRfid` = @EmployeeRfid ";
+
+                                                MySqlCommand command123 = new MySqlCommand(insertquerry1, iconnect12);
+                                                command123.Parameters.AddWithValue("@EmployeeRfid", btnScan.Text);
+
+                                                MySqlDataReader reader23;
+                                                iconnect12.Open();
+                                                reader23 = command123.ExecuteReader();
+
+                                                using (MySqlConnection conn12 = new MySqlConnection(MyDsql))
+                                                {
+                                                    string imges = "SELECT image FROM employees WHERE EmployeeRfidTag =@EmployeeRfidTag";
+                                                    MySqlCommand cmdO = new MySqlCommand(imges, conn12);
+
+                                                    cmdO.Parameters.AddWithValue("@EmployeeRfidTag", btnScan.Text);
+                                                    //cmdO.Parameters.AddWithValue("@image", empImg1.Image);
+
+                                                    MySqlDataAdapter da = new MySqlDataAdapter(cmdO);
+                                                    DataTable tbk = new DataTable();
+
+                                                    da.Fill(tbk);
+                                                    byte[] img = (byte[])tbk.Rows[0][0];
+
+                                                    MemoryStream ms1 = new MemoryStream(img);
+                                                    Imagebox.Image = Image.FromStream(ms1);
+
+                                                    da.Dispose();
+                                                }
+                                            }
+                                            else
+                                            {
+                                                AutoClosingMessageBox.Show("Already Log :)", "Information : 8:15 - 9:00", 1500);
+                                            }
+                                            catchTime = DateTime.Now.ToString("hh:mm tt");
+                                            IDrecognaizer.Text = "Hello";
+                                            cvname.Text = reader["EmployeeName"].ToString();
+                                            timed.Text = catchTime;
+                                            Remarks.Text = remarks;
+                                            info32.Text = info;
+                                            //Notif.Visible = false;
+                                            btnScan.Clear();
                                         }
                                     }
-                                }
-                                //6:00
-                                else if (dtime.Hour == 17)
-                                {
-                                    string date = DateTime.Now.ToString("yyyy-MM-dd");
-
-                                    dtime.Hour.ToString("hh");
-                                    IDrecognaizer.Visible = true;
-                                    tme.Visible = true;
-                                    timed.Visible = true;
-                                    rem.Visible = true;
-                                    inff.Visible = true;
-
-                                    info = "Time Out ";
-                                    remarks = "None";
-
-                                    using (MySqlConnection iconnectSelectend = new MySqlConnection(MyDsql))
+                                    //8:30 - 11:59
+                                    else if ((now > start830) && (now <= end12))
                                     {
-                                        DateTime time = DateTime.Now;
-                                        string selectquerry1end = "SELECT `EmployeeRfid`, `Date` ,`Pm_Out` FROM `attendance` WHERE EmployeeRfid = @EmployeeRfid AND Date= '" + date + "' AND Pm_Out IS NULL ";
+                                        string date = DateTime.Now.ToString("yyyy-MM-dd");
 
-                                        MySqlCommand commandSelectend = new MySqlCommand(selectquerry1end, iconnectSelectend);
-                                        commandSelectend.Parameters.AddWithValue("@EmployeeRfid", btnScan.Text);
-                                        MySqlDataReader readerSelectend;
-                                        iconnectSelectend.Open();
+                                        IDrecognaizer.Visible = true;
+                                        tme.Visible = true;
+                                        timed.Visible = true;
+                                        rem.Visible = true;
+                                        inff.Visible = true;
+                                        //Notif.Visible = false;
 
-                                        readerSelectend = commandSelectend.ExecuteReader();
-                                        if (readerSelectend.Read())
+                                        info = "Time in_1";
+                                        remarks = "Late";
+
+                                        using (MySqlConnection iconnectSelect1 = new MySqlConnection(MyDsql))
                                         {
-                                            string dtime1 = DateTime.Now.ToString("hh:mm:ss");
-                                            MySqlConnection iconnect12 = new MySqlConnection(MyDsql);
+                                            DateTime time = DateTime.Now;
+                                            string selectquerry11 = "SELECT `EmployeeRfid`, `Date` FROM `attendance` WHERE EmployeeRfid = @rfid AND `attendance`.`Date` = '" + date + "' AND Am_In IS NULL";
 
-                                            string insertquerry1 = "UPDATE `attendance` SET `Pm_Out` = '" + dtime1 + "' WHERE `attendance`.`Date` = '" + date + "' AND `attendance`.`EmployeeRfid`= @rfid";
+                                            MySqlCommand commandSelect = new MySqlCommand(selectquerry11, iconnectSelect1);
+                                            commandSelect.Parameters.AddWithValue("@rfid", btnScan.Text);
 
+                                            MySqlDataReader readerSelect11;
+                                            iconnectSelect1.Open();
 
-                                            MySqlCommand command123 = new MySqlCommand(insertquerry1, iconnect12);
-                                            command123.Parameters.AddWithValue("@rfid", btnScan.Text);
-
-                                            MySqlDataReader reader23;
-                                            iconnect12.Open();
-                                            reader23 = command123.ExecuteReader();
-
-                                            using (MySqlConnection conn12 = new MySqlConnection(MyDsql))
+                                            readerSelect11 = commandSelect.ExecuteReader();
+                                            if (readerSelect11.Read())
                                             {
-                                                string imges = "SELECT image FROM employees WHERE EmployeeRfidTag =@EmployeeRfidTag";
-                                                MySqlCommand cmdO = new MySqlCommand(imges, conn12);
+                                                MySqlConnection iconnect12 = new MySqlConnection(MyDsql);
 
-                                                cmdO.Parameters.AddWithValue("@EmployeeRfidTag", btnScan.Text);
+                                                string insertquerry1 = "UPDATE `attendance` SET `Am_In` = current_timestamp(), remarks='Late' WHERE `attendance`.`Date` = '" + date + "' AND `attendance`.`EmployeeRfid` = @EmployeeRfid ";
 
-                                                MySqlDataAdapter da = new MySqlDataAdapter(cmdO);
-                                                DataTable tbk = new DataTable();
+                                                MySqlCommand command123 = new MySqlCommand(insertquerry1, iconnect12);
+                                                command123.Parameters.AddWithValue("@EmployeeRfid", btnScan.Text);
 
-                                                da.Fill(tbk);
-                                                byte[] img = (byte[])tbk.Rows[0][0];
+                                                MySqlDataReader reader23;
+                                                iconnect12.Open();
+                                                reader23 = command123.ExecuteReader();
 
-                                                MemoryStream ms1 = new MemoryStream(img);
-                                                Imagebox.Image = Image.FromStream(ms1);
+                                                using (MySqlConnection conn12 = new MySqlConnection(MyDsql))
+                                                {
+                                                    string imges = "SELECT image FROM employees WHERE EmployeeRfidTag =@EmployeeRfidTag";
+                                                    MySqlCommand cmdO = new MySqlCommand(imges, conn12);
 
-                                                da.Dispose();
+                                                    cmdO.Parameters.AddWithValue("@EmployeeRfidTag", btnScan.Text);
+                                                    //cmdO.Parameters.AddWithValue("@image", empImg1.Image);
+
+                                                    MySqlDataAdapter da = new MySqlDataAdapter(cmdO);
+                                                    DataTable tbk = new DataTable();
+
+                                                    da.Fill(tbk);
+                                                    byte[] img = (byte[])tbk.Rows[0][0];
+
+                                                    MemoryStream ms1 = new MemoryStream(img);
+                                                    Imagebox.Image = Image.FromStream(ms1);
+
+                                                    da.Dispose();
+                                                }
+                                            }
+                                            else
+                                            {
+                                                AutoClosingMessageBox.Show("Already Log :)", "Information : 8:15 - 9:00", 1500);
+                                            }
+                                            catchTime = DateTime.Now.ToString("hh:mm tt");
+                                            IDrecognaizer.Text = "Hello";
+                                            cvname.Text = reader["EmployeeName"].ToString();
+                                            timed.Text = catchTime;
+                                            Remarks.Text = remarks;
+                                            info32.Text = info;
+                                            //Notif.Visible = false;
+                                            btnScan.Clear();
+                                        }
+                                    }
+                                    // 12:00 - 12:59
+                                    else if (dtime.Hour == 12 && dtime.Minute <= 59)
+                                    {
+                                        string date = DateTime.Now.ToString("yyyy-MM-dd");
+
+                                        IDrecognaizer.Visible = true;
+                                        tme.Visible = true;
+                                        timed.Visible = true;
+                                        rem.Visible = true;
+                                        inff.Visible = true;
+                                        //Notif.Visible = false;
+
+                                        info = "Time out_2";
+                                        remarks = "None";
+
+                                        using (MySqlConnection iconnectSelect = new MySqlConnection(MyDsql))
+                                        {
+                                            DateTime time = DateTime.Now;
+                                            string selectquerry1 = "SELECT `EmployeeRfid`, `Date` ,`Am_Out` FROM `attendance` WHERE EmployeeRfid = @EmployeeRfid AND Date= '" + date + "'  AND Am_Out IS  NULL";
+                                            //string insquerry = "insert into ams_rfid.attendance(AttendanceID,EmployeeRfid,EmployeeName,Date,Am_In,Am_Out,Pm_In,Pm_Out,Remarks) values('','" + this.btnScan.Text + "','"+ reader["EmployeeName"]+ "','""','8:00:00', NULL,NULL,NULL, '"+ remarks +"')";
+
+                                            MySqlCommand commandSelect = new MySqlCommand(selectquerry1, iconnectSelect);
+                                            commandSelect.Parameters.AddWithValue("@EmployeeRfid", btnScan.Text);
+
+                                            MySqlDataReader readerSelect;
+                                            iconnectSelect.Open();
+                                            DateTime catchTime1 = DateTime.Now;
+
+                                            readerSelect = commandSelect.ExecuteReader();
+                                            if (readerSelect.Read())
+                                            {
+                                                using (MySqlConnection pmsearchin = new MySqlConnection(MyDsql))
+                                                {
+                                                    MySqlConnection iconnect12 = new MySqlConnection(MyDsql);
+
+                                                    string insertquerry1 = "UPDATE `attendance` SET `Am_Out` = current_timestamp() WHERE `attendance`.`Date` = '" + date + "' AND `attendance`.`EmployeeRfid` = @rfid";
+
+
+                                                    MySqlCommand command123 = new MySqlCommand(insertquerry1, iconnect12);
+                                                    command123.Parameters.AddWithValue("@rfid", btnScan.Text);
+                                                    MySqlDataReader reader23;
+                                                    iconnect12.Open();
+                                                    reader23 = command123.ExecuteReader();
+
+                                                    using (MySqlConnection conn12 = new MySqlConnection(MyDsql))
+                                                    {
+                                                        string imges = "SELECT image FROM employees WHERE EmployeeRfidTag =@EmployeeRfidTag";
+                                                        MySqlCommand cmdO = new MySqlCommand(imges, conn12);
+
+                                                        cmdO.Parameters.AddWithValue("@EmployeeRfidTag", btnScan.Text);
+
+                                                        MySqlDataAdapter da = new MySqlDataAdapter(cmdO);
+                                                        DataTable tbk = new DataTable();
+
+                                                        da.Fill(tbk);
+                                                        byte[] img = (byte[])tbk.Rows[0][0];
+
+                                                        MemoryStream ms1 = new MemoryStream(img);
+                                                        Imagebox.Image = Image.FromStream(ms1);
+
+                                                        da.Dispose();
+                                                    }
+                                                }
+                                            }
+                                            else
+                                            {
+                                                using (MySqlConnection pmsearchinX = new MySqlConnection(MyDsql))
+                                                {
+                                                    string tm = DateTime.Now.ToString("hh:mm:ss");
+                                                    DateTime dt1 = DateTime.Now;
+                                                    DateTime dt2 = dt1.AddMinutes(1);
+                                                    Console.WriteLine(dt2.Minute);
+                                                    string selectquerry1q2 = "select MINUTE(Am_Out) FROM `attendance` WHERE EmployeeRfid = @EmployeeRfid AND Date = '" + date + "'  AND Am_Out IS NOT NULL";
+                                                    MySqlCommand commandSelect1S = new MySqlCommand(selectquerry1q2, pmsearchinX);
+                                                    commandSelect1S.Parameters.AddWithValue("@EmployeeRfid", btnScan.Text);
+                                                    MySqlDataReader readerSelect1X;
+                                                    pmsearchinX.Open();
+                                                    DateTime catchTime12 = DateTime.Now;
+                                                    readerSelect1X = commandSelect1S.ExecuteReader();
+
+                                                    if (readerSelect1X.Read())
+                                                    {
+                                                        //MessageBox.Show("GOOD");
+
+                                                        if (dt2.Minute > (int)readerSelect1X["MINUTE(Am_Out)"] + 5)
+                                                        {
+                                                            {
+                                                                MySqlConnection iconnect12 = new MySqlConnection(MyDsql);
+
+                                                                string insertquerry1 = "UPDATE `attendance` SET `Pm_In` = current_timestamp() WHERE `attendance`.`Date` = '" + date + "' AND `attendance`.`EmployeeRfid` = @rfid";
+
+
+                                                                MySqlCommand command123 = new MySqlCommand(insertquerry1, iconnect12);
+                                                                command123.Parameters.AddWithValue("@rfid", btnScan.Text);
+                                                                MySqlDataReader reader23;
+                                                                iconnect12.Open();
+                                                                reader23 = command123.ExecuteReader();
+
+                                                                using (MySqlConnection conn12 = new MySqlConnection(MyDsql))
+                                                                {
+                                                                    string imges = "SELECT image FROM employees WHERE EmployeeRfidTag =@EmployeeRfidTag";
+                                                                    MySqlCommand cmdO = new MySqlCommand(imges, conn12);
+
+                                                                    cmdO.Parameters.AddWithValue("@EmployeeRfidTag", btnScan.Text);
+
+                                                                    MySqlDataAdapter da = new MySqlDataAdapter(cmdO);
+                                                                    DataTable tbk = new DataTable();
+
+                                                                    da.Fill(tbk);
+                                                                    byte[] img = (byte[])tbk.Rows[0][0];
+
+                                                                    MemoryStream ms1 = new MemoryStream(img);
+                                                                    Imagebox.Image = Image.FromStream(ms1);
+
+                                                                    da.Dispose();
+                                                                }
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            AutoClosingMessageBox.Show("Time In Not Available: Comeback After 5 minutes. Thank you", "Info", 1500);
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        MessageBox.Show("ERROR");
+                                                    }
+                                                }
                                             }
                                         }
-                                        else
+                                        catchTime = DateTime.Now.ToString("hh:mm tt");
+                                        IDrecognaizer.Text = "Hello";
+                                        cvname.Text = reader["EmployeeName"].ToString();
+                                        timed.Text = catchTime;
+                                        Remarks.Text = remarks;
+                                        info32.Text = info;
+                                        btnScan.Clear();
+                                    }
+                                    // 1:00 - 1:15
+                                    else if (dtime.Hour == 13 && dtime.Minute <= 15)
+                                    {
+                                        string date = DateTime.Now.ToString("yyyy-MM-dd");
+
+                                        dtime.Hour.ToString("hh");
+                                        IDrecognaizer.Visible = true;
+                                        tme.Visible = true;
+                                        timed.Visible = true;
+                                        rem.Visible = true;
+                                        inff.Visible = true;
+                                        //Notif.Visible = false;
+
+                                        info = "Time In ";
+                                        remarks = "None";
+
+                                        using (MySqlConnection iconnectSelect = new MySqlConnection(MyDsql))
                                         {
-                                            AutoClosingMessageBox.Show("Already Log", "Information: 5:00", 2000);
+                                            DateTime time = DateTime.Now;
+                                            string selectquerry1 = "SELECT `EmployeeRfid`, `Date` ,`Pm_In` FROM `attendance` WHERE EmployeeRfid = @EmployeeRfid AND Date= '" + date + "' AND Pm_In IS NULL ";
+
+                                            MySqlCommand commandSelect = new MySqlCommand(selectquerry1, iconnectSelect);
+                                            commandSelect.Parameters.AddWithValue("@EmployeeRfid", btnScan.Text);
+                                            MySqlDataReader readerSelect;
+                                            iconnectSelect.Open();
+
+                                            readerSelect = commandSelect.ExecuteReader();
+                                            if (readerSelect.Read())
+                                            {
+                                                string dtime1 = DateTime.Now.ToString("hh:mm:ss");
+                                                MySqlConnection iconnect12 = new MySqlConnection(MyDsql);
+
+                                                string insertquerry1 = "UPDATE `attendance` SET `Pm_In` = '" + dtime1 + "' WHERE `attendance`.`Date` = '" + date + "' AND `attendance`.`EmployeeRfid`= @EmployeeRfid";
+
+
+                                                MySqlCommand command123 = new MySqlCommand(insertquerry1, iconnect12);
+                                                command123.Parameters.AddWithValue("@EmployeeRfid", btnScan.Text);
+
+                                                MySqlDataReader reader23;
+                                                iconnect12.Open();
+                                                reader23 = command123.ExecuteReader();
+
+                                                using (MySqlConnection conn12 = new MySqlConnection(MyDsql))
+                                                {
+                                                    string imges = "SELECT image FROM employees WHERE EmployeeRfidTag =@EmployeeRfidTag";
+                                                    MySqlCommand cmdO = new MySqlCommand(imges, conn12);
+
+                                                    cmdO.Parameters.AddWithValue("@EmployeeRfidTag", btnScan.Text);
+
+                                                    MySqlDataAdapter da = new MySqlDataAdapter(cmdO);
+                                                    DataTable tbk = new DataTable();
+
+                                                    da.Fill(tbk);
+                                                    byte[] img = (byte[])tbk.Rows[0][0];
+
+                                                    MemoryStream ms1 = new MemoryStream(img);
+                                                    Imagebox.Image = Image.FromStream(ms1);
+
+                                                    da.Dispose();
+                                                }
+                                            }
+                                            else
+                                            {
+                                                AutoClosingMessageBox.Show("Already Log", "Information: 1:00 - 1:15", 2000);
+                                            }
+                                        }
+
+                                        catchTime = DateTime.Now.ToString("hh:mm tt");
+                                        IDrecognaizer.Text = "Hello";
+                                        cvname.Text = reader["EmployeeName"].ToString();
+                                        timed.Text = catchTime;
+                                        Remarks.Text = remarks;
+                                        info32.Text = info;
+                                        btnScan.Clear();
+                                    }
+                                    //1:16 - 1:30
+                                    else if (dtime.Hour == 13 && dtime.Minute <= 30)
+                                    {
+                                        string date = DateTime.Now.ToString("yyyy-MM-dd");
+
+                                        dtime.Hour.ToString("hh");
+                                        IDrecognaizer.Visible = true;
+                                        tme.Visible = true;
+                                        timed.Visible = true;
+                                        rem.Visible = true;
+                                        inff.Visible = true;
+
+                                        info = "Time In ";
+                                        remarks = "None";
+
+                                        using (MySqlConnection iconnectSelect = new MySqlConnection(MyDsql))
+                                        {
+                                            DateTime time = DateTime.Now;
+                                            string selectquerry1 = "SELECT `EmployeeRfid`, `Date`  FROM `attendance` WHERE EmployeeRfid = @EmployeeRfid AND Date= '" + date + "' AND Pm_In IS NULL";
+
+                                            MySqlCommand commandSelect = new MySqlCommand(selectquerry1, iconnectSelect);
+                                            commandSelect.Parameters.AddWithValue("@EmployeeRfid", btnScan.Text);
+
+                                            MySqlDataReader readerSelect;
+                                            iconnectSelect.Open();
+
+                                            readerSelect = commandSelect.ExecuteReader();
+                                            if (readerSelect.Read())
+                                            {
+                                                string dtime1 = DateTime.Now.ToString("hh:mm:ss");
+                                                MySqlConnection iconnect12 = new MySqlConnection(MyDsql);
+
+                                                string insertquerry1 = "UPDATE `attendance` SET `Pm_In` = '" + dtime1 + "' WHERE `attendance`.`Date` = '" + date + "' AND `attendance`.`EmployeeRfid`= @EmployeeRfid";
+
+
+                                                MySqlCommand command123 = new MySqlCommand(insertquerry1, iconnect12);
+                                                command123.Parameters.AddWithValue("@EmployeeRfid", btnScan.Text);
+                                                MySqlDataReader reader23;
+                                                iconnect12.Open();
+                                                reader23 = command123.ExecuteReader();
+
+                                                using (MySqlConnection conn12 = new MySqlConnection(MyDsql))
+                                                {
+                                                    string imges = "SELECT image FROM employees WHERE EmployeeRfidTag =@EmployeeRfidTag";
+                                                    MySqlCommand cmdO = new MySqlCommand(imges, conn12);
+
+                                                    cmdO.Parameters.AddWithValue("@EmployeeRfidTag", btnScan.Text);
+
+                                                    MySqlDataAdapter da = new MySqlDataAdapter(cmdO);
+                                                    DataTable tbk = new DataTable();
+
+                                                    da.Fill(tbk);
+                                                    byte[] img = (byte[])tbk.Rows[0][0];
+
+                                                    MemoryStream ms1 = new MemoryStream(img);
+                                                    Imagebox.Image = Image.FromStream(ms1);
+
+                                                    da.Dispose();
+                                                }
+                                            }
+                                            else
+                                            {
+                                                AutoClosingMessageBox.Show("Already Log", "Information: 1:15 - 1:30", 2000);
+                                            }
+                                        }
+
+                                        catchTime = DateTime.Now.ToString("hh:mm tt");
+                                        IDrecognaizer.Text = "Hello";
+                                        cvname.Text = reader["EmployeeName"].ToString();
+                                        timed.Text = catchTime;
+                                        Remarks.Text = remarks;
+                                        info32.Text = info;
+                                        btnScan.Clear();
+                                    }
+                                    //1:30 > // 2:00 . 3:00 . 4:00
+                                    else if (dtime.Hour == 13 && dtime.Minute > 30 || dtime.Hour == 14 || dtime.Hour == 15 || dtime.Hour == 16)
+                                    {
+                                        string date = DateTime.Now.ToString("yyyy-MM-dd");
+
+                                        dtime.Hour.ToString("hh");
+                                        IDrecognaizer.Visible = true;
+                                        tme.Visible = true;
+                                        timed.Visible = true;
+                                        rem.Visible = true;
+                                        inff.Visible = true;
+
+                                        info = "Time In ";
+                                        remarks = "None";
+
+                                        using (MySqlConnection iconnectSelect = new MySqlConnection(MyDsql))
+                                        {
+                                            DateTime time = DateTime.Now;
+                                            string selectquerry1 = "SELECT `EmployeeRfid`, `Date`  FROM `attendance` WHERE EmployeeRfid = @EmployeeRfid AND Date= '" + date + "' AND Pm_In IS NULL";
+
+                                            MySqlCommand commandSelect = new MySqlCommand(selectquerry1, iconnectSelect);
+                                            commandSelect.Parameters.AddWithValue("@EmployeeRfid", btnScan.Text);
+
+                                            MySqlDataReader readerSelect;
+                                            iconnectSelect.Open();
+
+                                            readerSelect = commandSelect.ExecuteReader();
+                                            if (readerSelect.Read())
+                                            {
+                                                string dtime1 = DateTime.Now.ToString("hh:mm:ss");
+                                                MySqlConnection iconnect12 = new MySqlConnection(MyDsql);
+
+                                                string insertquerry1 = "UPDATE `attendance` SET `Pm_In` = '" + dtime1 + "' WHERE `attendance`.`Date` = '" + date + "' AND `attendance`.`EmployeeRfid`= @EmployeeRfid";
+
+
+                                                MySqlCommand command123 = new MySqlCommand(insertquerry1, iconnect12);
+                                                command123.Parameters.AddWithValue("@EmployeeRfid", btnScan.Text);
+                                                MySqlDataReader reader23;
+                                                iconnect12.Open();
+                                                reader23 = command123.ExecuteReader();
+
+                                                using (MySqlConnection conn12 = new MySqlConnection(MyDsql))
+                                                {
+                                                    string imges = "SELECT image FROM employees WHERE EmployeeRfidTag =@EmployeeRfidTag";
+                                                    MySqlCommand cmdO = new MySqlCommand(imges, conn12);
+
+                                                    cmdO.Parameters.AddWithValue("@EmployeeRfidTag", btnScan.Text);
+                                                    //cmdO.Parameters.AddWithValue("@image", empImg1.Image);
+
+                                                    MySqlDataAdapter da = new MySqlDataAdapter(cmdO);
+                                                    DataTable tbk = new DataTable();
+
+                                                    da.Fill(tbk);
+                                                    byte[] img = (byte[])tbk.Rows[0][0];
+
+                                                    MemoryStream ms1 = new MemoryStream(img);
+                                                    Imagebox.Image = Image.FromStream(ms1);
+
+                                                    da.Dispose();
+                                                }
+                                                catchTime = DateTime.Now.ToString("hh:mm tt");
+                                                IDrecognaizer.Text = "Hello";
+                                                cvname.Text = reader["EmployeeName"].ToString();
+                                                timed.Text = catchTime;
+                                                Remarks.Text = remarks;
+                                                info32.Text = info;
+                                                btnScan.Clear();
+                                            }
+                                            else
+                                            {
+                                                AutoClosingMessageBox.Show("Already Log", "Information: Late", 2000);
+                                            }
                                         }
                                     }
-                                    catchTime = DateTime.Now.ToString("hh:mm tt");
-                                    IDrecognaizer.Text = "Hello";
-                                    cvname.Text = reader["EmployeeName"].ToString();
-                                    timed.Text = catchTime;
-                                    Remarks.Text = remarks;
-                                    info32.Text = info;
-                                    btnScan.Clear();
+                                    //6:00
+                                    else if (dtime.Hour == 17)
+                                    {
+                                        string date = DateTime.Now.ToString("yyyy-MM-dd");
+
+                                        dtime.Hour.ToString("hh");
+                                        IDrecognaizer.Visible = true;
+                                        tme.Visible = true;
+                                        timed.Visible = true;
+                                        rem.Visible = true;
+                                        inff.Visible = true;
+
+                                        info = "Time Out ";
+                                        remarks = "None";
+
+                                        using (MySqlConnection iconnectSelectend = new MySqlConnection(MyDsql))
+                                        {
+                                            DateTime time = DateTime.Now;
+                                            string selectquerry1end = "SELECT `EmployeeRfid`, `Date` ,`Pm_Out` FROM `attendance` WHERE EmployeeRfid = @EmployeeRfid AND Date= '" + date + "' AND Pm_Out IS NULL ";
+
+                                            MySqlCommand commandSelectend = new MySqlCommand(selectquerry1end, iconnectSelectend);
+                                            commandSelectend.Parameters.AddWithValue("@EmployeeRfid", btnScan.Text);
+                                            MySqlDataReader readerSelectend;
+                                            iconnectSelectend.Open();
+
+                                            readerSelectend = commandSelectend.ExecuteReader();
+                                            if (readerSelectend.Read())
+                                            {
+                                                string dtime1 = DateTime.Now.ToString("hh:mm:ss");
+                                                MySqlConnection iconnect12 = new MySqlConnection(MyDsql);
+
+                                                string insertquerry1 = "UPDATE `attendance` SET `Pm_Out` = '" + dtime1 + "' WHERE `attendance`.`Date` = '" + date + "' AND `attendance`.`EmployeeRfid`= @rfid";
+
+
+                                                MySqlCommand command123 = new MySqlCommand(insertquerry1, iconnect12);
+                                                command123.Parameters.AddWithValue("@rfid", btnScan.Text);
+
+                                                MySqlDataReader reader23;
+                                                iconnect12.Open();
+                                                reader23 = command123.ExecuteReader();
+
+                                                using (MySqlConnection conn12 = new MySqlConnection(MyDsql))
+                                                {
+                                                    string imges = "SELECT image FROM employees WHERE EmployeeRfidTag =@EmployeeRfidTag";
+                                                    MySqlCommand cmdO = new MySqlCommand(imges, conn12);
+
+                                                    cmdO.Parameters.AddWithValue("@EmployeeRfidTag", btnScan.Text);
+
+                                                    MySqlDataAdapter da = new MySqlDataAdapter(cmdO);
+                                                    DataTable tbk = new DataTable();
+
+                                                    da.Fill(tbk);
+                                                    byte[] img = (byte[])tbk.Rows[0][0];
+
+                                                    MemoryStream ms1 = new MemoryStream(img);
+                                                    Imagebox.Image = Image.FromStream(ms1);
+
+                                                    da.Dispose();
+                                                }
+                                            }
+                                            else
+                                            {
+                                                AutoClosingMessageBox.Show("Already Log", "Information: 5:00", 2000);
+                                            }
+                                        }
+                                        catchTime = DateTime.Now.ToString("hh:mm tt");
+                                        IDrecognaizer.Text = "Hello";
+                                        cvname.Text = reader["EmployeeName"].ToString();
+                                        timed.Text = catchTime;
+                                        Remarks.Text = remarks;
+                                        info32.Text = info;
+                                        btnScan.Clear();
+                                    }
+                                    else
+                                    {
+                                        AutoClosingMessageBox.Show("No Work", "Warning", 2000);
+                                        btnScan.Clear();
+                                    }
                                 }
                                 else
                                 {
-                                    AutoClosingMessageBox.Show("No Work", "Warning", 2000);
-                                    btnScan.Clear();
+                                    AutoClosingMessageBox.Show("Rfid Not Registered. Please contact Administrator for Assistance", "Warning", 1500);
                                 }
                             }
-                            else
-                            {
-                                AutoClosingMessageBox.Show("Rfid Not Registered. Please contact Administrator for Assistance", "Warning", 1500);
-                            }
                         }
+						}
+						catch
+						{
+                            AutoClosingMessageBox.Show("Cannot start attendance. Please check you server", "Connection Error", 3000);
+                            btnScan.Clear();
+						}
+					    
+					    #endregion
+					}
+					else
+					{                       
+                        //Console.WriteLine("Time not set correctly");
+                        AutoClosingMessageBox.Show("Time not set correctly. Please set time or connect to internet", "System Time Error", 5000);
+                        AutoClosingMessageBox.Show("Exiting Application", "System Time Error", 1500);
+                        Application.Exit();
                     }
-                }
-                else
+                    DateTime? internetTime = TimeClass.GetInternetTime();
+                    if (internetTime == null)
+                    {
+                        //Console.WriteLine("Failed to get internet time.");
+                        AutoClosingMessageBox.Show("Cannot check time. Please Connect to a Network", "System Time Error", 5000);
+                        AutoClosingMessageBox.Show("Exiting Application", "System Time Error", 1500);
+                        Application.Exit();
+                    }
+				}
+				else
                 {
                     AutoClosingMessageBox.Show("Image does not Initialized. Please consult your admin", "Warning", 2000);
                     btnScan.Clear();

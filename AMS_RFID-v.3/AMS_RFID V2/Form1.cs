@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-
 namespace AMS_RFID_V2
 {
     public partial class LoginForm : Form
@@ -25,11 +24,7 @@ namespace AMS_RFID_V2
             InitializeComponent();
         }
         
-        private void Guna2CircleButton1_Click(object sender, EventArgs e)
-        {
-            MainPage Mp = new MainPage();
-            Mp.Show();
-        }
+        //string Conn =   
 
         private void LoginForm_MouseDown(object sender, MouseEventArgs e)
         {

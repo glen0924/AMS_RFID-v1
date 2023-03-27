@@ -583,8 +583,6 @@ J:\AMS_RFID-v.31\AMS_RFID V2\obj\x86\Debug\AMS_RFID V2.application
 J:\AMS_RFID-v.31\AMS_RFID V2\obj\x86\Debug\AMS_RFID V2.csproj.CopyComplete
 J:\AMS_RFID-v.31\AMS_RFID V2\obj\x86\Debug\AMS_RFID V2.exe
 J:\AMS_RFID-v.31\AMS_RFID V2\obj\x86\Debug\AMS_RFID V2.pdb
-C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\System.Buffers.xml
-C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\System.Numerics.Vectors.xml
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\x86\concrt140.dll
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\x86\cvextern.dll
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\x86\msvcp140.dll
@@ -670,11 +668,7 @@ C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\MetroFramework.Fonts.dll
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\MySql.Data.dll
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\MySqlBackup.dll
-C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Nager.Date.dll
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Renci.SshNet.dll
-C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Syncfusion.Licensing.dll
-C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Syncfusion.Shared.Base.dll
-C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Syncfusion.Shared.Windows.dll
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\System.Buffers.dll
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\System.Drawing.Common.dll
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\System.Memory.dll
@@ -704,11 +698,10 @@ C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\K4os.Compression.LZ4.Streams.xml
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\K4os.Hash.xxHash.xml
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\MySql.Data.xml
-C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Nager.Date.xml
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Renci.SshNet.xml
-C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Syncfusion.Shared.Base.xml
-C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\Syncfusion.Shared.Windows.xml
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\System.Buffers.xml
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\System.Memory.xml
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\System.Numerics.Vectors.xml
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\ZedGraph.xml
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\de\ZedGraph.resources.dll
@@ -724,6 +717,7 @@ C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\tr\ZedGraph.resources.dll
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\zh-cn\ZedGraph.resources.dll
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\bin\x86\Debug\zh-tw\ZedGraph.resources.dll
+C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\obj\x86\Debug\AMS_RFID V2.csproj.AssemblyReference.cache
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\obj\x86\Debug\AMS_RFID_V2.EmployeeAttendance.resources
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\obj\x86\Debug\AMS_RFID_V2.Properties.Resources.resources
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\obj\x86\Debug\AMS_RFID V2.csproj.GenerateResource.cache
@@ -733,4 +727,3 @@ C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\obj\x86\Debug
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\obj\x86\Debug\AMS_RFID V2.csproj.CopyComplete
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\obj\x86\Debug\AMS_RFID V2.exe
 C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\obj\x86\Debug\AMS_RFID V2.pdb
-C:\Users\glen2\Desktop\AMS_RFID\AMS_RFID\AMS_RFID-v.31\AMS_RFID V2\obj\x86\Debug\AMS_RFID V2.csproj.AssemblyReference.cache
