@@ -182,6 +182,7 @@ namespace AMS_RFID_V2
         //LOAD//
         private void MainPage_Load(object sender, EventArgs e)
         {
+            //this.Activate();
             DtrbyDate();
             Mysqlloop();
             // TODO: This line of code loads data into the 'ams_rfidDataSetAttendance.attendance' table. You can move, or remove it, as needed.
@@ -293,15 +294,11 @@ namespace AMS_RFID_V2
         ////////////FORM MOUSE DRAG (OTHERS)/////////
         private void MainPage_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
-            {
-                ReleaseCapture();
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
-            }
-        }
 
-        ////////////FORM MOUSE DRAG (OTHERS)/////////
-        private void guna2CustomGradientPanel1_MouseDown(object sender, MouseEventArgs e)
+		}
+
+		////////////FORM MOUSE DRAG (OTHERS)/////////
+		private void guna2CustomGradientPanel1_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -486,17 +483,25 @@ namespace AMS_RFID_V2
 
                             using (MySqlDataReader reader = command.ExecuteReader())
                             {
-                                while (reader.Read())
-                                {
-                                    using (MySqlConnection iconnectg = new MySqlConnection(MyDsql))
+								if (reader.Read())
+								{
+                                    while (reader.Read())
                                     {
-                                        string selectquery1 = string.Format("INSERT INTO `attendance`(`EmployeeRfid`,`EmployeeName`,`Date`,`DayofWeek`) VALUES ('" + reader["EmployeeRfidTag"] + "' ,'" + reader["EmployeeName"] + "', current_timestamp()  , '" + dayofweek + "')");
-                                        iconnectg.Open();
-                                        MySqlCommand command1 = new MySqlCommand(selectquery1, iconnectg);
-                                        MySqlDataReader reader1 = command1.ExecuteReader();
-                                        //AutoClosingMessageBox.Show("Importing data", "", 50);
+                                        using (MySqlConnection iconnectg = new MySqlConnection(MyDsql))
+                                        {
+                                            string selectquery1 = string.Format("INSERT INTO `attendance`(`EmployeeRfid`,`EmployeeName`,`Date`,`DayofWeek`) VALUES ('" + reader["EmployeeRfidTag"] + "' ,'" + reader["EmployeeName"] + "', current_timestamp()  , '" + dayofweek + "')");
+                                            iconnectg.Open();
+                                            MySqlCommand command1 = new MySqlCommand(selectquery1, iconnectg);
+                                            MySqlDataReader reader1 = command1.ExecuteReader();
+                                            //AutoClosingMessageBox.Show("Importing data", "", 50);
+                                        }
                                     }
-                                }
+								}
+								else
+								{
+                                    MessageBox.Show("No Data To be Inserted", "Error");
+								}
+                                
                             }
                             iconnect.Close();
                         }
@@ -2616,22 +2621,46 @@ namespace AMS_RFID_V2
 
         private void guna2GradientButton7_Click(object sender, EventArgs e)
         {
-            string file = @"C:\RFID\BROWSE\ams_rfid.sql";
-            using (MySqlConnection conn = new MySqlConnection(MyDsql))
-            {
-                using (MySqlCommand cmd = new MySqlCommand())
-                {
-                    using (MySqlBackup mb = new MySqlBackup(cmd))
+			if (MessageBox.Show("Do you want to Import File?","Warning",MessageBoxButtons.YesNoCancel,MessageBoxIcon.Warning) == DialogResult.Yes)
+			{
+				if (MessageBox.Show("You cannot Revert this area, once imported, the current database will be deleted. Are you Sure?", "Warning", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) == DialogResult.Yes)
+				{
+                    try
                     {
-                        cmd.Connection = conn;
-                        conn.Open();
-                        mb.ImportFromFile(file);
-                        conn.Close();
+                        string file = @"C:\RFID\BROWSE\ams_rfid.sql";
+                        using (MySqlConnection conn = new MySqlConnection(MyDsql))
+                        {
+                            using (MySqlCommand cmd = new MySqlCommand())
+                            {
+                                using (MySqlBackup mb = new MySqlBackup(cmd))
+                                {
+                                    cmd.Connection = conn;
+                                    conn.Open();
+                                    mb.ImportFromFile(file);
+                                    conn.Close();
+                                }
+                            }
+                        }
+                        MessageBox.Show("SUCCESSFULLY RESTORED.", "Information");
+
+
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Max Allowed Packets is 1M", "Warning");
                     }
                 }
+				else
+				{
+                    MessageBox.Show("Import Cancelled.", "Inoformation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-            MessageBox.Show("SUCCESSFULLY RESTORED.", "Information");
-        }
+			else
+			{
+                MessageBox.Show("Import Cancelled.", "Inoformation",MessageBoxButtons.OK, MessageBoxIcon.Information);
+			}
+			
+           } 
 
         #endregion export/import
 
@@ -2905,6 +2934,17 @@ namespace AMS_RFID_V2
 		private void BrwsTrainFile_Click(object sender, EventArgs e)
 		{
             Process.Start("C:\\RFID\\TrainedFaces\\TrainedLabels.txt");
+		}
+
+		private void MainPage_MouseClick(object sender, MouseEventArgs e)
+		{
+            //
+            
+		}
+
+		private void MainPage_Activated(object sender, EventArgs e)
+		{
+            this.Activate();
 		}
 
 		private void WebCamSelect1_Click(object sender, EventArgs e)

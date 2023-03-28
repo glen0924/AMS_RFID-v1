@@ -14,13 +14,8 @@ namespace AMS_RFID_V2
         private static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new EmployeeAttendance());
-            //Application.Run(new MainPage());
-            Application.Run(new LoginForm());
-            //Application.Run(new SupportingWinform());
-            //Application.Run(new EditEmployeeForm());
-            //Application.Run(new SupportingWinform());
+            Application.SetCompatibleTextRenderingDefault(false);           
+            Application.Run(new MainPage());
         }
     }
 }
