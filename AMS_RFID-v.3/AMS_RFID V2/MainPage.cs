@@ -516,38 +516,46 @@ namespace AMS_RFID_V2
 
         private void FullLogTimer1_Tick(object sender, EventArgs e)
         {
-            string QueryRef1 = "select `EmployeeRfid`,`EmployeeName`,`Date`,`Am_In`,`Am_Out`,`Pm_In`,`Pm_Out`,`Remarks`,`Remarks_AP`  from attendance";
+			try
+			{
+                string QueryRef1 = "select `EmployeeRfid`,`EmployeeName`,`Date`,`Am_In`,`Am_Out`,`Pm_In`,`Pm_Out`,`Remarks`,`Remarks_AP`  from attendance";
 
-            MySqlConnection conn1 = new MySqlConnection(MyDsql);
-            MySqlCommand cmd = new MySqlCommand(QueryRef1, conn1);
+                MySqlConnection conn1 = new MySqlConnection(MyDsql);
+                MySqlCommand cmd = new MySqlCommand(QueryRef1, conn1);
 
-            conn1.Open();
-            MySqlDataAdapter adp = new MySqlDataAdapter();
+                conn1.Open();
+                MySqlDataAdapter adp = new MySqlDataAdapter();
 
-            adp.SelectCommand = cmd;
-            DataTable dTable = new DataTable();
-            adp.Fill(dTable);
-            FullLogs.DataSource = dTable;
-            conn1.Close();
+                adp.SelectCommand = cmd;
+                DataTable dTable = new DataTable();
+                adp.Fill(dTable);
+                FullLogs.DataSource = dTable;
+                conn1.Close();
 
-            for (int i = 0; i < FullLogs.Rows.Count; i++)
-            {
-                if (FullLogs.Rows[i].Cells[5].Value.ToString() != "")
+                for (int i = 0; i < FullLogs.Rows.Count; i++)
                 {
-                    DateTime dt1W = DateTime.Parse(FullLogs.Rows[i].Cells[5].Value.ToString(), System.Globalization.CultureInfo.CurrentCulture);
-                    string tW = dt1W.ToString("hh:mm:ss");
-                    FullLogs.Rows[i].Cells[5].Value = tW;
+                    if (FullLogs.Rows[i].Cells[5].Value.ToString() != "")
+                    {
+                        DateTime dt1W = DateTime.Parse(FullLogs.Rows[i].Cells[5].Value.ToString(), System.Globalization.CultureInfo.CurrentCulture);
+                        string tW = dt1W.ToString("hh:mm:ss");
+                        FullLogs.Rows[i].Cells[5].Value = tW;
+                    }
+                }
+                for (int i = 0; i < FullLogs.Rows.Count; i++)
+                {
+                    if (FullLogs.Rows[i].Cells[6].Value.ToString() != "")
+                    {
+                        DateTime dt1E = DateTime.Parse(FullLogs.Rows[i].Cells[6].Value.ToString(), System.Globalization.CultureInfo.CurrentCulture);
+                        string tE = dt1E.ToString("hh:mm:ss");
+                        FullLogs.Rows[i].Cells[6].Value = tE;
+                    }
                 }
             }
-            for (int i = 0; i < FullLogs.Rows.Count; i++)
-            {
-                if (FullLogs.Rows[i].Cells[6].Value.ToString() != "")
-                {
-                    DateTime dt1E = DateTime.Parse(FullLogs.Rows[i].Cells[6].Value.ToString(), System.Globalization.CultureInfo.CurrentCulture);
-                    string tE = dt1E.ToString("hh:mm:ss");
-                    FullLogs.Rows[i].Cells[6].Value = tE;
-                }
+			catch
+			{
+                MessageBox.Show("Please check you connection between the server");
             }
+
         }
 
         private void guna2GradientButton2_Click(object sender, EventArgs e)
@@ -749,36 +757,44 @@ namespace AMS_RFID_V2
 
         private void EmpListTimer_Tick(object sender, EventArgs e)
         {
-            string ConString = "server=localhost;user id=AMS_RFID;password=@M$_Rf1d2O22;persistsecurityinfo=True;database=ams_rfid;allowuservariables=True;connectionlifetime=100";
-            string QuerryRefresh = "SELECT * FROM employees";
-            string QuerryRefresh1 = "SELECT `EmployeeRfidTag`,`EmployeeName` FROM employees";
-            //string QueryRef1 = "select `EmployeeRfid`,`EmployeeName`,`Date`,`Am_In`,`Am_Out`,`Pm_In`,`Pm_Out`,`Remarks`  from attendance  WHERE Date= '" + date + "'";
-            MySqlConnection conn1 = new MySqlConnection(ConString);
+			try
+			{
+                string ConString = "server=localhost;user id=AMS_RFID;password=@M$_Rf1d2O22;persistsecurityinfo=True;database=ams_rfid;allowuservariables=True;connectionlifetime=100";
+                string QuerryRefresh = "SELECT * FROM employees";
+                string QuerryRefresh1 = "SELECT `EmployeeRfidTag`,`EmployeeName` FROM employees";
+                //string QueryRef1 = "select `EmployeeRfid`,`EmployeeName`,`Date`,`Am_In`,`Am_Out`,`Pm_In`,`Pm_Out`,`Remarks`  from attendance  WHERE Date= '" + date + "'";
+                MySqlConnection conn1 = new MySqlConnection(ConString);
 
-            MySqlCommand cmd = new MySqlCommand(QuerryRefresh, conn1);
+                MySqlCommand cmd = new MySqlCommand(QuerryRefresh, conn1);
 
-            MySqlCommand cmd1 = new MySqlCommand(QuerryRefresh1, conn1);
-            MySqlCommand cmd0 = new MySqlCommand(QuerryRefresh1, conn1);
+                MySqlCommand cmd1 = new MySqlCommand(QuerryRefresh1, conn1);
+                MySqlCommand cmd0 = new MySqlCommand(QuerryRefresh1, conn1);
 
-            conn1.Open();
-            MySqlDataAdapter adp = new MySqlDataAdapter();
-            MySqlDataAdapter adp1 = new MySqlDataAdapter();
+                conn1.Open();
+                MySqlDataAdapter adp = new MySqlDataAdapter();
+                MySqlDataAdapter adp1 = new MySqlDataAdapter();
 
-            adp.SelectCommand = cmd;
-            adp1.SelectCommand = cmd1;
+                adp.SelectCommand = cmd;
+                adp1.SelectCommand = cmd1;
 
-            DataTable dTable = new DataTable();
-            DataTable dataTable1 = new DataTable();
-            DataTable dataTable2 = new DataTable();
+                DataTable dTable = new DataTable();
+                DataTable dataTable1 = new DataTable();
+                DataTable dataTable2 = new DataTable();
 
-            adp.Fill(dTable);
-            adp1.Fill(dataTable1);
-            adp.Fill(dataTable2);
+                adp.Fill(dTable);
+                adp1.Fill(dataTable1);
+                adp.Fill(dataTable2);
 
-            employeesGuna2DataGridView.DataSource = dTable;
-            guna2DataGridView2.DataSource = dataTable1;
-            guna2DataGridView8.DataSource = dataTable1;
-            conn1.Close();
+                employeesGuna2DataGridView.DataSource = dTable;
+                guna2DataGridView2.DataSource = dataTable1;
+                guna2DataGridView8.DataSource = dataTable1;
+                conn1.Close();
+            }
+			catch
+			{
+                MessageBox.Show("Please check you connection between the server");
+			}
+            
         }
 
         #endregion Employee List db
@@ -2282,145 +2298,160 @@ namespace AMS_RFID_V2
 
         private void update()
         {
-            using (MySqlConnection iconnecth = new MySqlConnection("Datasource=localhost;port=3306;username=AMS_RFID;password=@M$_Rf1d2O22; database = ams_rfid; Max Pool Size=1000;Convert Zero Datetime=True"))
-            {
-                string dateq = DateTime.Now.ToString("yyyy-MM-dd");
-                string selectqueryh = string.Format("SELECT `Date`, `Am_In`, `Am_Out`, `Pm_In`, `Pm_Out` FROM `attendance` WHERE Date = '" + dateq + "' ");
-
-                MySqlCommand commandh = new MySqlCommand(selectqueryh, iconnecth);
-                iconnecth.Open();
-                string date = DateTime.Now.ToString("yyyy-MM-dd");
-                DateTime A = DateTime.Now.AddDays(0);
-                using (MySqlDataReader readerh = commandh.ExecuteReader())
+			try
+			{
+                using (MySqlConnection iconnecth = new MySqlConnection("Datasource=localhost;port=3306;username=AMS_RFID;password=@M$_Rf1d2O22; database = ams_rfid; Max Pool Size=1000;Convert Zero Datetime=True"))
                 {
-                    while (readerh.Read())
+                    string dateq = DateTime.Now.ToString("yyyy-MM-dd");
+                    string selectqueryh = string.Format("SELECT `Date`, `Am_In`, `Am_Out`, `Pm_In`, `Pm_Out` FROM `attendance` WHERE Date = '" + dateq + "' ");
+
+                    MySqlCommand commandh = new MySqlCommand(selectqueryh, iconnecth);
+                    iconnecth.Open();
+                    string date = DateTime.Now.ToString("yyyy-MM-dd");
+                    DateTime A = DateTime.Now.AddDays(0);
+                    using (MySqlDataReader readerh = commandh.ExecuteReader())
                     {
-                        using (MySqlConnection iconnectAMIN = new MySqlConnection(MyDsql))
+                        while (readerh.Read())
                         {
-                            string selectquery12am1 = string.Format("UPDATE `attendance` SET Am_In = '' WHERE Am_In IS NULL");
-                            iconnectAMIN.Open();
-                            MySqlCommand command12am1 = new MySqlCommand(selectquery12am1, iconnectAMIN);
-                            MySqlDataReader reader1am1 = command12am1.ExecuteReader();
-                        }
-                        using (MySqlConnection iconnectg12AMOUT = new MySqlConnection(MyDsql))
-                        {
-                            string selectquery12gam2 = string.Format("UPDATE `attendance` SET Am_Out = '' WHERE Am_Out IS NULL");
-                            iconnectg12AMOUT.Open();
-                            MySqlCommand command12am2 = new MySqlCommand(selectquery12gam2, iconnectg12AMOUT);
-                            MySqlDataReader reader1 = command12am2.ExecuteReader();
-                        }
-                        using (MySqlConnection iconnectg12PMIN = new MySqlConnection(MyDsql))
-                        {
-                            string selectquery12pm = string.Format("UPDATE `attendance` SET Pm_In = '' WHERE Pm_In IS NULL");
-                            iconnectg12PMIN.Open();
-                            MySqlCommand command12pm = new MySqlCommand(selectquery12pm, iconnectg12PMIN);
-                            MySqlDataReader reader1h = command12pm.ExecuteReader();
-                        }
-                        using (MySqlConnection iconnectg12pm1 = new MySqlConnection(MyDsql))
-                        {
-                            string selectquery12g = string.Format("UPDATE `attendance` SET Pm_Out = '' WHERE Pm_Out IS NULL");
-                            iconnectg12pm1.Open();
-                            MySqlCommand command12 = new MySqlCommand(selectquery12g, iconnectg12pm1);
-                            MySqlDataReader reader1pm = command12.ExecuteReader();
+                            using (MySqlConnection iconnectAMIN = new MySqlConnection(MyDsql))
+                            {
+                                string selectquery12am1 = string.Format("UPDATE `attendance` SET Am_In = '' WHERE Am_In IS NULL");
+                                iconnectAMIN.Open();
+                                MySqlCommand command12am1 = new MySqlCommand(selectquery12am1, iconnectAMIN);
+                                MySqlDataReader reader1am1 = command12am1.ExecuteReader();
+                            }
+                            using (MySqlConnection iconnectg12AMOUT = new MySqlConnection(MyDsql))
+                            {
+                                string selectquery12gam2 = string.Format("UPDATE `attendance` SET Am_Out = '' WHERE Am_Out IS NULL");
+                                iconnectg12AMOUT.Open();
+                                MySqlCommand command12am2 = new MySqlCommand(selectquery12gam2, iconnectg12AMOUT);
+                                MySqlDataReader reader1 = command12am2.ExecuteReader();
+                            }
+                            using (MySqlConnection iconnectg12PMIN = new MySqlConnection(MyDsql))
+                            {
+                                string selectquery12pm = string.Format("UPDATE `attendance` SET Pm_In = '' WHERE Pm_In IS NULL");
+                                iconnectg12PMIN.Open();
+                                MySqlCommand command12pm = new MySqlCommand(selectquery12pm, iconnectg12PMIN);
+                                MySqlDataReader reader1h = command12pm.ExecuteReader();
+                            }
+                            using (MySqlConnection iconnectg12pm1 = new MySqlConnection(MyDsql))
+                            {
+                                string selectquery12g = string.Format("UPDATE `attendance` SET Pm_Out = '' WHERE Pm_Out IS NULL");
+                                iconnectg12pm1.Open();
+                                MySqlCommand command12 = new MySqlCommand(selectquery12g, iconnectg12pm1);
+                                MySqlDataReader reader1pm = command12.ExecuteReader();
+                            }
                         }
                     }
+                    iconnecth.Close();
                 }
-                iconnecth.Close();
             }
+			catch (Exception ez)
+			{
+
+                MessageBox.Show(ez.Message);
+			}
+            
         }
 
         ///Finalize data for absent
         private void calculate()
         {
-            using (MySqlConnection iconnect = new MySqlConnection(MyDsql))
-            {
-                string dateq = DateTime.Now.ToString("yyyy-MM-dd");
-                string selectquery = string.Format("SELECT * FROM `attendance`");
-
-                MySqlCommand command = new MySqlCommand(selectquery, iconnect);
-                iconnect.Open();
-                string date = DateTime.Now.ToString("yyyy-MM-dd");
-                DateTime A = DateTime.Now.AddDays(0);
-                using (MySqlDataReader reader = command.ExecuteReader())
+			try
+			{
+                using (MySqlConnection iconnect = new MySqlConnection(MyDsql))
                 {
-                    while (reader.Read())
-                    {
-                        DayOfWeek dayofweek = DateTime.Today.DayOfWeek;
+                    string dateq = DateTime.Now.ToString("yyyy-MM-dd");
+                    string selectquery = string.Format("SELECT * FROM `attendance`");
 
-                        if (dayofweek == System.DayOfWeek.Saturday || dayofweek == System.DayOfWeek.Sunday)
+                    MySqlCommand command = new MySqlCommand(selectquery, iconnect);
+                    iconnect.Open();
+                    string date = DateTime.Now.ToString("yyyy-MM-dd");
+                    DateTime A = DateTime.Now.AddDays(0);
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
                         {
-                            using (MySqlConnection iconnectg12 = new MySqlConnection(MyDsql))
+                            DayOfWeek dayofweek = DateTime.Today.DayOfWeek;
+
+                            if (dayofweek == System.DayOfWeek.Saturday || dayofweek == System.DayOfWeek.Sunday)
                             {
-                                string selectquery1 = string.Format("UPDATE `attendance` SET Remarks_AP = 'WeekEnd/P' WHERE DayofWeek = 'Saturday' and Am_In IS NOT NULL And Am_Out IS NOT NULL and Pm_In IS NOT NULL and Pm_Out IS NOT NULL");
-                                iconnectg12.Open();
-                                MySqlCommand command1 = new MySqlCommand(selectquery1, iconnectg12);
-                                MySqlDataReader reader1 = command1.ExecuteReader();
-                                iconnectg12.Close();
-                            }
-                            using (MySqlConnection iconnectg123 = new MySqlConnection(MyDsql))
-                            {
-                                string selectquery1 = string.Format("UPDATE `attendance` SET Remarks_AP = 'WeekEnd' WHERE DayofWeek = 'Sunday' ");
-                                iconnectg123.Open();
-                                MySqlCommand command1 = new MySqlCommand(selectquery1, iconnectg123);
-                                MySqlDataReader reader1 = command1.ExecuteReader();
-                                iconnectg123.Close();
+                                using (MySqlConnection iconnectg12 = new MySqlConnection(MyDsql))
+                                {
+                                    string selectquery1 = string.Format("UPDATE `attendance` SET Remarks_AP = 'WeekEnd/P' WHERE DayofWeek = 'Saturday' and Am_In IS NOT NULL And Am_Out IS NOT NULL and Pm_In IS NOT NULL and Pm_Out IS NOT NULL");
+                                    iconnectg12.Open();
+                                    MySqlCommand command1 = new MySqlCommand(selectquery1, iconnectg12);
+                                    MySqlDataReader reader1 = command1.ExecuteReader();
+                                    iconnectg12.Close();
+                                }
+                                using (MySqlConnection iconnectg123 = new MySqlConnection(MyDsql))
+                                {
+                                    string selectquery1 = string.Format("UPDATE `attendance` SET Remarks_AP = 'WeekEnd' WHERE DayofWeek = 'Sunday' ");
+                                    iconnectg123.Open();
+                                    MySqlCommand command1 = new MySqlCommand(selectquery1, iconnectg123);
+                                    MySqlDataReader reader1 = command1.ExecuteReader();
+                                    iconnectg123.Close();
+                                }
                             }
                         }
                     }
+                    iconnect.Close();
                 }
-                iconnect.Close();
-            }
-            using (MySqlConnection iconnectg1 = new MySqlConnection(MyDsql))
-            {
-                string selectquery1 = string.Format("SELECT Remarks,Remarks_AP FROM attendance WHERE Remarks = 'No12Break' AND Remarks_AP = 'Present' ");
-                iconnectg1.Open();
-                MySqlCommand command1q = new MySqlCommand(selectquery1, iconnectg1);
-                MySqlDataReader reader1 = command1q.ExecuteReader();
-
-                if (reader1.Read())
+                using (MySqlConnection iconnectg1 = new MySqlConnection(MyDsql))
                 {
-                    MessageBox.Show("week");
-                }
-                else
-                {
-                    using (MySqlConnection iconnectg12 = new MySqlConnection(MyDsql))
-                    {
-                        string selectquery12 = string.Format("UPDATE `attendance` SET Remarks_AP = 'Present' WHERE Am_In IS NOT NULL AND Am_Out IS NOT NULL AND Pm_In IS NOT NULL AND Pm_Out IS NOT NULL");
-                        iconnectg12.Open();
-                        MySqlCommand command12 = new MySqlCommand(selectquery12, iconnectg12);
-                        MySqlDataReader reader1q = command12.ExecuteReader();
-                        iconnectg12.Close();
-                    }
-                    using (MySqlConnection iconnectg = new MySqlConnection(MyDsql))
-                    {
-                        string selectquery1q = string.Format("UPDATE `attendance` SET Remarks_AP = 'Absent' WHERE Am_In IS NULL AND Am_Out IS NULL AND Pm_In IS NULL AND Pm_Out IS NULL");
-                        iconnectg.Open();
-                        MySqlCommand command1q1 = new MySqlCommand(selectquery1q, iconnectg);
-                        MySqlDataReader reader1q1 = command1q1.ExecuteReader();
-                        iconnectg.Close();
-                    }
+                    string selectquery1 = string.Format("SELECT Remarks,Remarks_AP FROM attendance WHERE Remarks = 'No12Break' AND Remarks_AP = 'Present' ");
+                    iconnectg1.Open();
+                    MySqlCommand command1q = new MySqlCommand(selectquery1, iconnectg1);
+                    MySqlDataReader reader1 = command1q.ExecuteReader();
 
-                    using (MySqlConnection iconnectg1q = new MySqlConnection(MyDsql))
+                    if (reader1.Read())
                     {
-                        string selectquery1q = string.Format("UPDATE `attendance` SET Remarks_AP = 'Half Day' WHERE Am_In IS NOT NULL AND Am_Out IS NOT NULL AND Pm_In IS NULL AND Pm_out IS NULL");
-                        iconnectg1q.Open();
-                        MySqlCommand command1qs = new MySqlCommand(selectquery1q, iconnectg1q);
-                        MySqlDataReader reader1q2 = command1qs.ExecuteReader();
-                        iconnectg1q.Close();
+                        MessageBox.Show("week");
                     }
-                    using (MySqlConnection icon = new MySqlConnection(MyDsql))
+                    else
                     {
-                        string selectquery1q = string.Format("UPDATE `attendance` SET Remarks_AP = 'Half Day' WHERE Am_In IS NULL AND Am_Out IS NULL AND Pm_In IS NOT NULL AND Pm_out IS NOT NULL ");
-                        icon.Open();
-                        MySqlCommand command1qq = new MySqlCommand(selectquery1q, icon);
-                        MySqlDataReader reader1q3 = command1qq.ExecuteReader();
-                        icon.Close();
+                        using (MySqlConnection iconnectg12 = new MySqlConnection(MyDsql))
+                        {
+                            string selectquery12 = string.Format("UPDATE `attendance` SET Remarks_AP = 'Present' WHERE Am_In IS NOT NULL AND Am_Out IS NOT NULL AND Pm_In IS NOT NULL AND Pm_Out IS NOT NULL");
+                            iconnectg12.Open();
+                            MySqlCommand command12 = new MySqlCommand(selectquery12, iconnectg12);
+                            MySqlDataReader reader1q = command12.ExecuteReader();
+                            iconnectg12.Close();
+                        }
+                        using (MySqlConnection iconnectg = new MySqlConnection(MyDsql))
+                        {
+                            string selectquery1q = string.Format("UPDATE `attendance` SET Remarks_AP = 'Absent' WHERE Am_In IS NULL AND Am_Out IS NULL AND Pm_In IS NULL AND Pm_Out IS NULL");
+                            iconnectg.Open();
+                            MySqlCommand command1q1 = new MySqlCommand(selectquery1q, iconnectg);
+                            MySqlDataReader reader1q1 = command1q1.ExecuteReader();
+                            iconnectg.Close();
+                        }
+
+                        using (MySqlConnection iconnectg1q = new MySqlConnection(MyDsql))
+                        {
+                            string selectquery1q = string.Format("UPDATE `attendance` SET Remarks_AP = 'Half Day' WHERE Am_In IS NOT NULL AND Am_Out IS NOT NULL AND Pm_In IS NULL AND Pm_out IS NULL");
+                            iconnectg1q.Open();
+                            MySqlCommand command1qs = new MySqlCommand(selectquery1q, iconnectg1q);
+                            MySqlDataReader reader1q2 = command1qs.ExecuteReader();
+                            iconnectg1q.Close();
+                        }
+                        using (MySqlConnection icon = new MySqlConnection(MyDsql))
+                        {
+                            string selectquery1q = string.Format("UPDATE `attendance` SET Remarks_AP = 'Half Day' WHERE Am_In IS NULL AND Am_Out IS NULL AND Pm_In IS NOT NULL AND Pm_out IS NOT NULL ");
+                            icon.Open();
+                            MySqlCommand command1qq = new MySqlCommand(selectquery1q, icon);
+                            MySqlDataReader reader1q3 = command1qq.ExecuteReader();
+                            icon.Close();
+                        }
                     }
+                    iconnectg1.Close();
                 }
-                iconnectg1.Close();
             }
+			catch (Exception ez)
+			{
 
-            //MessageBox.Show("false");
+                MessageBox.Show(ez.Message);
+			}
         }
 
         private void Finalize_Click(object sender, EventArgs e)
@@ -2580,8 +2611,6 @@ namespace AMS_RFID_V2
 
         #endregion Report Viewer
 
-
-
         #region Settings
 
         #region export/import
@@ -2647,7 +2676,7 @@ namespace AMS_RFID_V2
                     }
                     catch
                     {
-                        MessageBox.Show("Max Allowed Packets is 1M", "Warning");
+                        MessageBox.Show("Max Allowed Packets needed is greter than 1M", "Warning");
                     }
                 }
 				else
@@ -2714,25 +2743,33 @@ namespace AMS_RFID_V2
 
         private void RepsTo_Tick(object sender, EventArgs e)
         {
-            using (MySqlConnection ms = new MySqlConnection(MyDsql))
-            {
-                string QuerryRefresh = "SELECT * FROM reportsto";
-                //string QueryRef1 = "select `EmployeeRfid`,`EmployeeName`,`Date`,`Am_In`,`Am_Out`,`Pm_In`,`Pm_Out`,`Remarks`  from attendance  WHERE Date= '" + date + "'";
+			try
+			{
+                using (MySqlConnection ms = new MySqlConnection(MyDsql))
+                {
+                    string QuerryRefresh = "SELECT * FROM reportsto";
+                    //string QueryRef1 = "select `EmployeeRfid`,`EmployeeName`,`Date`,`Am_In`,`Am_Out`,`Pm_In`,`Pm_Out`,`Remarks`  from attendance  WHERE Date= '" + date + "'";
 
-                MySqlCommand cmd = new MySqlCommand(QuerryRefresh, ms);
+                    MySqlCommand cmd = new MySqlCommand(QuerryRefresh, ms);
 
-                ms.Open();
-                MySqlDataAdapter adp = new MySqlDataAdapter();
+                    ms.Open();
+                    MySqlDataAdapter adp = new MySqlDataAdapter();
 
-                adp.SelectCommand = cmd;
+                    adp.SelectCommand = cmd;
 
-                DataTable dTable = new DataTable();
+                    DataTable dTable = new DataTable();
 
-                adp.Fill(dTable);
+                    adp.Fill(dTable);
 
-                guna2DataGridView5.DataSource = dTable;
-                ms.Close();
+                    guna2DataGridView5.DataSource = dTable;
+                    ms.Close();
+                }
             }
+			catch (Exception ez)
+			{
+                MessageBox.Show(ez.Message);
+            }
+            
         }
 
         //deP
@@ -2758,6 +2795,7 @@ namespace AMS_RFID_V2
 
         private void employeedetailsdataview_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             if (employeedetailsdataview.Columns[e.ColumnIndex].Name == "Details11")
             {
                 foreach (DataGridViewRow row in employeedetailsdataview.SelectedRows)
@@ -2766,23 +2804,31 @@ namespace AMS_RFID_V2
                     Console.WriteLine(value1);
 
                     guna2TabControl4.SelectedIndex = 1;
-                    using (MySqlConnection md = new MySqlConnection(MyDsql))
-                    {
-                        string g = "SELECT EmployeeName,Date,Am_In,Am_Out,Pm_In,Pm_Out,Remarks,Remarks_AP FROM attendance WHERE EmployeeName=@emp ";
+					try
+					{
+                        using (MySqlConnection md = new MySqlConnection(MyDsql))
+                        {
+                            string g = "SELECT EmployeeName,Date,Am_In,Am_Out,Pm_In,Pm_Out,Remarks,Remarks_AP FROM attendance WHERE EmployeeName=@emp ";
 
-                        MySqlCommand c = new MySqlCommand(g, md);
-                        c.Parameters.AddWithValue("@emp", value1);
-                        md.Open();
+                            MySqlCommand c = new MySqlCommand(g, md);
+                            c.Parameters.AddWithValue("@emp", value1);
+                            md.Open();
 
-                        MySqlDataAdapter ad = new MySqlDataAdapter();
-                        DataTable gs = new DataTable();
+                            MySqlDataAdapter ad = new MySqlDataAdapter();
+                            DataTable gs = new DataTable();
 
-                        ad.SelectCommand = c;
-                        ad.Fill(gs);
+                            ad.SelectCommand = c;
+                            ad.Fill(gs);
 
-                        EmployeeGrid.DataSource = gs;
-                        md.Close();
+                            EmployeeGrid.DataSource = gs;
+                            md.Close();
+                        }
                     }
+					catch (Exception)
+					{
+                        MessageBox.Show("Error Connection the server");
+					}
+                    
                 }
             }
         }
@@ -2792,12 +2838,7 @@ namespace AMS_RFID_V2
             string Labelsinfo = File.ReadAllText(Application.StartupPath + "/TrainedFaces/TrainedLabels.txt");
             
         }
-
-        private void guna2CirclePictureBox4_Click(object sender, EventArgs e)
-        {
-        }
-
-        //dES
+       //dES
         private void guna2ToggleSwitch10_Click(object sender, EventArgs e)
         {
             if (guna2ToggleSwitch10.Checked == true)
@@ -2865,52 +2906,61 @@ namespace AMS_RFID_V2
             }
             else
             {
-                using (MySqlConnection ms = new MySqlConnection(MyDsql))
-                {
-                    string updt = "SELECT password FROM login WHERE password = @pass";
-                    ms.Open();
-                    MySqlCommand c = new MySqlCommand(updt, ms);
-
-                    c.Parameters.AddWithValue("@pass", CurrPass.Text);
-
-                    MySqlDataReader r = c.ExecuteReader();
-                    if (r.Read())
+				try
+				{
+                    using (MySqlConnection ms = new MySqlConnection(MyDsql))
                     {
-                        if (NewPass.Text == ReTPass.Text)
+                        string updt = "SELECT password FROM login WHERE password = @pass";
+                        ms.Open();
+                        MySqlCommand c = new MySqlCommand(updt, ms);
+
+                        c.Parameters.AddWithValue("@pass", CurrPass.Text);
+
+                        MySqlDataReader r = c.ExecuteReader();
+                        if (r.Read())
                         {
-                            if (MessageBox.Show("Are you sure to change password???????", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                            if (NewPass.Text == ReTPass.Text)
                             {
-                                using (MySqlConnection n = new MySqlConnection(MyDsql))
+                                if (MessageBox.Show("Are you sure to change password???????", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
                                 {
-                                    string d = "UPDATE 'login' SET 'password' = @password ";
-                                    string d1 = "UPDATE `login` SET `password`=@password";
+                                    using (MySqlConnection n = new MySqlConnection(MyDsql))
+                                    {
+                                        string d = "UPDATE 'login' SET 'password' = @password ";
+                                        string d1 = "UPDATE `login` SET `password`=@password";
 
-                                    n.Open();
-                                    MySqlCommand gs = new MySqlCommand(d1, n);
+                                        n.Open();
+                                        MySqlCommand gs = new MySqlCommand(d1, n);
 
-                                    gs.Parameters.AddWithValue("@password", ReTPass.Text);
+                                        gs.Parameters.AddWithValue("@password", ReTPass.Text);
 
-                                    MySqlDataReader t = gs.ExecuteReader();
-                                    n.Close();
+                                        MySqlDataReader t = gs.ExecuteReader();
+                                        n.Close();
+                                    }
+                                    AutoClosingMessageBox.Show("Change password Successfully", "Information", 2000);
                                 }
-                                AutoClosingMessageBox.Show("Change password Successfully", "Information", 2000);
+                                else
+                                {
+                                    AutoClosingMessageBox.Show("No Changes made.", "Information", 2000);
+                                }
                             }
                             else
                             {
-                                AutoClosingMessageBox.Show("No Changes made.", "Information", 2000);
+                                AutoClosingMessageBox.Show("Password does not Match", "error", 2500);
                             }
+                            ms.Close();
                         }
                         else
                         {
                             AutoClosingMessageBox.Show("Password does not Match", "error", 2500);
                         }
-                        ms.Close();
-                    }
-                    else
-                    {
-                        AutoClosingMessageBox.Show("Password does not Match", "error", 2500);
                     }
                 }
+				catch (Exception ex)
+				{
+
+                    MessageBox.Show(ex.Message);
+				}
+               
             }
         }
 

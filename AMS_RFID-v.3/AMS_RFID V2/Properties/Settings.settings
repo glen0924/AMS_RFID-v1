@@ -26,5 +26,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">server=localhost;user id=AMS_RFID;password=@M$_Rf1d2O22;persistsecurityinfo=True;database=ams_rfid;allowuservariables=True;connectionlifetime=100</Value>
     </Setting>
+    <Setting Name="Name" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Empty</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
