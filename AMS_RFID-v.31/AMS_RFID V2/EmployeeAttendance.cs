@@ -56,7 +56,6 @@ namespace AMS_RFID_V2
         public EmployeeAttendance()
         {
             InitializeComponent();
-            //this.AttendanceGridView = g;
         }
 
         //mysql COnnections
@@ -130,15 +129,15 @@ namespace AMS_RFID_V2
                 Application.Exit();
             }
 
-            DateTime? internetTime = TimeClass.GetInternetTime();
-            if (internetTime == null)
-            {
-                //Console.WriteLine("Failed to get internet time.");
-                AutoClosingMessageBox.Show("Cannot check time. Please Connect to a Network","System Time Error",5000);
-                AutoClosingMessageBox.Show("Exiting Application","System Time Error",1500);
-                Application.Exit();
-            }           
-        }
+			DateTime? internetTime = TimeClass.GetInternetTime();
+			if (internetTime == null)
+			{
+				//Console.WriteLine("Failed to get internet time.");
+				AutoClosingMessageBox.Show("Cannot check time. Please Connect to a Network", "System Time Error", 5000);
+				AutoClosingMessageBox.Show("Exiting Application", "System Time Error", 1500);
+				Application.Exit();
+			}
+		}
 
         #region OTHERS
 

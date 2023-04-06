@@ -2970,7 +2970,7 @@ namespace AMS_RFID_V2
             Process.Start("C:\\RFID\\TrainedFaces\\TrainedLabels.txt");
 		}
 
-		private void guna2GradientButton1_Click(object sender, EventArgs e)
+		private void label40_Click(object sender, EventArgs e)
 		{
 
 		}

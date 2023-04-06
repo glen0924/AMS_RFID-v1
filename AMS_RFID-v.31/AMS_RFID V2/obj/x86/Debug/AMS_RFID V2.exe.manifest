@@ -86,7 +86,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>6x+Iz9VfmeHcb0Gf7YjjQzU7Dj7rhAQwDr/jbayhxcY=</dsig:DigestValue>
+        <dsig:DigestValue>Vno1faIR6+7Q7vSV871ghVfI/CdjqZ8QpwlmgmPj6LM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -726,13 +726,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="AMS_RFID V2.exe.config" size="1906">
+  <file name="AMS_RFID V2.exe.config" size="2537">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>dG3ZN+tXlgDaZhs5X2IFtoq7/M7v3yt/bG4yG7PCCzY=</dsig:DigestValue>
+      <dsig:DigestValue>39DGWnEhHtYJtg2VbtBmoJNnSGGOF3iS00isSaCqa3Q=</dsig:DigestValue>
     </hash>
   </file>
   <file name="cv110.dll" size="881960">
