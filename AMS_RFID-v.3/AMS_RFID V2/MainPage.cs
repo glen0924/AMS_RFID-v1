@@ -476,32 +476,30 @@ namespace AMS_RFID_V2
                         Console.WriteLine(dayofweek);
                         using (MySqlConnection iconnect = new MySqlConnection(MyDsql))
                         {
-                            string selectquery = string.Format("SELECT * FROM employees ");
+                            string selectquery = string.Format("SELECT * FROM employees");
 
                             MySqlCommand command = new MySqlCommand(selectquery, iconnect);
                             iconnect.Open();
 
                             using (MySqlDataReader reader = command.ExecuteReader())
                             {
-								if (reader.Read())
+								while (reader.Read())
 								{
-                                    while (reader.Read())
-                                    {
-                                        using (MySqlConnection iconnectg = new MySqlConnection(MyDsql))
-                                        {
-                                            string selectquery1 = string.Format("INSERT INTO `attendance`(`EmployeeRfid`,`EmployeeName`,`Date`,`DayofWeek`) VALUES ('" + reader["EmployeeRfidTag"] + "' ,'" + reader["EmployeeName"] + "', current_timestamp()  , '" + dayofweek + "')");
-                                            iconnectg.Open();
-                                            MySqlCommand command1 = new MySqlCommand(selectquery1, iconnectg);
-                                            MySqlDataReader reader1 = command1.ExecuteReader();
-                                            //AutoClosingMessageBox.Show("Importing data", "", 50);
-                                        }
-                                    }
-								}
-								else
-								{
-                                    MessageBox.Show("No Data To be Inserted", "Error");
-								}
-                                
+									try
+									{
+										using (MySqlConnection iconnectg = new MySqlConnection(MyDsql))
+										{
+											string selectquery1 = string.Format("INSERT INTO `attendance`(`EmployeeRfid`,`EmployeeName`,`Date`,`DayofWeek`) VALUES ('" + reader["EmployeeRfidTag"] + "' ,'" + reader["EmployeeName"] + "', current_timestamp()  , '" + dayofweek + "')");
+											iconnectg.Open();
+											MySqlCommand command1 = new MySqlCommand(selectquery1, iconnectg);
+                                            command1.ExecuteNonQuery();
+										}
+									}
+									catch (Exception ex)
+									{
+										MessageBox.Show(ex.Message);
+									}
+								}                               
                             }
                             iconnect.Close();
                         }
@@ -560,7 +558,7 @@ namespace AMS_RFID_V2
 
         private void guna2GradientButton2_Click(object sender, EventArgs e)
         {
-            if (guna2GradientButton2.Checked == true)
+            if (guna2ToggleSwitch7.Checked == true)
             {
                 MessageBox.Show("Pease Turn off the toggle button before manual search.");
             }
@@ -2925,7 +2923,6 @@ namespace AMS_RFID_V2
                                 {
                                     using (MySqlConnection n = new MySqlConnection(MyDsql))
                                     {
-                                        string d = "UPDATE 'login' SET 'password' = @password ";
                                         string d1 = "UPDATE `login` SET `password`=@password";
 
                                         n.Open();
@@ -2963,19 +2960,6 @@ namespace AMS_RFID_V2
                
             }
         }
-
-        //nONOONBREAKCOMBO
-        private void guna2ComboBox2_Click(object sender, EventArgs e)
-        {
-            guna2ComboBox2.Items.Clear();
-            NoNoonBreakDb();
-        }
-
-		private void guna2GradientButton11_Click(object sender, EventArgs e)
-		{
-
-		}
-
 		private void empName_TextChanged(object sender, EventArgs e)
 		{
             reps();
@@ -2984,6 +2968,11 @@ namespace AMS_RFID_V2
 		private void BrwsTrainFile_Click(object sender, EventArgs e)
 		{
             Process.Start("C:\\RFID\\TrainedFaces\\TrainedLabels.txt");
+		}
+
+		private void guna2GradientButton1_Click(object sender, EventArgs e)
+		{
+
 		}
 
 		private void MainPage_MouseClick(object sender, MouseEventArgs e)
@@ -3045,73 +3034,6 @@ namespace AMS_RFID_V2
             FinalVideo = new VideoCaptureDevice();
             //CaptureApp = new Capture(WebCamSelect.SelectedIndex);
         }
-
-        private void NoNoonBreakDb()
-        {
-            try
-            {
-                string date = DateTime.Now.ToString("yyyy-MM-dd");
-
-                using (MySqlConnection mswl = new MySqlConnection(MyDsql))
-                {
-                    string Ref = "SELECT EmployeeName FROM attendance WHERE Date = '" + date + "' ";
-                    mswl.Open();
-                    MySqlCommand cmdO = new MySqlCommand(Ref, mswl);
-                    MySqlDataReader readd = cmdO.ExecuteReader();
-
-                    while (readd.Read())
-
-                    {
-                        guna2ComboBox2.Items.Add(readd.GetString("EmployeeName"));
-                    }
-                    mswl.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void guna2GradientButton10_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Are you sure?", "Warning", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                try
-                {
-                    string date = DateTime.Now.ToString("yyyy-MM-dd");
-
-                    using (MySqlConnection s = new MySqlConnection(MyDsql))
-                    {
-                        string d = "UPDATE attendance SET Remarks = 'No12Break',Remarks_AP = 'Present' WHERE EmployeeName = @emp AND Date = @date";
-
-                        MySqlCommand c = new MySqlCommand(d, s);
-
-                        c.Parameters.AddWithValue("@emp", guna2ComboBox2.Text);
-                        c.Parameters.AddWithValue("@date", date);
-                        s.Open();
-                        MySqlDataReader r = c.ExecuteReader();
-                        s.Close();
-                    }
-                    AutoClosingMessageBox.Show("Updated successfully", "Information", 2000);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            else
-            {
-                AutoClosingMessageBox.Show("No changes Made", "Information", 2000);
-            }
-        }
-
-        //General
-
-
-        //General Employee db+Combo
-
-
         #endregion Settings
     }
 }
